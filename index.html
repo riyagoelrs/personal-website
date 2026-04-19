@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Riya Goel Gazette</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=unifrakturmaguntia&family=source+serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=dm+sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--ink:#0e0c0a;--paper:#faf7f0;--red:#b5270e;--mid:#6b6458;--rule:#c8bfb0;}
+body{background:var(--paper);color:var(--ink);font-family:'Source Serif 4',serif;}
+::selection{background:var(--red);color:var(--paper);}
+.masthead{border-bottom:3px double var(--ink);padding:1.5rem 4%;}
+.mast-top{display:flex;justify-content:space-between;align-items:center;padding-bottom:1rem;border-bottom:1px solid var(--rule);margin-bottom:1rem;}
+.mast-meta{font-family:'DM Sans',sans-serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.mast-links{display:flex;gap:1.5rem;}
+.mast-links a{font-family:'DM Sans',sans-serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);text-decoration:none;}
+.mast-links a:hover{color:var(--red);}
+.mast-title{text-align:center;margin-bottom:1rem;}
+.paper-name{font-family:'UnifrakturMaguntia',cursive;font-size:clamp(3rem,8vw,7rem);line-height:1;color:var(--ink);display:block;}
+.paper-sub{font-family:'DM Sans',sans-serif;font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--mid);margin-top:.4rem;}
+.mast-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:.8rem;border-top:1px solid var(--rule);}
+.mast-date{font-family:'DM Sans',sans-serif;font-size:.68rem;color:var(--mid);letter-spacing:.05em;}
+.mast-edition{font-family:'DM Sans',sans-serif;font-size:.68rem;color:var(--mid);}
+.mast-price{font-family:'Source Serif 4',serif;font-size:.75rem;font-style:italic;color:var(--mid);}
+.section-rule{display:flex;align-items:center;gap:1rem;padding:.5rem 4%;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);background:var(--ink);color:var(--paper);}
+.section-name{font-family:'DM Sans',sans-serif;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;}
+.section-rule .dots{flex:1;border-bottom:1px dotted rgba(255,255,255,.3);}
+.nav-strip{display:flex;justify-content:center;gap:0;border-bottom:1px solid var(--rule);}
+.nav-strip a{font-family:'DM Sans',sans-serif;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding:.7rem 1.8rem;border-right:1px solid var(--rule);}
+.nav-strip a:first-child{border-left:1px solid var(--rule);}
+.nav-strip a:hover{background:var(--ink);color:var(--paper);}
+.front{display:grid;grid-template-columns:1fr 2.2fr 1fr;border-bottom:2px solid var(--ink);}
+.front-col{padding:2rem 1.8rem;}
+.front-col.center{border-left:1px solid var(--rule);border-right:1px solid var(--rule);}
+.col-head{font-family:'DM Sans',sans-serif;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);border-bottom:1px solid var(--red);padding-bottom:.3rem;margin-bottom:1.2rem;display:inline-block;}
+.brief{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--rule);}
+.brief:last-child{border-bottom:none;margin-bottom:0;}
+.brief-head{font-family:'Playfair Display',serif;font-size:1rem;line-height:1.3;margin-bottom:.4rem;font-weight:700;}
+.brief-body{font-family:'Source Serif 4',serif;font-size:.78rem;line-height:1.7;color:#444;}
+.brief-link{font-family:'DM Sans',sans-serif;font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:var(--red);text-decoration:none;display:inline-block;margin-top:.4rem;}
+.main-story .kicker{font-family:'DM Sans',sans-serif;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:.8rem;}
+.main-story h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,4rem);line-height:1.05;font-weight:900;margin-bottom:1rem;letter-spacing:-.01em;}
+.main-story h1 em{font-style:italic;font-weight:400;}
+.main-story .deck{font-family:'Source Serif 4',serif;font-size:1.05rem;line-height:1.6;color:#333;font-style:italic;border-left:3px solid var(--red);padding-left:1rem;margin-bottom:1.5rem;}
+.main-story .byline{font-family:'DM Sans',sans-serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);margin-bottom:1.5rem;display:flex;align-items:center;gap:.8rem;}
+.main-story .byline::after{content:'';flex:1;height:1px;background:var(--rule);}
+.main-story .body{font-size:.9rem;line-height:1.85;color:#2a2520;column-count:2;column-gap:2rem;column-rule:1px solid var(--rule);}
+.pullquote{font-family:'Playfair Display',serif;font-size:1.4rem;font-style:italic;line-height:1.4;text-align:center;padding:1.5rem 0;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);margin:1.5rem 0;color:var(--ink);}
+.pullquote::before{content:'\201C';font-size:3rem;line-height:0;vertical-align:-.4em;color:var(--red);margin-right:.2rem;}
+.career-section{border-bottom:2px solid var(--ink);}
+.career-grid{display:grid;grid-template-columns:1.2fr 1fr;border-top:1px solid var(--rule);}
+.career-main{padding:2.5rem 2rem;border-right:1px solid var(--rule);}
+.career-side{padding:2.5rem 2rem;}
+.career-head{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;margin-bottom:.3rem;}
+.career-sub{font-family:'Source Serif 4',serif;font-style:italic;color:var(--mid);font-size:.88rem;margin-bottom:2rem;}
+.career-item{display:grid;grid-template-columns:80px 1fr;gap:1.2rem;padding:1.2rem 0;border-top:1px solid var(--rule);}
+.career-yr{font-family:'Source Serif 4',serif;font-style:italic;font-size:.88rem;color:var(--red);padding-top:2px;}
+.career-role{font-size:.92rem;font-weight:600;font-family:'DM Sans',sans-serif;margin-bottom:.15rem;}
+.career-co{font-size:.78rem;color:var(--mid);font-family:'DM Sans',sans-serif;}
+.career-desc{font-size:.78rem;color:#555;line-height:1.65;margin-top:.3rem;font-family:'Source Serif 4',serif;}
+.sidebar-head{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;margin-bottom:.3rem;}
+.sidebar-sub{font-family:'Source Serif 4',serif;font-style:italic;color:var(--mid);font-size:.8rem;margin-bottom:1.5rem;}
+.stat-box{background:var(--ink);color:var(--paper);padding:1.5rem;margin-bottom:1rem;text-align:center;}
+.stat-num{font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;color:var(--paper);line-height:1;}
+.stat-label{font-family:'DM Sans',sans-serif;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:#888;margin-top:.3rem;}
+.quote-box{border:1px solid var(--rule);padding:1.2rem;margin-top:1rem;}
+.quote-box p{font-family:'Source Serif 4',serif;font-style:italic;font-size:.88rem;line-height:1.65;color:#333;}
+.quote-box cite{font-family:'DM Sans',sans-serif;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);display:block;margin-top:.5rem;}
+.opinion-section{border-bottom:2px solid var(--ink);}
+.opinion-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;border-top:1px solid var(--rule);}
+.op-col{padding:2rem 1.8rem;border-right:1px solid var(--rule);}
+.op-col:last-child{border-right:none;}
+.op-label{font-family:'DM Sans',sans-serif;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);border-bottom:1px solid var(--red);padding-bottom:.3rem;margin-bottom:1.2rem;display:inline-block;}
+.op-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;line-height:1.35;margin-bottom:.6rem;}
+.op-body{font-family:'Source Serif 4',serif;font-size:.78rem;line-height:1.7;color:#444;margin-bottom:.8rem;}
+.op-link{font-family:'DM Sans',sans-serif;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--red);text-decoration:none;}
+.op-link:hover{text-decoration:underline;}
+.op-divider{border:none;border-top:1px solid var(--rule);margin:1rem 0;}
+.books-section{border-bottom:2px solid var(--ink);}
+.books-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--rule);}
+.book-feature{padding:3rem 3.5rem;border-right:1px solid var(--rule);position:relative;}
+.book-feature:last-child{border-right:none;}
+.book-number{font-family:'Playfair Display',serif;font-size:8rem;font-weight:900;color:rgba(0,0,0,.04);position:absolute;top:1rem;right:2rem;line-height:1;}
+.book-label{font-family:'DM Sans',sans-serif;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:1.5rem;display:inline-block;}
+.book-title{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2.5rem);font-weight:900;line-height:1.1;margin-bottom:1rem;}
+.book-title em{font-style:italic;font-weight:400;}
+.book-desc{font-family:'Source Serif 4',serif;font-size:.88rem;line-height:1.85;color:#444;margin-bottom:1.5rem;}
+.book-cta{display:inline-block;border:1px solid var(--ink);padding:.6rem 1.5rem;font-family:'DM Sans',sans-serif;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--ink);}
+.book-cta:hover{background:var(--ink);color:var(--paper);}
+.ticker{background:var(--ink);color:var(--paper);padding:.6rem 0;overflow:hidden;white-space:nowrap;border-top:1px solid #333;}
+.ticker-inner{display:inline-block;animation:tick 30s linear infinite;}
+.ticker-inner span{font-family:'DM Sans',sans-serif;font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;margin:0 2.5rem;color:#888;}
+.ticker-inner span.hi{color:#c4724a;}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.classifieds{padding:3rem 4%;border-bottom:2px solid var(--ink);display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;}
+.classified-box{border:1px solid var(--rule);padding:1.5rem;}
+.classified-head{font-family:'DM Sans',sans-serif;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:.8rem;}
+.classified-text{font-family:'Source Serif 4',serif;font-size:.82rem;line-height:1.7;color:#444;}
+.classified-links{margin-top:1rem;display:flex;flex-direction:column;gap:.4rem;}
+.classified-links a{font-family:'DM Sans',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:.3rem;}
+.classified-links a:hover{color:var(--red);}
+footer{padding:2rem 4%;border-top:3px double var(--ink);display:flex;justify-content:space-between;align-items:center;}
+.footer-name{font-family:'UnifrakturMaguntia',cursive;font-size:1.8rem;}
+.footer-links{display:flex;gap:2rem;}
+.footer-links a{font-family:'DM Sans',sans-serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;}
+.footer-links a:hover{color:var(--red);}
+.footer-copy{font-family:'Source Serif 4',serif;font-size:.7rem;font-style:italic;color:var(--mid);}
+@media(max-width:768px){
+.front{grid-template-columns:1fr;}
+.front-col.center{border-left:none;border-right:none;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+.main-story .body{column-count:1;}
+.opinion-grid{grid-template-columns:1fr 1fr;}
+.career-grid{grid-template-columns:1fr;}
+.career-main{border-right:none;border-bottom:1px solid var(--rule);}
+.books-grid{grid-template-columns:1fr;}
+.book-feature{border-right:none;border-bottom:1px solid var(--rule);}
+.classifieds{grid-template-columns:1fr;}
+.nav-strip{flex-wrap:wrap;}
+}
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="mast-top">
+    <div class="mast-meta">Est. New York, 2024</div>
+    <div class="mast-links"><a href="#">Finance</a><a href="#">Writing</a><a href="#">Books</a><a href="#">Contact</a></div>
+    <div class="mast-meta">Vol. I, No. 1</div>
+  </div>
+  <div class="mast-title">
+    <span class="paper-name">The Riya Goel Gazette</span>
+    <div class="paper-sub">Finance · Fashion · South Asian Identity · Literature</div>
+  </div>
+  <div class="mast-bottom">
+    <span class="mast-date">New York City — March 2026</span>
+    <span class="mast-edition">Investment Banking · Cultural Criticism · Publishing</span>
+    <span class="mast-price">Complimentary</span>
+  </div>
+</header>
+<nav class="nav-strip">
+  <a href="#front-page">Front Page</a>
+  <a href="#career">Career</a>
+  <a href="#opinion">Opinion</a>
+  <a href="#books">Books</a>
+  <a href="#contact">Contact</a>
+</nav>
+<div id="front-page" class="section-rule"><span class="section-name">Front Page</span><span class="dots"></span></div>
+<section class="front">
+  <div class="front-col left">
+    <span class="col-head">Fast Facts</span>
+    <div class="brief"><div class="brief-head">Barnard College, Columbia University</div><div class="brief-body">BA, Economics & Data Science. Graduated December 2024 — a semester early.</div></div>
+    <div class="brief"><div class="brief-head">Bank of America</div><div class="brief-body">Investment Banking Analyst, Consumer & Retail Group. New York City, 2025–present.</div></div>
+    <div class="brief"><div class="brief-head">United Nations</div><div class="brief-body">Youth Consultant & Girl Advocate, Beijing 25+ Task Force. Started at age 16.</div><a href="#" class="brief-link">Read More →</a></div>
+    <div class="brief"><div class="brief-head">Barnard Investment Group</div><div class="brief-body">Founder & President. Barnard's first women-focused investment club, with financial literacy programs in Harlem.</div></div>
+    <div class="brief"><div class="brief-head">High Line Nine Galleries</div><div class="brief-body">Gallery Associate, 2024. NYC's premier gallery complex. Where finance met art.</div></div>
+  </div>
+  <div class="front-col center">
+    <div class="main-story">
+      <div class="kicker">Profile · Investment Banking & Culture</div>
+      <h1>The Analyst Who Writes What <em>Finance Refuses to Say</em></h1>
+      <p class="deck">"I'm most alive when I'm asking the question nobody in the room wanted to ask."</p>
+      <div class="byline">By The Gazette Desk · New York City</div>
+      <div class="body">
+        <p>Riya Goel is a contradiction that Wall Street hasn't figured out what to do with yet. She is an Investment Banking Analyst at Bank of America's Consumer & Retail Group — and she is also the person who wrote "Kissing My Resume for the Last Time," a Medium essay that reads like a quiet manifesto against everything her day job represents.</p>
+        <p>She graduated from Barnard College in December 2024, a semester ahead of schedule, with a degree in Economics and Data Science. Before she touched a financial model, she was a United Nations Youth Consultant at sixteen, advocating for gender equity on the world stage. At nineteen, she published her first book — during a pandemic.</p>
+        <p>At twenty-one, she founded Barnard Investment Group, the first women-focused investment club at Barnard College, expanding its reach to include financial literacy programs in Harlem. She then worked as a gallery associate at High Line Nine, one of New York's premier gallery complexes — simultaneously.</p>
+        <p>Her writing on Medium spans fashion as cultural critique, South Asian identity in predominantly white institutions, and the aesthetics of political drift in fast fashion. None of it reads like it was written by someone who works at an investment bank. That's precisely the point.</p>
+      </div>
+      <div class="pullquote">Finance, fashion, and the South Asian diaspora's relationship to power — someone has to write about it honestly.</div>
+    </div>
+  </div>
+  <div class="front-col right">
+    <span class="col-head">Published Works</span>
+    <div class="brief"><div class="brief-head">The Gen-Z Book</div><div class="brief-body">A strategic guide to Gen-Z culture for brands. New Degree Press, 2020. Written at nineteen.</div><a href="#" class="brief-link">Order on Amazon →</a></div>
+    <div class="brief"><div class="brief-head">Brewing Community: The Latte Effect</div><div class="brief-body">On coffee culture, third places, and the meaning of gathering. New Degree Press, 2024.</div><a href="#" class="brief-link">Order on Amazon →</a></div>
+    <hr style="border:none;border-top:1px solid var(--rule);margin:1.5rem 0;"/>
+    <span class="col-head">On the Web</span>
+    <div class="brief"><div class="brief-head">Medium Essays</div><div class="brief-body">Cultural criticism, identity writing, and the occasional manifesto. 200+ claps on her best pieces.</div><a href="#" class="brief-link">Read on Medium →</a></div>
+    <div class="brief"><div class="brief-head">LinkedIn</div><div class="brief-body">Finance career, club founding, and the occasional thought leadership piece.</div><a href="#" class="brief-link">Connect →</a></div>
+  </div>
+</section>
+<div class="ticker"><div class="ticker-inner"><span class="hi">Bank of America</span><span>·</span><span>Consumer & Retail</span><span>·</span><span class="hi">Barnard College</span><span>·</span><span>Columbia University</span><span>·</span><span class="hi">The Gen-Z Book</span><span>·</span><span>New Degree Press</span><span>·</span><span class="hi">Brewing Community</span><span>·</span><span>United Nations</span><span>·</span><span class="hi">High Line Nine</span><span>·</span><span>Scotiabank</span><span>·</span><span class="hi">South Asian Identity</span><span>·</span><span>Fashion Criticism</span><span>·</span><span class="hi">Barnard Investment Group</span><span>·</span><span class="hi">Bank of America</span><span>·</span><span>Consumer & Retail</span><span>·</span><span class="hi">Barnard College</span><span>·</span><span>Columbia University</span><span>·</span><span class="hi">The Gen-Z Book</span><span>·</span><span>New Degree Press</span><span>·</span><span class="hi">Brewing Community</span><span>·</span><span>United Nations</span><span>·</span><span class="hi">High Line Nine</span><span>·</span><span>Scotiabank</span><span>·</span><span class="hi">South Asian Identity</span><span>·</span><span>Fashion Criticism</span><span>·</span><span class="hi">Barnard Investment Group</span><span>·</span></div></div>
+<div id="career" class="section-rule"><span class="section-name">Business & Finance</span><span class="dots"></span></div>
+<section class="career-section">
+  <div class="career-grid">
+    <div class="career-main">
+      <div class="career-head">Career Record</div>
+      <div class="career-sub">A timeline of roles, ventures, and institutions.</div>
+      <div class="career-item"><div class="career-yr">2025–</div><div><div class="career-role">Investment Banking Analyst</div><div class="career-co">Bank of America · Consumer & Retail Group · New York City</div><div class="career-desc">M&A, capital raises, and financial advisory in consumer and retail. Previously interned in the Natural Energy Transition group.</div></div></div>
+      <div class="career-item"><div class="career-yr">2023–24</div><div><div class="career-role">Founder & President</div><div class="career-co">Barnard Investment Group · Barnard College</div><div class="career-desc">Built Barnard's first women-focused investment club from scratch. Expanded to financial literacy outreach in Harlem communities.</div></div></div>
+      <div class="career-item"><div class="career-yr">2024</div><div><div class="career-role">Gallery Associate</div><div class="career-co">High Line Nine Galleries · New York City</div><div class="career-desc">Gallery management and curation at NYC's premier multi-gallery complex.</div></div></div>
+      <div class="career-item"><div class="career-yr">2023</div><div><div class="career-role">IB / Capital Markets Summer Analyst</div><div class="career-co">Scotiabank · New York City</div><div class="career-desc">Investment banking internship in Capital Markets. The summer that confirmed the career path.</div></div></div>
+      <div class="career-item"><div class="career-yr">2022</div><div><div class="career-role">Head of Business Development & ActUs City Launcher</div><div class="career-co">senken / Meta · New York City</div><div class="career-desc">Web3 carbon credits startup and Meta community activation — simultaneously.</div></div></div>
+      <div class="career-item"><div class="career-yr">2019–21</div><div><div class="career-role">Youth Consultant & Girl Advocate</div><div class="career-co">United Nations · Beijing 25+ Task Force</div><div class="career-desc">International gender equity advocacy, starting at age 16.</div></div></div>
+    </div>
+    <div class="career-side">
+      <div class="sidebar-head">By the Numbers</div>
+      <div class="sidebar-sub">A statistical portrait.</div>
+      <div class="stat-box"><div class="stat-num">2</div><div class="stat-label">Books Published</div></div>
+      <div class="stat-box"><div class="stat-num">16</div><div class="stat-label">Age at UN Debut</div></div>
+      <div class="stat-box"><div class="stat-num">BofA</div><div class="stat-label">Consumer & Retail Group</div></div>
+      <div class="stat-box"><div class="stat-num">1st</div><div class="stat-label">Women's Invest Club at Barnard</div></div>
+      <div class="quote-box"><p>"The résumé is a performance. The writing is the truth."</p><cite>— Riya Goel, Medium</cite></div>
+    </div>
+  </div>
+</section>
+<div id="opinion" class="section-rule"><span class="section-name">Opinion & Culture</span><span class="dots"></span></div>
+<section class="opinion-section">
+  <div class="opinion-grid">
+    <div class="op-col"><span class="op-label">Fashion · Culture</span><div class="op-title">The Evolution of Fashion: From Bourgeoisie to Authentic Narratives</div><div class="op-body">Fashion has always been about who gets to be seen. This essay traces its shift from exclusivity toward storytelling — and asks who still gets left out of the frame.</div><a href="#" class="op-link">Read on Medium →</a></div>
+    <div class="op-col"><span class="op-label">Identity · Ambition</span><div class="op-title">Kissing My Resume for the Last Time</div><div class="op-body">A reckoning with hustle culture and the dangerous habit of building an entire identity around credentials. What happens when the résumé isn't enough — and never was?</div><a href="#" class="op-link">Read on Medium →</a><hr class="op-divider"/><span class="op-label">Gender · Media</span><div class="op-title">Surrender to the Patriarchy if you want to have fun</div><div class="op-body">224 claps. A feminist essay that didn't flinch. Provocative, precise, and entirely Riya.</div><a href="#" class="op-link">Read on Medium →</a></div>
+    <div class="op-col"><span class="op-label">South Asian · Art Market</span><div class="op-title">Why South Asian Art Needs Buyers Beyond South Asians</div><div class="op-body">On the art market's relationship with diaspora identity, and who gets to assign cultural value. Written after a year at High Line Nine.</div><a href="#" class="op-link">Read on Medium →</a></div>
+    <div class="op-col"><span class="op-label">Politics · Fashion</span><div class="op-title">The Aesthetic Right-Wing Drift: How PrettyLittleThing Got Basic</div><div class="op-body">The strange crossover between fast fashion aesthetics and political drift. What a clothing brand's visual identity reveals about its politics.</div><a href="#" class="op-link">Read on Medium →</a><hr class="op-divider"/><span class="op-label">All Essays</span><div class="op-body" style="margin-bottom:.8rem;">More writing on fashion, South Asian identity, finance culture, and everything in between.</div><a href="#" class="op-link">View All Writing →</a></div>
+  </div>
+</section>
+<div id="books" class="section-rule"><span class="section-name">Books & Publishing</span><span class="dots"></span></div>
+<section class="books-section">
+  <div class="books-grid">
+    <div class="book-feature"><div class="book-number">01</div><span class="book-label">Published 2020 · New Degree Press</span><div class="book-title">The Gen-Z <em>Book</em></div><p class="book-desc">Written at nineteen, during a pandemic, before investment banking was even a thought. A strategic guide to understanding Gen-Z for brands, marketers, and anyone trying to reach the generation that grew up online. Prescient, accessible, and still relevant.</p><a href="#" class="book-cta">Order on Amazon</a></div>
+    <div class="book-feature"><div class="book-number">02</div><span class="book-label">Published 2024 · New Degree Press</span><div class="book-title">Brewing Community: <em>The Latte Effect</em></div><p class="book-desc">Part cultural anthropology, part love letter to third places. On coffee culture, community-building, and what it means to gather in an age of digital everything. Published the same year she graduated, interned, and built an investment club.</p><a href="#" class="book-cta">Order on Amazon</a></div>
+  </div>
+</section>
+<div id="contact" class="section-rule"><span class="section-name">Classifieds & Contact</span><span class="dots"></span></div>
+<section class="classifieds">
+  <div class="classified-box"><div class="classified-head">Connect Professionally</div><div class="classified-text">Investment banking, business development, or anything at the intersection of finance and culture. Always open to interesting conversations.</div><div class="classified-links"><a href="#">LinkedIn →</a><a href="#">Email →</a></div></div>
+  <div class="classified-box"><div class="classified-head">Read the Writing</div><div class="classified-text">Essays on fashion, South Asian identity, finance culture, and the occasional feminist provocation. All on Medium. Some of it will make you uncomfortable. That's the point.</div><div class="classified-links"><a href="#">Medium Profile →</a><a href="#">Best Essays →</a></div></div>
+  <div class="classified-box"><div class="classified-head">Buy the Books</div><div class="classified-text">Two books, two very different subjects, both worth your time. The Gen-Z Book and Brewing Community: The Latte Effect. Both on Amazon.</div><div class="classified-links"><a href="#">The Gen-Z Book →</a><a href="#">Brewing Community →</a></div></div>
+</section>
+<footer>
+  <div class="footer-name">The Riya Goel Gazette</div>
+  <div class="footer-links"><a href="#">LinkedIn</a><a href="#">Medium</a><a href="#">Instagram</a><a href="#">Twitter</a></div>
+  <div class="footer-copy">New York City · © 2026 Riya Goel</div>
+</footer>
+</body>
+</html>
