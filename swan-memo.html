@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Swan × Family Office Thesis — The Deal Brief</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=IBM+Plex+Mono:wght@400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --ink:       #0e0a14;
+    --paper:     #faf7f2;
+    --aged:      #ede5d8;
+    --plum-dark: #1a0d2e;
+    --plum:      #3d1a5c;
+    --plum-mid:  #6b3fa0;
+    --plum-lite: #c4a8e0;
+    --gold:      #c9910a;
+    --gold-pale: #f0d898;
+    --rose:      #9e2a52;
+    --cream:     #f5f0e8;
+    --rule:      #3d1a5c;
+    --mono:      'IBM Plex Mono', monospace;
+    --serif:     'Cormorant Garamond', Georgia, serif;
+    --body:      'Libre Baskerville', Georgia, serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--aged);
+    font-family: var(--body);
+    color: var(--ink);
+    padding: 2rem 1rem;
+  }
+
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    background: var(--paper);
+    box-shadow: 0 0 0 1px #c4a8e0, 6px 6px 0 #a080c0, 12px 12px 0 #7060a0;
+  }
+
+  /* ══════════════════════════════════
+     MASTHEAD — full editorial hero
+  ══════════════════════════════════ */
+  .masthead-hero {
+    background: var(--plum-dark);
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    min-height: 340px;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  /* Texture grain */
+  .masthead-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(ellipse at 20% 50%, rgba(108,63,160,0.35) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(158,42,82,0.2) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  /* Halftone dots overlay */
+  .masthead-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 12px 12px;
+    pointer-events: none;
+  }
+
+  .hero-text {
+    position: relative;
+    z-index: 2;
+    padding: 2.5rem 2rem 2.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .pub-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .pub-eyebrow-line {
+    flex: 1;
+    height: 1px;
+    background: rgba(196,168,224,0.4);
+  }
+
+  .pub-eyebrow span {
+    font-family: var(--mono);
+    font-size: 0.52rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--plum-lite);
+    white-space: nowrap;
+  }
+
+  .pub-name {
+    font-family: var(--serif);
+    font-size: 3.2rem;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    color: #fff;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+
+  .pub-name strong {
+    font-weight: 700;
+    color: var(--gold-pale);
+    display: block;
+    font-size: 1rem;
+    letter-spacing: 0.35em;
+    margin-bottom: 0.6rem;
+  }
+
+  .hero-headline {
+    font-family: var(--serif);
+    font-size: 1.9rem;
+    font-weight: 600;
+    font-style: italic;
+    line-height: 1.2;
+    color: #fff;
+    margin: 1rem 0 0.8rem;
+    border-top: 1px solid rgba(196,168,224,0.3);
+    padding-top: 1rem;
+  }
+
+  .hero-deck {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    line-height: 1.7;
+    color: rgba(196,168,224,0.85);
+    letter-spacing: 0.04em;
+    max-width: 480px;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(196,168,224,0.2);
+  }
+
+  .hero-meta-item {
+    font-family: var(--mono);
+    font-size: 0.5rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .hero-meta-item .label { color: rgba(196,168,224,0.5); display: block; }
+  .hero-meta-item .val { color: var(--gold-pale); font-weight: 600; }
+
+  /* SWAN ILLUSTRATION PANEL */
+  .swan-panel {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 1.5rem 1.5rem 0;
+    overflow: hidden;
+  }
+
+  .swan-panel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, var(--plum-dark) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .swan-svg-wrap {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 280px;
+    opacity: 0.92;
+  }
+
+  /* ══════════════════════════════════
+     FIGURES STRIP
+  ══════════════════════════════════ */
+  .figures-strip {
+    background: var(--plum);
+    border-top: 2px solid var(--gold);
+    border-bottom: 1px solid rgba(196,168,224,0.25);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 0 2rem;
+    height: 88px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .figures-strip::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right,
+      var(--plum) 0%,
+      transparent 8%,
+      transparent 92%,
+      var(--plum) 100%);
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .fig-svg {
+    opacity: 0.72;
+    flex-shrink: 0;
+    transition: opacity 0.3s;
+  }
+  .fig-svg:hover { opacity: 0.95; }
+
+  /* ══════════════════════════════════
+     TICKER — single scrolling line
+  ══════════════════════════════════ */
+  .ticker-wrap {
+    background: var(--plum-dark);
+    border-top: 2px solid var(--gold);
+    overflow: hidden;
+    height: 26px;
+    display: flex;
+    align-items: center;
+  }
+
+  .ticker-label {
+    background: var(--gold);
+    color: var(--plum-dark);
+    font-family: var(--mono);
+    font-size: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0 0.7rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .ticker-track {
+    display: flex;
+    align-items: center;
+    animation: ticker-scroll 32s linear infinite;
+    white-space: nowrap;
+    padding-left: 2rem;
+  }
+
+  .ticker-track:hover { animation-play-state: paused; }
+
+  @keyframes ticker-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .ticker-item {
+    font-family: var(--mono);
+    font-size: 0.52rem;
+    letter-spacing: 0.1em;
+    color: var(--gold-pale);
+    margin-right: 3rem;
+    white-space: nowrap;
+  }
+
+  .ticker-sep {
+    color: var(--plum-lite);
+    margin-right: 3rem;
+    opacity: 0.5;
+    white-space: nowrap;
+  }
+
+  /* ══════════════════════════════════
+     INNER BODY
+  ══════════════════════════════════ */
+  .inner { padding: 2.5rem 3.5rem 4rem; }
+
+  .byline {
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #888;
+    text-align: center;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #d4c0e8;
+  }
+  .byline em { color: var(--rose); font-style: normal; }
+
+  .section-head {
+    font-family: var(--mono);
+    font-size: 0.55rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--rose);
+    border-bottom: 1.5px solid var(--rose);
+    padding-bottom: 0.22rem;
+    margin-bottom: 0.8rem;
+  }
+
+  p {
+    font-size: 0.83rem;
+    line-height: 1.8;
+    color: var(--ink);
+    margin-bottom: 0.85rem;
+  }
+
+  strong { color: var(--plum); }
+
+  .cols-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .cols-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
+  .col-rule { border-left: 1px solid #d4c0e8; padding-left: 2rem; }
+
+  .rule-text {
+    display: flex; align-items: center; gap: 1rem; margin: 1.4rem 0;
+  }
+  .rule-text span {
+    font-family: var(--mono); font-size: 0.53rem; letter-spacing: 0.18em;
+    text-transform: uppercase; color: #9880b8; white-space: nowrap;
+  }
+  .rule-text::before, .rule-text::after {
+    content: ''; flex: 1; border-top: 1px solid #d4c0e8;
+  }
+
+  /* DARK PANEL */
+  .dark-panel { background: var(--plum-dark); padding: 1.1rem 1.4rem; margin: 1rem 0; }
+  .dark-panel .label {
+    font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; display: block;
+  }
+  .dark-panel p { font-size: 0.78rem; color: #d8c8f0; margin: 0; line-height: 1.65; }
+  .dark-panel p+p { margin-top: 0.5rem; }
+  .dark-panel strong { color: #e8d8ff; }
+
+  /* ANNOTATION */
+  .annotation {
+    background: #f0e8f8; border-left: 3px solid var(--plum-mid);
+    padding: 0.8rem 1.1rem; margin: 0.9rem 0;
+  }
+  .annotation::before {
+    content: '✎ ANALYST NOTE';
+    font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.16em;
+    color: var(--plum-mid); display: block; margin-bottom: 0.35rem; font-weight: 600;
+  }
+  .annotation p { font-size: 0.78rem; color: #2d1a3d; margin: 0; line-height: 1.65; font-style: italic; }
+  .annotation p+p { margin-top: 0.5rem; }
+  .annotation strong { font-style: normal; color: var(--plum); }
+
+  /* ROSE FLASH */
+  .rose-panel {
+    background: #2a0d18; border-left: 3px solid var(--rose);
+    padding: 1rem 1.3rem; margin: 1rem 0;
+  }
+  .rose-panel .label {
+    font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: #e8a0b8; margin-bottom: 0.4rem; display: block;
+  }
+  .rose-panel p { font-size: 0.78rem; color: #f5d0dc; margin: 0; line-height: 1.65; }
+  .rose-panel strong { color: #ffb8cc; }
+
+  /* GOLD FLASH */
+  .gold-panel {
+    background: #1e1400; border-left: 3px solid var(--gold);
+    padding: 1rem 1.3rem; margin: 1rem 0;
+  }
+  .gold-panel .label {
+    font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: #e8b840; margin-bottom: 0.4rem; display: block;
+  }
+  .gold-panel p { font-size: 0.78rem; color: #f5e8c0; margin: 0; line-height: 1.65; }
+  .gold-panel strong { color: #ffd580; }
+
+  /* PULL QUOTE */
+  .pull-quote {
+    border-top: 2px solid var(--rose); border-bottom: 2px solid var(--rose);
+    padding: 0.9rem 1.5rem; margin: 1.2rem 0; text-align: center;
+  }
+  .pull-quote p {
+    font-family: var(--serif); font-size: 1.3rem; font-style: italic;
+    font-weight: 600; line-height: 1.4; margin: 0; color: var(--plum);
+  }
+
+  /* STAT ROW */
+  .stat-row { display: flex; gap: 1rem; margin: 1.1rem 0; }
+  .stat-cell {
+    flex: 1; border: 1.5px solid var(--plum);
+    padding: 0.7rem 0.5rem; text-align: center;
+  }
+  .stat-cell .n {
+    font-family: var(--serif); font-size: 1.8rem;
+    font-weight: 700; color: var(--rose); display: block; line-height: 1;
+  }
+  .stat-cell .l {
+    font-family: var(--mono); font-size: 0.49rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: #46394f; display: block;
+    margin-top: 0.25rem; line-height: 1.4;
+  }
+
+  /* CASE GRID */
+  .case-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    border: 1.5px solid var(--plum); margin: 1rem 0;
+  }
+  .case-cell {
+    padding: 0.9rem 1rem;
+    border-right: 1px solid #d4c0e8; border-bottom: 1px solid #d4c0e8;
+  }
+  .case-cell:nth-child(2n) { border-right: none; }
+  .case-cell:nth-last-child(-n+2) { border-bottom: none; }
+  .case-cell .ct {
+    font-family: var(--mono); font-size: 0.48rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--rose); margin-bottom: 0.2rem; display: block;
+  }
+  .case-cell .ch {
+    font-family: var(--serif); font-size: 1.1rem;
+    font-weight: 700; color: var(--plum); line-height: 1.1; margin-bottom: 0.3rem;
+  }
+  .case-cell p { font-size: 0.72rem; color: #333; margin: 0; line-height: 1.55; }
+
+  /* CONTRAST BAND */
+  .contrast-band {
+    background: var(--plum); color: #f0e8ff;
+    padding: 1rem 1.4rem; margin: 1rem 0;
+    display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: center;
+  }
+  .contrast-band .big-n {
+    font-family: var(--serif); font-size: 3rem;
+    font-weight: 700; color: var(--gold-pale); line-height: 1;
+    white-space: nowrap;
+  }
+  .contrast-band .big-l {
+    font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--plum-lite); margin-top: 0.3rem; display: block;
+  }
+  .contrast-band p { font-size: 0.78rem; color: #e8d8ff; margin: 0; line-height: 1.65; }
+  .contrast-band strong { color: var(--gold-pale); }
+
+  /* TORY BURCH STRIP — breaking news style */
+  .breaking-strip {
+    background: var(--rose);
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.2rem 0;
+  }
+  .breaking-strip .flag {
+    font-family: var(--mono);
+    font-size: 0.52rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #fff;
+    background: rgba(0,0,0,0.3);
+    padding: 0.2rem 0.5rem;
+    white-space: nowrap;
+    font-weight: 600;
+  }
+  .breaking-strip p {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.06em;
+    color: #ffe8f0;
+    margin: 0;
+    line-height: 1.4;
+  }
+  .breaking-strip strong { color: #fff; font-style: normal; }
+
+  .hl { background: #fff3c4; padding: 0 2px; }
+
+  /* FOOTER */
+  .footer {
+    border-top: 3px double var(--plum); margin-top: 2.5rem;
+    padding-top: 0.8rem; display: flex; justify-content: space-between; gap: 2rem;
+  }
+  .footer p {
+    font-family: var(--mono); font-size: 0.52rem; color: #9880b8;
+    margin: 0; letter-spacing: 0.05em; line-height: 1.6;
+  }
+
+  @media (max-width: 720px) {
+    .masthead-hero { grid-template-columns: 1fr; }
+    .swan-panel { display: none; }
+    .inner { padding: 1.5rem 1.2rem; }
+    .cols-2, .cols-3, .case-grid { grid-template-columns: 1fr; }
+    .col-rule { border-left: none; padding-left: 0; border-top: 1px solid #d4c0e8; padding-top: 1rem; }
+    .stat-row { flex-wrap: wrap; }
+    .stat-cell { min-width: 45%; }
+    .contrast-band { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ══════════════════════════════════
+       MASTHEAD HERO
+  ══════════════════════════════════ -->
+  <div class="masthead-hero">
+
+    <!-- LEFT TEXT COLUMN -->
+    <div class="hero-text">
+      <div>
+        <div class="pub-eyebrow">
+          <div class="pub-eyebrow-line"></div>
+          <span>Consumer × Capital × Beauty Tech</span>
+          <div class="pub-eyebrow-line"></div>
+        </div>
+
+        <div class="pub-name">
+          <strong>Vol. II — Issue 7 · Addendum IV</strong>
+          The Deal Brief
+        </div>
+
+        <div class="hero-headline">
+          The Family Office Is the New PE.<br>Swan Beauty Just Proved It.
+        </div>
+
+        <div class="hero-deck">
+          The Mitchell Family Office acquired a 50-year-old luxury retailer, built an AI beauty mirror on top of it, sponsored a mid-tier creator's bachelorette trip to St. Barths, broke the internet without buying a single ad — and the company had 4,400 Instagram followers. Tory Burch just pulled $346M from General Atlantic using a $700M leveraged loan to reclaim her brand. Huda, Stella McCartney, RY — the same story, different ZIP codes. PE is leaving the building. Founders are taking back the table.
+        </div>
+      </div>
+
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="label">Date</span>
+          <span class="val">April 27, 2026</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="label">Coverage</span>
+          <span class="val">Consumer · Beauty · Capital</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="label">Status</span>
+          <span class="val">Draft — Not for Distribution</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- STRIP REMOVED -->
+  <div class="figures-strip" style="display:none">
+    <svg width="100%" height="88" viewBox="0 0 960 88" preserveAspectRatio="xMidYMid meet"
+         xmlns="http://www.w3.org/2000/svg" style="display:block;">
+      <defs>
+        <!-- Water gradient -->
+        <linearGradient id="wg" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#4a2080" stop-opacity="0.5"/>
+          <stop offset="100%" stop-color="#1a0d2e" stop-opacity="0.9"/>
+        </linearGradient>
+        <!-- Swan body fill — soft white glow -->
+        <radialGradient id="sg1" cx="45%" cy="38%" r="55%">
+          <stop offset="0%" stop-color="#ffffff"/>
+          <stop offset="70%" stop-color="#ecdcff"/>
+          <stop offset="100%" stop-color="#c4a8e0" stop-opacity="0.6"/>
+        </radialGradient>
+        <radialGradient id="sg2" cx="45%" cy="38%" r="55%">
+          <stop offset="0%" stop-color="#ffffff"/>
+          <stop offset="70%" stop-color="#f0e8ff"/>
+          <stop offset="100%" stop-color="#d4b8f0" stop-opacity="0.6"/>
+        </radialGradient>
+        <!-- Feather glow filter -->
+        <filter id="fg" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="2" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <!-- Soft drop shadow -->
+        <filter id="ds">
+          <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#6b3fa0" flood-opacity="0.5"/>
+        </filter>
+        <!-- Gold shimmer gradient -->
+        <linearGradient id="goldShim" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#c9910a"/>
+          <stop offset="50%" stop-color="#f0d060"/>
+          <stop offset="100%" stop-color="#c9910a"/>
+        </linearGradient>
+        <!-- Left/right fade masks -->
+        <linearGradient id="lmask" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#3d1a5c"/>
+          <stop offset="8%" stop-color="#3d1a5c" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="rmask" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="92%" stop-color="#3d1a5c" stop-opacity="0"/>
+          <stop offset="100%" stop-color="#3d1a5c"/>
+        </linearGradient>
+      </defs>
+      <rect x="0" y="58" width="960" height="30" fill="url(#wg)"/>
+    </svg>
+  </div>
+
+  <!-- SCROLLING TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker-label">LIVE &nbsp;●</div>
+    <div class="ticker-track">
+      <span class="ticker-item">TORY BURCH: $700M LOAN — $346M TO BUY OUT GENERAL ATLANTIC AFTER 14 YEARS</span>
+      <span class="ticker-sep">◆</span>
+      <span class="ticker-item">SWAN × @ACQUIREDSTYLE — 4,400 FOLLOWERS BROKE THE INTERNET</span>
+      <span class="ticker-sep">◆</span>
+      <span class="ticker-item">FAMILY OFFICE DIRECT INVESTMENTS +123% YOY → $12.9B (S&P GLOBAL, APRIL 2026)</span>
+      <span class="ticker-sep">◆</span>
+      <span class="ticker-item">PE RETREATING FROM BEAUTY — EURAZEO SHUTTERED BRAND ARM · CARLYLE PULLING BACK</span>
+      <span class="ticker-sep">◆</span>
+      <span class="ticker-item">HUDA BEAUTY · STELLA McCARTNEY · RY — FOUNDER BUYBACKS ACCELERATING</span>
+      <span class="ticker-sep">◆</span>
+      <span class="ticker-item">SWAN BEAUTY MIRROR: $795 · MITCHELL FAMILY OFFICE BACKS · COS BAR ACQUIRED SEP 2025</span>
+      <span class="ticker-sep">◆</span>
+      <span class="ticker-item">TORY BURCH: $700M LOAN — $346M TO BUY OUT GENERAL ATLANTIC AFTER 14 YEARS</span>
+      <span class="ticker-sep">◆</span>
+      <span class="ticker-item">SWAN × @ACQUIREDSTYLE — 4,400 FOLLOWERS BROKE THE INTERNET</span>
+      <span class="ticker-sep">◆</span>
+      <span class="ticker-item">FAMILY OFFICE DIRECT INVESTMENTS +123% YOY → $12.9B (S&P GLOBAL, APRIL 2026)</span>
+      <span class="ticker-sep">◆</span>
+      <span class="ticker-item">PE RETREATING FROM BEAUTY — EURAZEO SHUTTERED BRAND ARM · CARLYLE PULLING BACK</span>
+      <span class="ticker-sep">◆</span>
+      <span class="ticker-item">HUDA BEAUTY · STELLA McCARTNEY · RY — FOUNDER BUYBACKS ACCELERATING</span>
+      <span class="ticker-sep">◆</span>
+      <span class="ticker-item">SWAN BEAUTY MIRROR: $795 · MITCHELL FAMILY OFFICE BACKS · COS BAR ACQUIRED SEP 2025</span>
+      <span class="ticker-sep">◆</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       BODY
+  ══════════════════════════════════ -->
+  <div class="inner">
+    <div class="byline">Consumer Intelligence · Beauty & Capital Coverage &nbsp;|&nbsp; <em>Draft Memo — Not for Distribution</em></div>
+
+    <div class="rule-text"><span>§ I — The Case Study</span></div>
+    <div class="section-head">Swan Beauty × @acquiredstyle — Dissecting What Actually Happened</div>
+
+    <div class="cols-2">
+      <div>
+        <p>In January 2026, a beauty tech startup with 4,400 Instagram followers <span class="hl">sponsored a bachelorette trip to St. Barths on a private jet for Brigette Pheloung — @acquiredstyle — who had 1.7M TikTok followers and just under 1M on Instagram.</span> Swan-branded pillows, blankets, and a large-format AI mirror kept appearing in her content. The internet asked: who is Swan Beauty?</p>
+
+        <p>By the end of the weekend, Pheloung had cracked 1 million Instagram followers. Six other creator-guests with 363K–1.3M TikTok followers were gifted the $795 mirror. Only Pheloung had contractual posting requirements — over 15 posts — with education of her community as the stated goal, not virality. You do not impulse-purchase a $795 AI mirror. You discover it, research it, and watch your favorite creator use it before deciding.</p>
+      </div>
+      <div class="col-rule">
+        <div class="dark-panel">
+          <span class="label">◈ Swan Beauty — The Architecture</span>
+          <p><strong>Hardware:</strong> $795 AI mirror. 15.6" Samsung OLED, 4K camera, adjustable LED. Aluminum body, stainless-steel hinges.</p>
+          <p><strong>Software:</strong> AI skin analyzer scoring 7 concerns over time. Real-time AR makeup guide. Membership $9.95/mo or $94/yr for advanced AI + AR features.</p>
+          <p><strong>Marketplace:</strong> Shoppable through the mirror screen — Sisley Paris, Augustinus Bader, La Prairie, Charlotte Tilbury, Dr. Barbara Sturm. Recommendations driven by your own skin data.</p>
+          <p><strong>Distribution:</strong> DTC + Cos Bar locations (Aspen, Dallas, California, NJ) with in-store "Swan Bar" installations live Q1 2026.</p>
+        </div>
+        <div class="annotation">
+          <p><strong>The Mitchell Family Office move that unlocked everything:</strong> In September 2025 — before Swan launched — the Mitchell Family Office acquired Cos Bar, the 50-year-old luxury retailer with 21 stores across 9 states. That gave Swan its brand relationships, physical presence, and credibility before the mirror was ever for sale. <strong>Vertical integration by family office, not conglomerate.</strong> The moat was built before the product existed.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-grid">
+      <div class="case-cell">
+        <span class="ct">Capital Structure</span>
+        <div class="ch">Mitchell Family Office</div>
+        <p>Single-family office as operator-founder. Acquires Cos Bar as retail infrastructure. Patient capital — no LP pressure, no 5-year exit clock. Can hold, build, and compound on its own timeline.</p>
+      </div>
+      <div class="case-cell">
+        <span class="ct">Creator Strategy</span>
+        <div class="ch">@acquiredstyle — The Right Bet</div>
+        <p>1M Instagram, 1.7M TikTok. Loyal lifestyle-luxury audience. Not paid to post — sponsored an entire experience. Estimated $150K–$200K total. No media buy. No ad agency. No ROAS tracking.</p>
+      </div>
+      <div class="case-cell">
+        <span class="ct">Revenue Architecture</span>
+        <div class="ch">Hardware → Membership → Marketplace</div>
+        <p>$795 one-time device. $94/yr membership recurring. Take-rate on every Sisley or La Prairie purchase made through the screen. Three streams, one device. AOV compounds over lifetime.</p>
+      </div>
+      <div class="case-cell">
+        <span class="ct">The Real Asset</span>
+        <div class="ch">First-Party Skin Data</div>
+        <p>Every scan, every routine, every purchase creates a data loop no brand partner can replicate. In 24 months Swan will know more about users' skin trajectories than any brand in the Cos Bar portfolio. The data, not the mirror, is the moat.</p>
+      </div>
+    </div>
+
+    <div class="rule-text"><span>§ II — The Signal Trade</span></div>
+    <div class="section-head">Tory Burch Buys Out General Atlantic — The Pattern Is Now Undeniable</div>
+
+    <div class="breaking-strip">
+      <span class="flag">● Breaking · April 2026</span>
+      <p><strong>Tory Burch is taking a $700M leveraged loan — $346M of which buys out General Atlantic's stake</strong>, ending a 14-year relationship. Post-deal ownership: BDT & MSD Partners, Tory Burch, and her family. The brand previously used debt to buy out Tresalia Capital in 2018. This is a founder concentrating control, not diversifying it.</p>
+    </div>
+
+    <div class="cols-2">
+      <div>
+        <p>General Atlantic acquired its Tory Burch stake in 2012, when the designer's ex-husband Christopher Burch sold off much of his interest following a public legal dispute. <span class="hl">The buyout, priced at $346M for General Atlantic's entire position, is funded by a $700M term loan (5-year tenor, 400bps over benchmark, priced at 98 cents on the dollar) plus a new $300M revolving credit facility.</span></p>
+
+        <p>S&P, rating the deal, forecast the company would use cash flow to rapidly pay down debt — signaling the business is healthy enough to lever up precisely <em>because</em> it doesn't need the money for growth. It needs it to buy back its own independence.</p>
+
+        <p>This follows Tory Burch's 2018 Tresalia buyout almost exactly. The pattern is consistent: <strong>use debt strategically to concentrate ownership, remove financial-sponsor dynamics from the governance table, and operate on a founder's timeline rather than a fund's.</strong></p>
+      </div>
+      <div class="col-rule">
+        <div class="annotation">
+          <p><strong>Why this matters beyond the deal itself:</strong> General Atlantic is not a distressed seller. Tory Burch is not a distressed brand. This is a consensual separation at a fair price — and that's precisely the point. <strong>The founder is choosing to lever up rather than live with PE dynamics at the board table.</strong> That choice, made voluntarily, tells you something about how founder-operators view financial sponsor ownership in 2026.</p>
+          <p>The broader pattern is now statistically significant. Huda Kattan reacquired full ownership of Huda Beauty. Stella McCartney bought back LVMH's minority stake. RY's founders repatriated from their institutional backer. Tory Burch exits General Atlantic after 14 years. <strong>This is not a wave of distressed buybacks. It is a structural revaluation of what founder ownership is worth.</strong></p>
+        </div>
+        <div class="rose-panel">
+          <span class="label">⚑ The Buyback Economics</span>
+          <p>Tory Burch: <strong>$700M loan · $346M to GA · $300M revolver</strong> · 5yr tenor · 400bps spread · priced at 98¢. Ownership post-deal: Tory Burch family + BDT & MSD Partners (family-aligned long-term capital). GA held since 2012 — a 14-year hold. Exit via founder-driven debt recap, not IPO, not strategic sale.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rule-text"><span>§ III — The Structural Thesis</span></div>
+    <div class="section-head">Why The Family Office Is Winning The Consumer Brand Race PE Is Losing</div>
+
+    <div class="cols-2">
+      <div>
+        <p><span class="hl">Global family office direct investments jumped 123% year-over-year to $12.9 billion in 2025, according to S&P Global.</span> At the same time, traditional PE is actively retreating from beauty: Eurazeo shuttered its brand investment arm. Carlyle and TPG are understood to be pulling back. "In 2021, you could probably have said there were two dozen large PE guys that wanted to do beauty buyouts. Today it's really narrowed down," one banking source told WWD.</p>
+
+        <p>The gap PE is leaving — patient capital, brand stewardship, no forced exit timeline, operator-aligned governance — is exactly where family offices live structurally. Swan is not an anomaly. It is a preview. The consumer brand capital structure of the next decade is being written right now, in St. Barths, on a private jet, through a $795 mirror.</p>
+      </div>
+      <div class="col-rule">
+        <div class="annotation">
+          <p><strong>Why PE is the structurally wrong vehicle for the new consumer brand playbook:</strong> The Swan model depends on three things PE fund cycles cannot accommodate.</p>
+          <p><strong>(1) Long trust-building timelines.</strong> You cannot build parasocial loyalty, skin data depth, or community credibility in a 5-year hold. Swan's flywheel needs 3–5 years to spin up.</p>
+          <p><strong>(2) Strategic acquisitions as infrastructure, not portfolio diversification.</strong> The Cos Bar deal was not a bet on retail — it was the launch infrastructure for a hardware company that hadn't opened yet. PE cannot hold that kind of operational overlap.</p>
+          <p><strong>(3) Creator relationship economics.</strong> The @acquiredstyle bachelorette spend — ~$200K — has no measurable 90-day ROAS. PE reporting structures cannot underwrite it. Family offices underwrite brand equity compounding. <strong>That is a fundamentally different instrument.</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="contrast-band">
+      <div>
+        <div class="big-n">123%</div>
+        <span class="big-l">YOY increase in family office<br>direct investments · 2025 → $12.9B</span>
+      </div>
+      <p>Family offices control an estimated <strong>$6 trillion or more globally</strong>, with 60% investing on horizons beyond 10 years. One-third expect next-generation leadership transitions within 5 years — and those next-gen principals have parasocial literacy, creator fluency, and a fundamentally different view of what brand equity is worth. <strong>The generational transition inside family offices is accelerating exactly as the consumer brand capital gap opens. These two curves meet in 2026–2028.</strong></p>
+    </div>
+
+    <div class="pull-quote">
+      <p>"PE owns for 5 years then sells. The family office builds for 50 and compounds. Brands that need trust, data, and community require the second clock, not the first."</p>
+    </div>
+
+    <div class="rule-text"><span>§ IV — The Template</span></div>
+    <div class="section-head">What Swan Got Right — The Family Office Consumer Brand Playbook</div>
+
+    <div class="cols-3">
+      <div>
+        <div class="rose-panel">
+          <span class="label">Move 1 · Acquire Infrastructure First</span>
+          <p>Don't launch cold. <strong>Buy the distribution asset before the product exists.</strong> Cos Bar gave Swan 21 stores, 50 years of brand trust, and physical credibility on launch day. The moat was built before the mirror was sold.</p>
+        </div>
+      </div>
+      <div>
+        <div class="rose-panel">
+          <span class="label">Move 2 · Education Over Virality</span>
+          <p>Swan explicitly said it wasn't building for virality — and went viral anyway, because <strong>discovery-driven virality converts differently than paid reach.</strong> The bachelorette content did the education. The $795 price point requires it. Impulse-purchase economics don't apply here.</p>
+        </div>
+      </div>
+      <div>
+        <div class="rose-panel">
+          <span class="label">Move 3 · Data Moat From Day One</span>
+          <p>Every scan generates first-party skin data. Every routine, every purchase compounds it. <strong>In 24 months Swan knows more about its users than any brand on its marketplace.</strong> That's leverage over every brand partner. The mirror is a data collection device dressed as a luxury object.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rule-text"><span>§ V — Capital Structure</span></div>
+    <div class="section-head">How To Think About Family Office Exposure In Consumer</div>
+
+    <div class="cols-2">
+      <div>
+        <p>The consumer brands that fit the family office profile share four traits. <strong>First,</strong> a hardware or device component creating a recurring data relationship. <strong>Second,</strong> a luxury or prestige category with an AI layer that justifies premium pricing. <strong>Third,</strong> distribution requiring physical retail credibility alongside DTC — you cannot launch a $795 device purely online. <strong>Fourth,</strong> a creator strategy that is relationship-based, not transactional.</p>
+
+        <p>The orphan brands of the millennial growth cycle — decent businesses, no longer aligned with parent priorities — are entering the market at compressed valuations. The playbook: <strong>acquire a prestige retail asset with heritage, layer a technology product on top, structure creator strategy around education not virality, build the data flywheel from day one.</strong></p>
+      </div>
+      <div class="col-rule">
+        <div class="gold-panel">
+          <span class="label">⚑ The Exit Is Different Too</span>
+          <p>The family office exit is not a 5-year sale to a strategic. It is a platform that compounds indefinitely — or a generational asset the family holds forever. <strong>BDT & MSD Partners, who remain in Tory Burch alongside the founder, are the model:</strong> long-horizon, relationship-driven, aligned with the founder's ownership ambitions rather than a fund mandate. That capital structure enables decisions PE cannot make — buying out a stakeholder with debt because the brand's cash generation supports it, on the founder's terms, at a moment of her choosing.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-cell">
+        <span class="n">$6T+</span>
+        <span class="l">Est. global family office AUM</span>
+      </div>
+      <div class="stat-cell">
+        <span class="n">$346M</span>
+        <span class="l">Tory Burch buyout of General Atlantic · April 2026</span>
+      </div>
+      <div class="stat-cell">
+        <span class="n">60%</span>
+        <span class="l">Family offices investing on 10+ year horizons</span>
+      </div>
+      <div class="stat-cell">
+        <span class="n">⅓</span>
+        <span class="l">Expect next-gen leadership within 5 years — consumer + tech shift accelerates</span>
+      </div>
+    </div>
+
+    <div class="rule-text"><span>§ VI — The Graveyard</span></div>
+    <div class="section-head">What PE Gets Wrong In Beauty — A Pattern, Not Bad Luck</div>
+
+    <div class="cols-2">
+      <div>
+        <p>The retreat of traditional PE from beauty is not a market cycle. It is a reckoning with a structural mismatch. <span class="hl">In May 2021, Carlyle invested roughly $600 million in Beautycounter. Within three years, the brand was shut down and every dollar of Carlyle's investment was lost — one of the worst investments in the firm's 37-year history.</span> The post-mortem is instructive: Carlyle replaced the founder's community-first selling model with conventional retail expansion, stripped the direct sales network that gave the brand its identity, and watched the trust architecture collapse.</p>
+
+        <p>Eurazeo's trajectory is identical in structure if different in outcome. <strong>In 2018 Eurazeo backed Pat McGrath Labs in a deal that valued the brand at $1 billion.</strong> By 2025, the brand's assets were for sale at an understood valuation of approximately $174 million — an 83% markdown in seven years. Eurazeo subsequently shut down its entire Eurazeo Brands arm, dissolving a portfolio that also included Beekman 1802, Gisou, Nest New York, Herschel, and Axel Arigato.</p>
+
+        <p>TPG's story follows the same arc. <span class="hl">TPG sold its $600 million stake in Anastasia Beverly Hills at a loss after valuing the company at $3 billion.</span> General Atlantic — the same firm Tory Burch just bought out — took a 60% stake in Morphe at a $2.2 billion valuation. Morphe's parent Forma Brands subsequently went bankrupt and Morphe was acquired for $33 million by Cerberus and Oaktree.</p>
+      </div>
+      <div class="col-rule">
+        <div class="annotation">
+          <p><strong>The failure pattern is consistent across every case.</strong> PE acquires a beauty brand at peak valuation, typically on the strength of a founder's personal trust equity and creator relationships. Then the fund cycle pressure begins: overhead reduction, retail expansion, leadership changes, brand extensions into adjacent categories. Each decision makes operational sense in isolation. Together they do exactly one thing — they sever the parasocial thread that connected the brand's audience to its founder. Once that thread is cut, no amount of marketing spend reattaches it.</p>
+          <p>Beautycounter lost its 60,000-person direct sales network. Pat McGrath lost the scarcity mystique of its drops. Anastasia Beverly Hills lost the founder's personal proximity to the beauty community. <strong>In every case, PE didn't destroy the product. It destroyed the trust infrastructure the product ran on.</strong> That infrastructure cannot be rebuilt on a 5-year hold timeline. It takes a decade to build and 18 months to lose.</p>
+        </div>
+        <div class="dark-panel">
+          <span class="label">◈ PE Beauty — The Scorecard</span>
+          <p><strong>Carlyle × Beautycounter:</strong> $600M in → $0 out. Brand shuttered 2024.</p>
+          <p><strong>Eurazeo × Pat McGrath Labs:</strong> $1B valuation (2018) → ~$174M assets for sale (2025). Eurazeo Brands arm dissolved.</p>
+          <p><strong>TPG × Anastasia Beverly Hills:</strong> $600M stake sold at loss vs. $3B peak valuation.</p>
+          <p><strong>General Atlantic × Morphe:</strong> $2.2B valuation → $33M distressed sale after Forma Brands bankruptcy.</p>
+          <p><strong>Common thread:</strong> Every failure severed the founder-community relationship within 24 months of the deal close.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rule-text"><span>§ VII — The Creator Stakeholder Model</span></div>
+    <div class="section-head">From Paid Placement to Equity Partner — Why The Trust Premium Is Untenable To VC</div>
+
+    <div class="cols-2">
+      <div>
+        <p>Tarte Cosmetics invented the brand trip in 2015, flying creators like Patrick Starrr and Desi Perkins to Turks & Caicos in exchange for content. <span class="hl">The Tarte Turks & Caicos excursion in spring 2023 — featuring Alix Earle at peak "it-girl" virality — generated over $7 million in earned media value from the #trippinwithtarte hashtag alone, against a total trip spend estimated at $250K.</span> That is a 28x media multiplier on a single relationship investment.</p>
+
+        <p>But Tarte's model has a structural ceiling — and the backlash exposed it. The Dubai trip was called "tone-deaf." The Turks & Caicos trip generated diversity and room-size controversies that played out like reality television. <strong>Tarte "never did traditional advertising" — the brand CEO's words — which meant the entire marketing apparatus depended on creator goodwill that Tarte did not actually own.</strong> It rented it, trip by trip, controversy by controversy.</p>
+
+        <p>The Revolve model is the evolution. <span class="hl">70% of Revolve's revenue comes via creators.</span> Revolve's differentiation is not the trips — it is the long-term ambassador architecture, proprietary tracking technology that maps creator engagement to actual revenue, and the platform dynamic where creators <em>want</em> to tag Revolve organically because Revolve amplifies them back. It is a flywheel, not a campaign.</p>
+      </div>
+      <div class="col-rule">
+        <p>Swan's @acquiredstyle play represents the next layer beyond Revolve — and the one most relevant to the family office thesis. <strong>It is not a brand trip. It is a relationship investment structured as an experience.</strong> The distinction matters enormously:</p>
+
+        <div class="case-grid" style="margin-top:0.8rem;">
+          <div class="case-cell">
+            <span class="ct">Tarte Model</span>
+            <div class="ch">Rent the Creator</div>
+            <p>Pay for access to audience via experience. Creator has no stake in outcome. Goodwill is transactional. Backlash risk is unhedged. Content depreciates the moment the trip ends.</p>
+          </div>
+          <div class="case-cell">
+            <span class="ct">Revolve Model</span>
+            <div class="ch">Build the Ambassador</div>
+            <p>Long-term retainer + amplification loop. Creator wants to post because Revolve makes them bigger. Revenue-tracked. Still transactional at its core — creator earns commission, not equity.</p>
+          </div>
+          <div class="case-cell">
+            <span class="ct">Swan Model</span>
+            <div class="ch">Align the Stakeholder</div>
+            <p>Relationship built before launch. Creator introduced to product at a personal life moment (bachelorette). Audience education — not promotion — is the brief. Virality emerges from authenticity, not obligation.</p>
+          </div>
+          <div class="case-cell">
+            <span class="ct">Next Frontier</span>
+            <div class="ch">Creator as Equity Partner</div>
+            <p>Creator holds a direct stake in brand outcome. Posts because the brand's success is their financial upside. Disclosure of ownership becomes the trust signal — the most credible content imaginable. No VC fund can structure this; family offices can.</p>
+          </div>
+        </div>
+
+        <div class="annotation" style="margin-top:0.9rem;">
+          <p><strong>Why VC and PE structurally cannot do creator equity:</strong> The LP agreement governs what a fund can hold. Equity stakes in individual creators or in creator-linked brand entities create cap table complexity, require consent processes, and introduce illiquid non-standard assets that violate most fund mandates. Family offices operate under no such constraint. They can hold a 5% equity stake in a creator's brand entity, a warrant in a beauty tech company tied to creator performance milestones, or a revenue-share agreement structured over a decade. <strong>The creative flexibility of the family office governance structure is itself a competitive advantage in the creator economy.</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pull-quote">
+      <p>"Tarte rents the creator. Revolve builds the ambassador. The family office makes the creator a stakeholder. Only one of those produces a relationship that compounds."</p>
+    </div>
+
+    <div class="footer">
+      <p>THE DEAL BRIEF © 2026 · Consumer & Beauty Intelligence<br>Vol. II Issue 7 · Draft circulation only — privileged and confidential</p>
+      <p>Sources: Glossy / Swan Beauty CEO exclusive (April 2026) · Bloomberg / Tory Burch loan (April 2026) · BoF / Tarte brand trips · CreatorIQ #trippinwithtarte EMV · Seattle Times / Carlyle × Beautycounter · BoF / Eurazeo Brands closure · PitchBook / Morphe distressed sale · WWD M&A · S&P Global Family Office · Revolve Group investor filings 2025</p>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
