@@ -14,15 +14,97 @@ font-family: 'Jost', sans-serif;
 font-weight: 300;
 -webkit-font-smoothing: antialiased;
 }
-.hero h1 {font-family: 'Cormorant Garamond', serif;}
-.masthead span,.hero-tag,.sec-label,.term-tag,.day-label,.end-tag {font-family: 'Courier Prime', monospace;}
+.masthead {
+background: #1C1A17;
+padding: 16px 48px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+.masthead span,.hero-tag,.sec-label,.term-tag,.day-label,.end-tag,.stat-desc {
+font-family:'Courier Prime', monospace;
+}
+.hero {
+padding:72px 60px 56px;
+max-width:1080px;
+margin:0 auto;
+}
+.hero h1 {
+font-family:'Cormorant Garamond', serif;
+font-size:clamp(60px,9vw,108px);
+font-weight:300;
+line-height:0.9;
+margin-bottom:36px;
+}
+.hero-deck {
+font-family:'Cormorant Garamond', serif;
+font-size:21px;
+font-style:italic;
+line-height:1.6;
+max-width:700px;
+border-left:3px solid #C4A87A;
+padding-left:20px;
+}
+.sec-inner {
+max-width:1080px;
+margin:0 auto;
+padding:64px 60px;
+}
+p.body {
+font-size:17px;
+line-height:1.9;
+max-width:700px;
+margin-bottom:22px;
+}
+.stat-band {
+background:#2C2A24;
+padding:36px 60px;
+display:flex;
+gap:32px;
+overflow-x:auto;
+}
+.stat-num {
+font-family:'Cormorant Garamond', serif;
+font-size:38px;
+color:#C4A87A;
+}
+.closer {
+background:#1C1A17;
+padding:64px 60px;
+text-align:center;
+}
+.closer p {
+font-family:'Cormorant Garamond', serif;
+font-style:italic;
+font-size:24px;
+color:rgba(247,244,239,0.75);
+}
 </style>
 </head>
 <body>
-<div style="padding:80px;max-width:900px;margin:auto;">
-<h1 style="font-size:72px;line-height:0.95;margin-bottom:30px;">Post-<em>Diet</em><br>Diet Culture</h1>
-<p style="font-size:24px;line-height:1.7;max-width:700px;">We didn't abandon the obsession with what we eat. We upgraded its vocabulary. The new religion isn't restriction — it's optimization.</p>
-<p style="margin-top:40px;font-size:18px;line-height:1.9;">Full essay uploaded successfully.</p>
+<header class="masthead">
+<span>Food &amp; Culture</span>
+<span>The Optimization Dispatch</span>
+<span>May 2026</span>
+</header>
+<div class="hero">
+<span class="hero-tag">Think Piece -- Consumer Behavior / CPG</span>
+<h1>Post-<em>Diet</em><br>Diet Culture</h1>
+<p class="hero-deck">We didn't abandon the obsession with what we eat. We upgraded its vocabulary. The new religion isn't restriction -- it's optimization. And the altar is stocked with adaptogens, NAD+ shots, and cortisol-lowering cacao.</p>
+</div>
+<div class="stat-band">
+<div><span class="stat-num">$398B</span><div class="stat-desc">Functional food &amp; bev market</div></div>
+<div><span class="stat-num">$793B</span><div class="stat-desc">Projected value by 2032</div></div>
+<div><span class="stat-num">+32.8%</span><div class="stat-desc">Creatine supplement sales growth</div></div>
+</div>
+<div class="sec-inner">
+<h2 style="font-family:'Cormorant Garamond',serif;font-size:52px;margin-bottom:32px;">From Subtraction to <em>Enhancement</em></h2>
+<p class="body">For forty years, diet culture spoke one language: less. Fewer calories. Fewer carbs. Less fat, less sugar, less of the very thing you want. The message was deprivation dressed up as discipline — a slow punishment marketed as self-love.</p>
+<p class="body">Welcome to the post-diet diet culture. The new consumer isn't counting calories. She's tracking her cortisol. She isn't cutting carbs — she's choosing which polyphenols will support her mitochondrial biogenesis.</p>
+<p class="body">What replaced restriction is a logic of addition. The new food and beverage product tells you what it adds to your biology.</p>
+</div>
+<div class="closer">
+<p>We didn't stop obsessing over food. We just stopped apologizing for eating it.</p>
 </div>
 </body>
 </html>
