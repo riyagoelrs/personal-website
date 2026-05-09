@@ -9,7 +9,7 @@
 <meta property="og:description" content="writer, builder, investor. new york city.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Kalam:wght@300;400;700&family=Kantumruy+Pro:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Kalam:wght@300;400;700&family=Kantumruy+Pro:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
 :root {
   --paper: #f7f5e8;
@@ -20,6 +20,7 @@
   --rule: #d8cdb0;
   --wine: #6e1811;
   --wine-soft: #9c3b2a;
+  --kiss: #b4291f;
   --terracotta: #c97a4f;
   --sage: #8a9b7a;
   --rose: #d4a5a0;
@@ -27,104 +28,81 @@
   --tape: rgba(110, 24, 17, 0.18);
 }
 @media (prefers-color-scheme: dark) {
-  :root {
-    --paper: #1a1410;
-    --paper-2: #251c16;
-    --ink: #f0e8d4;
-    --ink-soft: #c8b89a;
-    --ink-faint: #7a6a52;
-    --rule: #3a2e22;
-    --wine: #d4564a;
-    --wine-soft: #e8a87c;
-  }
+  :root { --paper: #1a1410; --paper-2: #251c16; --ink: #f0e8d4; --ink-soft: #c8b89a; --ink-faint: #7a6a52; --rule: #3a2e22; --wine: #d4564a; --wine-soft: #e8a87c; --kiss: #d4564a; }
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 16px; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
-body { font-family: 'Kantumruy Pro', 'Inter', system-ui, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; min-height: 100vh; overflow-x: hidden; }
-.page { display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 64rem; margin: 0 auto; padding: 2rem 1.25rem 5rem; }
-@media (min-width: 880px) { .page { grid-template-columns: 13rem 1fr; gap: 4rem; padding: 3.5rem 2.5rem 6rem; } }
+body { font-family: 'Kantumruy Pro', system-ui, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; min-height: 100vh; overflow-x: hidden; }
+.page { display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 64rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+@media (min-width: 880px) { .page { grid-template-columns: 13rem 1fr; gap: 4rem; padding: 3.5rem 2.5rem 5rem; } }
 .rail { display: flex; flex-direction: column; gap: 1rem; }
 .rail .thumb { width: 5.5rem; height: 5.5rem; border-radius: 0.25rem; background: var(--paper-2) center/cover no-repeat; background-image: url('https://sxhodsrixg8meuri.public.blob.vercel-storage.com/workshop/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.05.17_am-egEt3Yos5R5VN2jdDwULd4oicLVr2V.png'); }
-.rail .name { font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin-top: 0.25rem; font-weight: 600; }
-.rail nav { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.75rem; }
-.rail nav a { font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-faint); text-decoration: none; transition: color 0.18s; padding: 0.1rem 0; font-weight: 500; }
+.rail .name { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); margin-top: 0.4rem; font-weight: 500; }
+.rail nav { display: flex; flex-direction: column; gap: 0.55rem; margin-top: 0.85rem; }
+.rail nav a { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-faint); text-decoration: none; transition: color 0.18s; padding: 0.05rem 0; font-weight: 500; }
 .rail nav a:hover, .rail nav a.active { color: var(--ink); }
-.rail nav .sub { display: flex; flex-direction: column; gap: 0.3rem; padding-left: 0.75rem; margin: 0.15rem 0 0.35rem; }
-.rail nav .sub a { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: none; color: var(--ink-faint); }
 @media (min-width: 880px) { .rail { position: sticky; top: 3.5rem; align-self: start; } }
 .col { min-width: 0; }
-.typed-wrap { font-family: 'Courier Prime', monospace; font-size: 1.02rem; line-height: 1.95; margin-bottom: 2.5rem; min-height: 14rem; max-width: 38rem; }
+.typed-wrap { font-family: 'Courier Prime', monospace; font-size: 1.02rem; line-height: 1.95; margin-bottom: 2rem; min-height: 11rem; max-width: 38rem; }
 .typed-wrap p { margin-bottom: 1rem; }
 .typed-wrap a { color: var(--wine); text-decoration: none; border-bottom: 1px solid var(--rule); }
 .typed-wrap a:hover { border-bottom-color: var(--wine); color: var(--wine-soft); }
 .cursor { display: inline-block; width: 0.55ch; height: 1.05em; background: var(--ink); vertical-align: text-bottom; margin-left: 1px; animation: blink 1s step-end infinite; }
 .cursor.hidden { display: none; }
 @keyframes blink { 50% { opacity: 0; } }
-@media (min-width: 600px) { .typed-wrap { font-size: 1.08rem; } }
-.desk-wrap { margin-top: 1rem; padding-top: 1.5rem; border-top: 1px dashed var(--rule); }
-.desk-label { font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1rem; }
-.desk { position: relative; width: 100%; height: 36rem; perspective: 800px; }
-@media (min-width: 600px) { .desk { height: 40rem; } }
+@media (min-width: 600px) { .typed-wrap { font-size: 1.05rem; } }
+
+.desk-wrap { margin-top: 0.5rem; padding-top: 1.25rem; border-top: 1px dashed var(--rule); }
+.desk-label { font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1rem; font-family: 'Kantumruy Pro', sans-serif; }
+.desk { position: relative; width: 100%; height: 38rem; }
+@media (min-width: 600px) { .desk { height: 36rem; } }
 .desk-item { position: absolute; opacity: 0; will-change: transform, opacity; }
-.desk-item.settled { animation: drop 1.1s cubic-bezier(0.2, 0.8, 0.3, 1) forwards; }
+.desk-item.settled { animation: drop 1s cubic-bezier(0.2, 0.8, 0.3, 1) forwards; }
 @keyframes drop { 0% { opacity: 0; transform: translate3d(var(--fx, 0), var(--fy, -120vh), 0) rotate(var(--fr, -40deg)) scale(0.85); } 60% { opacity: 1; } 100% { opacity: 1; transform: translate3d(0, 0, 0) rotate(var(--rot, 0deg)) scale(1); } }
-.polaroid { background: #fbfaf6; padding: 0.55rem 0.55rem 1.4rem; box-shadow: 0 8px 22px rgba(0,0,0,0.22), 0 1px 2px rgba(0,0,0,0.1); }
-.polaroid.sm { width: 7.5rem; }
-.polaroid.md { width: 9.5rem; }
-.polaroid.lg { width: 11.5rem; }
-.polaroid img { display: block; width: 100%; height: 8.5rem; object-fit: cover; filter: saturate(0.96) contrast(0.98); }
-.polaroid.sm img { height: 7rem; }
-.polaroid.lg img { height: 10.5rem; }
-.polaroid .cap { font-family: 'Caveat', cursive; font-size: 1.1rem; color: #1a1410; text-align: center; margin-top: 0.45rem; line-height: 1.1; }
-.polaroid::before { content: ''; position: absolute; top: -0.4rem; left: 50%; transform: translateX(-50%) rotate(-3deg); width: 2.6rem; height: 0.65rem; background: var(--tape); }
+
+/* gallery frames — ciaragan-inspired */
+.frame { padding: 0.6rem; background: var(--paper); position: relative; box-shadow: 0 8px 22px rgba(0,0,0,0.22), 0 1px 2px rgba(0,0,0,0.1); }
+.frame::before { content: ''; position: absolute; inset: 0.25rem; border: 1px solid var(--ink); pointer-events: none; }
+.frame::after { content: ''; position: absolute; inset: 0.4rem; border: 1px solid var(--ink); opacity: 0.35; pointer-events: none; }
+.frame img { display: block; width: 100%; height: 100%; object-fit: cover; filter: saturate(0.96) contrast(0.98); }
+.frame.sm { width: 7rem; }
+.frame.md { width: 9rem; }
+.frame.lg { width: 11rem; }
+.frame.sm img { height: 7rem; }
+.frame.md img { height: 9rem; }
+.frame.lg img { height: 12rem; }
+.frame .cap { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.78rem; letter-spacing: 0.04em; color: var(--ink); text-align: center; margin-top: 0.45rem; line-height: 1.1; padding: 0 0.2rem; }
+
+/* corner ornaments on lg frame */
+.frame.lg .corner { position: absolute; width: 0.7rem; height: 0.7rem; border: 1px solid var(--ink); }
+.frame.lg .corner.tl { top: 0.55rem; left: 0.55rem; border-right: 0; border-bottom: 0; }
+.frame.lg .corner.tr { top: 0.55rem; right: 0.55rem; border-left: 0; border-bottom: 0; }
+.frame.lg .corner.bl { bottom: 1.5rem; left: 0.55rem; border-right: 0; border-top: 0; }
+.frame.lg .corner.br { bottom: 1.5rem; right: 0.55rem; border-left: 0; border-top: 0; }
+
+/* rounded museum-mat frame for one image */
+.frame.oval { border-radius: 50%; padding: 0; box-shadow: 0 6px 18px rgba(0,0,0,0.25); width: 8.5rem; height: 8.5rem; background: transparent; }
+.frame.oval::before, .frame.oval::after { display: none; }
+.frame.oval .matte { width: 100%; height: 100%; border-radius: 50%; background: var(--paper); border: 6px solid var(--paper); box-shadow: inset 0 0 0 1px var(--ink); overflow: hidden; }
+.frame.oval img { border-radius: 50%; }
+.frame.oval .cap { position: absolute; bottom: -1.2rem; left: 0; right: 0; }
+
 .note { padding: 0.85rem 0.9rem 1rem; font-family: 'Kalam', cursive; line-height: 1.35; color: #1a1410; box-shadow: 0 4px 14px rgba(0,0,0,0.16), 0 1px 1px rgba(0,0,0,0.08); position: relative; }
 .note.sticky { background: var(--oat); width: 9rem; font-size: 0.88rem; }
-.note.sticky-sm { background: var(--rose); width: 7rem; font-size: 0.82rem; padding: 0.6rem 0.7rem 0.75rem; }
-.note.lined { background: #fbfaf6; width: 12rem; font-size: 0.95rem; padding: 0.9rem 1rem 1.05rem 1.4rem; background-image: repeating-linear-gradient(transparent, transparent 1.3rem, rgba(110, 24, 17, 0.18) 1.3rem, rgba(110, 24, 17, 0.18) 1.32rem), linear-gradient(to right, transparent 1rem, rgba(200, 80, 80, 0.5) 1rem, rgba(200, 80, 80, 0.5) 1.04rem, transparent 1.04rem); }
-.note.torn { background: var(--sage); width: 10rem; font-size: 0.9rem; clip-path: polygon(0 4%, 8% 0, 22% 5%, 38% 1%, 55% 4%, 72% 0, 88% 6%, 100% 2%, 98% 95%, 90% 100%, 75% 96%, 60% 100%, 42% 96%, 25% 100%, 10% 96%, 2% 100%); }
+.note.lined { background: #fbfaf6; width: 11rem; font-size: 0.9rem; padding: 0.8rem 0.9rem 0.95rem 1.4rem; background-image: repeating-linear-gradient(transparent, transparent 1.3rem, rgba(110, 24, 17, 0.18) 1.3rem, rgba(110, 24, 17, 0.18) 1.32rem), linear-gradient(to right, transparent 1rem, rgba(200, 80, 80, 0.5) 1rem, rgba(200, 80, 80, 0.5) 1.04rem, transparent 1.04rem); }
 .note.craft { background: var(--terracotta); color: #f7f5e8; width: 8.5rem; font-size: 0.85rem; }
-.note .src { display: block; margin-top: 0.5rem; font-family: 'Courier Prime', monospace; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.7; }
-.note::before { content: ''; position: absolute; top: -0.45rem; left: 50%; transform: translateX(-50%) rotate(-2deg); width: 3rem; height: 0.7rem; background: var(--tape); }
-.scribble { font-family: 'Caveat', cursive; font-size: 1.4rem; color: var(--wine); width: 6rem; line-height: 1; transform-origin: center; }
-.section { margin-top: 4rem; max-width: 38rem; scroll-margin-top: 3rem; }
-.section h2 { font-family: 'Kantumruy Pro', sans-serif; font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink); font-weight: 700; margin-bottom: 1.25rem; }
-.section ul { list-style: disc; padding-left: 1.1rem; display: flex; flex-direction: column; gap: 0.45rem; }
-.section li { font-size: 0.95rem; line-height: 1.55; color: var(--ink); }
-.section li .desc { color: var(--ink-soft); }
-.section a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; transition: text-decoration-color 0.18s, color 0.18s; }
-.section a:hover { color: var(--wine); text-decoration-color: var(--wine); }
-.section .empty { color: var(--ink-faint); font-style: italic; font-size: 0.9rem; }
-.fav-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
-@media (min-width: 600px) { .fav-grid { grid-template-columns: 1fr 1fr; } }
-.fav-block h3 { font-family: 'Kantumruy Pro', sans-serif; font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink); font-weight: 700; margin-bottom: 0.6rem; }
-.fav-block ul { list-style: disc; padding-left: 1.1rem; display: flex; flex-direction: column; gap: 0.3rem; }
-.fav-block li { font-size: 0.92rem; color: var(--ink); }
-.design-hero { display: grid; grid-template-columns: 1fr; gap: 1.25rem; margin-bottom: 1.25rem; }
-@media (min-width: 600px) { .design-hero { grid-template-columns: 14rem 1fr; align-items: start; } }
-.design-hero img { width: 100%; height: auto; display: block; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
-.design-hero .copy { font-size: 0.95rem; line-height: 1.6; color: var(--ink-soft); }
-.design-hero .copy strong { color: var(--ink); font-weight: 600; }
-.design-hero .copy a { color: var(--wine); }
-#guestbook { margin-top: 4.5rem; max-width: 42rem; }
-#guestbook .lead { font-size: 0.95rem; color: var(--ink-soft); margin-bottom: 1.25rem; }
-.notepad { background: #c0c0c0; border: 2px solid; border-color: #ffffff #808080 #808080 #ffffff; font-family: 'Courier Prime', monospace; color: #000; box-shadow: 1px 1px 0 #404040; }
-.notepad-title { background: linear-gradient(to right, #0a246a, #a6caf0); color: #fff; padding: 0.25rem 0.5rem; font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 600; display: flex; align-items: center; justify-content: space-between; }
-.notepad-title .name-bar { display: flex; align-items: center; gap: 0.4rem; }
-.notepad-title .icon { width: 0.95rem; height: 0.95rem; background: #fff; border: 1px solid #555; }
-.notepad-title .ctrls { display: flex; gap: 2px; }
-.notepad-title .ctrls span { width: 1rem; height: 0.9rem; background: #c0c0c0; border: 1px solid; border-color: #fff #808080 #808080 #fff; color: #000; font-size: 0.7rem; line-height: 0.85rem; text-align: center; font-family: 'Courier New', monospace; }
-.notepad-menu { background: #c0c0c0; padding: 0.18rem 0.5rem; font-family: 'Inter', sans-serif; font-size: 0.75rem; color: #000; display: flex; gap: 1rem; border-bottom: 1px solid #808080; }
-.notepad-body { background: #fff; padding: 0.85rem 1rem; min-height: 16rem; max-height: 26rem; overflow-y: auto; font-size: 0.86rem; line-height: 1.55; color: #000; border: 1px solid; border-color: #808080 #fff #fff #808080; margin: 0.4rem; }
-.notepad-entry { padding-bottom: 0.85rem; margin-bottom: 0.85rem; border-bottom: 1px dotted #c0c0c0; }
-.notepad-entry:last-child { border-bottom: 0; margin-bottom: 0; }
-.notepad-entry .meta { color: #555; font-size: 0.78rem; margin-bottom: 0.15rem; }
-.notepad-entry .body { white-space: pre-wrap; word-break: break-word; }
-.notepad-form { padding: 0.4rem; }
-.notepad-form textarea { width: 100%; padding: 0.55rem 0.7rem; font-family: 'Courier Prime', monospace; font-size: 0.86rem; border: 1px solid; border-color: #808080 #fff #fff #808080; background: #fff; resize: vertical; min-height: 3.25rem; color: #000; }
-.notepad-foot { padding: 0.25rem 0.5rem 0.45rem; display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; color: #2a2418; font-family: 'Courier Prime', monospace; }
-.notepad-foot button { background: #c0c0c0; border: 2px solid; border-color: #fff #808080 #808080 #fff; padding: 0.2rem 0.9rem; font-family: 'Inter', sans-serif; font-size: 0.78rem; cursor: pointer; color: #000; }
-.notepad-foot button:active { border-color: #808080 #fff #fff #808080; }
-.foot { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); font-size: 0.78rem; color: var(--ink-faint); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+.note .src { display: block; margin-top: 0.4rem; font-family: 'Courier Prime', monospace; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.7; }
+.note::before { content: ''; position: absolute; top: -0.4rem; left: 50%; transform: translateX(-50%) rotate(-2deg); width: 2.6rem; height: 0.6rem; background: var(--tape); }
+
+.scribble { font-family: 'Caveat', cursive; font-size: 1.6rem; color: var(--wine); line-height: 1; }
+.scribble.sm { font-size: 1.2rem; }
+
+/* lipstick kiss — SVG */
+.kiss { width: 3.2rem; height: 2.6rem; opacity: 0.85; }
+.kiss.sm { width: 2.2rem; height: 1.8rem; }
+.kiss path { fill: var(--kiss); }
+
+.foot { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); font-size: 0.78rem; color: var(--ink-faint); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
 .foot .left { font-style: italic; color: var(--ink-soft); }
 @media (prefers-reduced-motion: reduce) { .cursor { animation: none; } .desk-item { opacity: 1 !important; animation: none !important; transform: rotate(var(--rot, 0deg)) !important; } html { scroll-behavior: auto; } }
 </style>
@@ -135,17 +113,11 @@ body { font-family: 'Kantumruy Pro', 'Inter', system-ui, sans-serif; background:
     <div class="thumb" aria-hidden="true"></div>
     <div class="name">riya</div>
     <nav aria-label="sections">
-      <a href="#about" class="navlink">about</a>
-      <a href="#writing" class="navlink">writing</a>
-      <div class="sub">
-        <a href="#writing">essays &amp; op-eds</a>
-        <a href="#writing">medium</a>
-        <a href="#writing">memos</a>
-      </div>
-      <a href="#books" class="navlink">books</a>
-      <a href="#design" class="navlink">design</a>
-      <a href="#favorites" class="navlink">favorites</a>
-      <a href="#guestbook" class="navlink">guestbook</a>
+      <a href="./" class="navlink active">about</a>
+      <a href="./writing.html" class="navlink">writing</a>
+      <a href="./design.html" class="navlink">design</a>
+      <a href="./favorites.html" class="navlink">favorites</a>
+      <a href="./guestbook.html" class="navlink">guestbook</a>
     </nav>
   </aside>
   <main class="col">
@@ -156,79 +128,22 @@ body { font-family: 'Kantumruy Pro', 'Inter', system-ui, sans-serif; background:
         <div class="desk" id="desk" aria-label="scrapbook desk"></div>
       </div>
     </section>
-    <section id="writing" class="section">
-      <h2>Writing</h2>
-      <ul>
-        <li><a href="#">Essays &amp; Op-Eds</a> <span class="desc empty">(add link)</span></li>
-        <li><a href="#">Medium</a> <span class="desc empty">(add link)</span></li>
-      </ul>
-      <h2 style="margin-top:2rem">Memos</h2>
-      <ul>
-        <li><a href="/swan-memo.html">Swan Beauty</a> &mdash; <span class="desc">the family office is the new pe.</span></li>
-        <li><a href="#">More memos</a> <span class="desc empty">(coming soon)</span></li>
-      </ul>
-    </section>
-    <section id="books" class="section">
-      <h2>Books</h2>
-      <ul>
-        <li><a href="#">The Gen-Z Book</a> &mdash; <span class="desc">written at eighteen.</span></li>
-        <li><a href="#">Brewing Community</a> &mdash; <span class="desc">the latte effect.</span></li>
-      </ul>
-    </section>
-    <section id="design" class="section">
-      <h2>Design</h2>
-      <div class="design-hero">
-        <img src="https://sxhodsrixg8meuri.public.blob.vercel-storage.com/workshop/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.18.47_am-4esuFEHWYuyQb2wWvFoycrkuCl8Top.png" alt="riya block printing in workshop">
-        <div class="copy">
-          <p><strong><a href="https://indiyanyc.com">Indiya NYC</a></strong> &mdash; sustainable clothing, made for you. limited drops, exclusive designs. research focused &amp; uplifting artisans.</p>
-          <p style="margin-top:0.75rem">i co-build the brand &mdash; sourcing block prints from jaipur ateliers, designing the cuts, writing the copy. the photo is me at one of our workshops choosing wood blocks.</p>
-          <p style="margin-top:0.75rem"><a href="https://indiyanyc.com">visit indiyanyc.com &rarr;</a></p>
-        </div>
-      </div>
-    </section>
-    <section id="favorites" class="section">
-      <h2>Favorites</h2>
-      <div class="fav-grid">
-        <div class="fav-block">
-          <h3>Writers</h3>
-          <ul><li>Joan Didion</li><li>Zadie Smith</li><li>Jhumpa Lahiri</li><li>Ottessa Moshfegh</li><li>Arundhati Roy</li></ul>
-        </div>
-        <div class="fav-block">
-          <h3>Cities</h3>
-          <ul><li>New York</li><li>Jaipur</li><li>Lisbon</li><li>Mumbai</li><li>Mexico City</li></ul>
-        </div>
-        <div class="fav-block">
-          <h3>Cafes</h3>
-          <ul><li>Devoción in Soho</li><li>Maman on Mulberry</li><li>Sant Ambroeus</li><li>Bluestone Lane</li><li>Café Habana</li></ul>
-        </div>
-        <div class="fav-block">
-          <h3>Reads</h3>
-          <ul><li>The White Album</li><li>The Namesake</li><li>The God of Small Things</li><li>Bel Canto</li><li>The Idiot &mdash; Batuman</li></ul>
-        </div>
-      </div>
-      <p class="desc empty" style="margin-top:1rem">(swap any of these &mdash; placeholders for now)</p>
-    </section>
-    <section id="guestbook" class="section">
-      <h2>Guestbook</h2>
-      <p class="lead">leave a note, say hi, share a thought :)</p>
-      <div class="notepad">
-        <div class="notepad-title"><div class="name-bar"><span class="icon"></span> Guestbook.txt - Notepad</div><div class="ctrls"><span>_</span><span>□</span><span>×</span></div></div>
-        <div class="notepad-menu"><span>File</span><span>Edit</span><span>Format</span><span>View</span><span>Help</span></div>
-        <div class="notepad-body" id="gb-body"></div>
-        <div class="notepad-form"><textarea id="gb-input" maxlength="280" placeholder="Type your message here..."></textarea></div>
-        <div class="notepad-foot"><span class="count"><span id="gb-count">0</span>/280</span><button id="gb-add" type="button">Add Entry</button></div>
-      </div>
-    </section>
     <footer class="foot"><div class="left">— riya, new york city</div><div>2026</div></footer>
   </main>
 </div>
+
+<svg width="0" height="0" style="position:absolute"><defs>
+  <symbol id="kiss" viewBox="0 0 64 52">
+    <path d="M32 14 C 24 4, 10 4, 6 14 C 2 22, 12 30, 32 36 C 52 30, 62 22, 58 14 C 54 4, 40 4, 32 14 Z M32 36 C 28 40, 20 42, 14 40 M32 36 C 36 40, 44 42, 50 40 M22 22 L24 26 M30 22 L32 26 M38 22 L40 26 M46 22 L48 26" stroke="#6e1811" stroke-width="0.8" fill="#b4291f" fill-opacity="0.92"/>
+  </symbol>
+</defs></svg>
+
 <script>
 (function () {
   var target = document.getElementById('typed');
   var paragraphs = [
     ["hi, i'm riya. i write, i build, and right now i'm an investment banking analyst at ", { link: "bank of america", href: "https://www.bankofamerica.com/" }, ", on the consumer & retail team."],
-    ["before this i spent years inside the ", { link: "united nations", href: "https://www.unwomen.org/en" }, " — beijing 25+, generation equality, csw — and founded ", { link: "barnard's first women-focused investment club", href: "https://www.columbiaspectator.com/news/2024/01/31/barnard-investment-group-seeks-to-empower-women-in-finance/" }, " because no one was going to build it for us."],
-    ["i wrote ", { link: "the gen-z book", href: "#books" }, " at eighteen, and a second one called ", { link: "brewing community", href: "#books" }, ". on the side, i co-build ", { link: "indiya nyc", href: "#design" }, " and angel invest in people i've watched build for years."],
+    ["i co-build ", { link: "indiya nyc", href: "./design.html" }, " — sustainable clothing made with block-printers in jaipur — and on the side, angel invest in people i've watched build for years."],
     ["the rest of this page is the short version of the longer one."]
   ];
   var pIdx = 0, chunkIdx = 0, cIdx = 0, currentP = null, cursor = null;
@@ -248,35 +163,55 @@ body { font-family: 'Kantumruy Pro', 'Inter', system-ui, sans-serif; background:
   }
   startNextParagraph();
 })();
+
 (function () {
   var desk = document.getElementById('desk');
   if (!desk) return;
   var P_FABRIC = 'https://sxhodsrixg8meuri.public.blob.vercel-storage.com/workshop/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.05.17_am-egEt3Yos5R5VN2jdDwULd4oicLVr2V.png';
   var P_PJ = 'https://sxhodsrixg8meuri.public.blob.vercel-storage.com/workshop/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.07.56_am-NFaJH6hVnYc3UrAKp9XIUpbnj7pLYt.png';
   var P_BLOCK = 'https://sxhodsrixg8meuri.public.blob.vercel-storage.com/workshop/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.18.47_am-4esuFEHWYuyQb2wWvFoycrkuCl8Top.png';
+
+  // grid-anchored layout: 4 cols x 4 rows, every item lives in its own cell + small jitter
+  // x,y are top-left of cell as %; rot in deg; size where applicable
   var items = [
-    { kind: 'polaroid', size: 'lg', cap: 'fabric district', img: P_FABRIC, x: 2,  y: 4,  rot: -7 },
-    { kind: 'note', cls: 'sticky', text: "the family office is the new pe — quietly, then suddenly.", src: 'swan memo', x: 46, y: 2, rot: 4 },
-    { kind: 'note', cls: 'craft', text: "capital follows conviction.", src: 'field notes', x: 73, y: 6, rot: -5 },
-    { kind: 'note', cls: 'lined', text: "being the youngest in the room is a superpower if you use it right.", src: 'gen-z book', x: 38, y: 22, rot: -3 },
-    { kind: 'scribble', text: 'write more!', x: 78, y: 28, rot: -8 },
-    { kind: 'polaroid', size: 'md', cap: 'soho mornings', img: P_PJ, x: 4, y: 38, rot: 6 },
-    { kind: 'note', cls: 'sticky-sm', text: "i think clearly with a cursor blinking.", src: '— r.g.', x: 50, y: 44, rot: 7 },
-    { kind: 'note', cls: 'torn', text: "build the room you wished existed at sixteen.", src: 'barnard ‘24', x: 70, y: 48, rot: -4 },
-    { kind: 'polaroid', size: 'sm', cap: 'jaipur', img: P_BLOCK, x: 28, y: 70, rot: 9 },
-    { kind: 'note', cls: 'sticky', text: "limited drops > infinite scroll.", src: 'indiya nyc', x: 56, y: 76, rot: -6 },
-    { kind: 'scribble', text: 'xoxo', x: 84, y: 78, rot: 12 }
+    { kind: 'frame', variant: 'lg', cap: 'fabric district', img: P_FABRIC, x: 4,  y: 2,  rot: -5 },
+    { kind: 'note', cls: 'sticky', text: "the family office is the new pe — quietly, then suddenly.", src: 'swan memo', x: 50, y: 4, rot: 4 },
+    { kind: 'note', cls: 'craft', text: "capital follows conviction.", src: 'field notes', x: 78, y: 6, rot: -6 },
+    { kind: 'kiss', size: '', x: 38, y: 32, rot: -12 },
+    { kind: 'frame', variant: 'oval', cap: 'soho mornings', img: P_PJ, x: 30, y: 38, rot: 5 },
+    { kind: 'scribble', text: 'write more!', cls: '', x: 62, y: 36, rot: -6 },
+    { kind: 'note', cls: 'lined', text: "being the youngest in the room is a superpower if you use it right.", src: 'gen-z book', x: 56, y: 50, rot: 3 },
+    { kind: 'kiss', size: 'sm', x: 4, y: 56, rot: 18 },
+    { kind: 'frame', variant: 'md', cap: 'jaipur', img: P_BLOCK, x: 4, y: 68, rot: 7 },
+    { kind: 'scribble', text: 'xoxo', cls: 'sm', x: 80, y: 72, rot: 12 }
   ];
   var deskW = desk.clientWidth;
   var isNarrow = deskW < 540;
-  function buildPolaroid(item) { var fig = document.createElement('figure'); fig.className = 'desk-item polaroid ' + (item.size || 'md'); var im = document.createElement('img'); im.src = item.img; im.alt = item.cap; im.loading = 'lazy'; fig.appendChild(im); var c = document.createElement('figcaption'); c.className = 'cap'; c.textContent = item.cap; fig.appendChild(c); return fig; }
+
+  function buildFrame(item) {
+    var fig = document.createElement('figure');
+    fig.className = 'desk-item frame ' + item.variant;
+    if (item.variant === 'oval') {
+      var m = document.createElement('div'); m.className = 'matte';
+      var im = document.createElement('img'); im.src = item.img; im.alt = item.cap; im.loading = 'lazy';
+      m.appendChild(im); fig.appendChild(m);
+    } else {
+      var im2 = document.createElement('img'); im2.src = item.img; im2.alt = item.cap; im2.loading = 'lazy'; fig.appendChild(im2);
+      if (item.variant === 'lg') {
+        ['tl','tr','bl','br'].forEach(function (k) { var c = document.createElement('span'); c.className = 'corner ' + k; fig.appendChild(c); });
+      }
+    }
+    var c = document.createElement('figcaption'); c.className = 'cap'; c.textContent = item.cap; fig.appendChild(c);
+    return fig;
+  }
   function buildNote(item) { var n = document.createElement('div'); n.className = 'desk-item note ' + item.cls; var t = document.createElement('div'); t.textContent = item.text; var s = document.createElement('span'); s.className = 'src'; s.textContent = item.src; n.appendChild(t); n.appendChild(s); return n; }
-  function buildScribble(item) { var n = document.createElement('div'); n.className = 'desk-item scribble'; n.textContent = item.text; return n; }
+  function buildScribble(item) { var n = document.createElement('div'); n.className = 'desk-item scribble' + (item.cls ? ' ' + item.cls : ''); n.textContent = item.text; return n; }
+  function buildKiss(item) { var d = document.createElement('div'); d.className = 'desk-item'; var s = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); s.setAttribute('class', 'kiss' + (item.size ? ' ' + item.size : '')); s.setAttribute('viewBox', '0 0 64 52'); var u = document.createElementNS('http://www.w3.org/2000/svg', 'use'); u.setAttribute('href', '#kiss'); s.appendChild(u); d.appendChild(s); return d; }
   var nodes = [];
   items.forEach(function (item, i) {
-    var el = item.kind === 'polaroid' ? buildPolaroid(item) : item.kind === 'scribble' ? buildScribble(item) : buildNote(item);
+    var el = item.kind === 'frame' ? buildFrame(item) : item.kind === 'note' ? buildNote(item) : item.kind === 'kiss' ? buildKiss(item) : buildScribble(item);
     var x = item.x, y = item.y;
-    if (isNarrow) { x = (i % 2 === 0) ? 4 : 50; y = Math.floor(i / 2) * 13 + 2; }
+    if (isNarrow) { x = (i % 2 === 0) ? 4 : 50; y = Math.floor(i / 2) * 11 + 1; }
     el.style.left = x + '%'; el.style.top = y + '%'; el.style.setProperty('--rot', item.rot + 'deg');
     var fx = (Math.random() < 0.5 ? -1 : 1) * (40 + Math.random() * 30);
     var fy = -(60 + Math.random() * 60);
@@ -288,36 +223,6 @@ body { font-family: 'Kantumruy Pro', 'Inter', system-ui, sans-serif; background:
   function trigger() { nodes.forEach(function (el, i) { setTimeout(function () { el.classList.add('settled'); }, 250 + i * 110); }); }
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { nodes.forEach(function (el) { el.classList.add('settled'); }); return; }
   setTimeout(trigger, 600);
-})();
-(function () {
-  var links = Array.prototype.slice.call(document.querySelectorAll('.navlink'));
-  if (!('IntersectionObserver' in window) || !links.length) return;
-  var byId = {}; links.forEach(function (l) { byId[l.getAttribute('href')] = l; });
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) { if (e.isIntersecting) { links.forEach(function (l) { l.classList.remove('active'); }); var l = byId['#' + e.target.id]; if (l) l.classList.add('active'); } });
-  }, { rootMargin: '-30% 0px -55% 0px', threshold: 0 });
-  ['about','writing','books','design','favorites','guestbook'].forEach(function (id) { var s = document.getElementById(id); if (s) io.observe(s); });
-})();
-(function () {
-  var KEY = 'rg_guestbook_v1';
-  var body = document.getElementById('gb-body'), input = document.getElementById('gb-input'), btn = document.getElementById('gb-add'), counter = document.getElementById('gb-count');
-  if (!body || !input || !btn) return;
-  var seed = [
-    { ts: Date.parse('2026-04-12T08:30:00Z'), text: "obsessed with the polaroid notes — stealing the energy. xx" },
-    { ts: Date.parse('2026-04-15T14:21:00Z'), text: "finally a personal site that doesn't read like a resume" },
-    { ts: Date.parse('2026-04-22T19:05:00Z'), text: "the indiya nyc workshop photo — stunning. when's the next drop?" }
-  ];
-  function load() { try { var raw = localStorage.getItem(KEY); if (!raw) { localStorage.setItem(KEY, JSON.stringify(seed)); return seed.slice(); } var arr = JSON.parse(raw); return Array.isArray(arr) ? arr : seed.slice(); } catch (_) { return seed.slice(); } }
-  function save(arr) { try { localStorage.setItem(KEY, JSON.stringify(arr)); } catch (_) {} }
-  function fmt(ts) { var d = new Date(ts); var p = function (n) { return n < 10 ? '0' + n : '' + n; }; return '[' + p(d.getMonth() + 1) + '/' + p(d.getDate()) + '/' + d.getFullYear() + ' ' + p(d.getHours()) + ':' + p(d.getMinutes()) + ']'; }
-  function render() {
-    var entries = load().slice().sort(function (a, b) { return b.ts - a.ts; });
-    body.innerHTML = '';
-    entries.forEach(function (e, i) { var n = entries.length - i; var w = document.createElement('div'); w.className = 'notepad-entry'; var m = document.createElement('div'); m.className = 'meta'; m.textContent = fmt(e.ts) + ' Entry #' + n; var t = document.createElement('div'); t.className = 'body'; t.textContent = e.text; w.appendChild(m); w.appendChild(t); body.appendChild(w); });
-  }
-  input.addEventListener('input', function () { counter.textContent = String(input.value.length); });
-  btn.addEventListener('click', function () { var text = input.value.trim(); if (!text) return; var arr = load(); arr.push({ ts: Date.now(), text: text }); save(arr); input.value = ''; counter.textContent = '0'; render(); body.scrollTop = 0; });
-  render();
 })();
 </script>
 </body>
