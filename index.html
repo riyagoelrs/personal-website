@@ -9,88 +9,54 @@
 <meta property="og:description" content="writer, builder, investor. new york city.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Kalam:wght@300;400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Kalam:wght@300;400&family=Inter:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
 :root {
-  --paper: #f7f3ec;
-  --ink: #2a2418;
-  --ink-soft: #5c5142;
-  --ink-faint: #9d8f76;
-  --rule: #d6c9b2;
-  --accent: #9c4221;
-  --accent-soft: #c97a4f;
+  --paper: #f7f5e8;
+  --ink: #1a1410;
+  --ink-soft: #4a3f33;
+  --ink-faint: #8a7a64;
+  --rule: #d8cfb8;
+  --accent: #6e1811;
+  --accent-soft: #9c3a2a;
   --tape: rgba(220, 198, 138, 0.55);
-  --note-yellow: #f5e9a8;
-  --note-pink: #f3c8c8;
-  --note-blue: #cfd8e8;
-  --note-cream: #f0e6cf;
+  --note-terracotta: #d4896b;
+  --note-rose: #e6b8b0;
+  --note-sage: #b8c4a0;
+  --note-oat: #ebe0c4;
+  --note-wine: #8a3a30;
+  --note-mustard: #d4a850;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --paper: #1a1612;
+    --paper: #14110d;
     --ink: #ebe2d0;
     --ink-soft: #b5a98f;
     --ink-faint: #6b6051;
     --rule: #3a3225;
-    --accent: #e8a87c;
-    --accent-soft: #c97a4f;
+    --accent: #d4896b;
+    --accent-soft: #e6b8b0;
     --tape: rgba(180, 150, 90, 0.4);
-    --note-yellow: #b5a35a;
-    --note-pink: #b07a7a;
-    --note-blue: #7a8aa3;
-    --note-cream: #a89a78;
   }
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 16px; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
-body {
-  font-family: 'Courier Prime', ui-monospace, 'Courier New', monospace;
-  background: var(--paper);
-  color: var(--ink);
-  line-height: 1.8;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
+body { font-family: 'Courier Prime', ui-monospace, monospace; background: var(--paper); color: var(--ink); line-height: 1.8; min-height: 100vh; overflow-x: hidden; }
 
-/* layout */
-.page {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  max-width: 64rem;
-  margin: 0 auto;
-  padding: 2rem 1.25rem 5rem;
-}
-@media (min-width: 880px) {
-  .page {
-    grid-template-columns: 12rem 1fr;
-    gap: 4rem;
-    padding: 3.5rem 2.5rem 6rem;
-  }
-}
+.page { display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 64rem; margin: 0 auto; padding: 2rem 1.25rem 5rem; }
+@media (min-width: 880px) { .page { grid-template-columns: 12rem 1fr; gap: 4rem; padding: 3.5rem 2.5rem 6rem; } }
 
-/* side rail — devan style: only section anchors, no nested links */
-.rail { display: flex; flex-direction: column; gap: 1.25rem; }
+.rail { display: flex; flex-direction: column; gap: 1rem; }
+.rail .thumb { width: 5.5rem; height: 5.5rem; border-radius: 0.25rem; background-image: url('https://sxhodsrixg8meuri.public.blob.vercel-storage.com/workshop/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.05.17_am-egEt3Yos5R5VN2jdDwULd4oicLVr2V.png'); background-size: cover; background-position: center; }
 .rail .name { font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin-top: 0.25rem; }
-.rail .thumb { width: 5.5rem; height: 5.5rem; border-radius: 0.25rem; background: var(--rule); object-fit: cover; }
-.rail nav { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.75rem; }
-.rail nav a {
-  font-size: 0.78rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  text-decoration: none;
-  transition: color 0.18s;
-  padding: 0.1rem 0;
-}
+.rail nav { display: flex; flex-direction: column; gap: 0.4rem; margin-top: 0.6rem; }
+.rail nav a { font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-faint); text-decoration: none; transition: color 0.18s; padding: 0.05rem 0; }
 .rail nav a:hover, .rail nav a.active { color: var(--ink); }
-@media (min-width: 880px) {
-  .rail { position: sticky; top: 3.5rem; align-self: start; }
-}
+.rail nav .sub { font-size: 0.7rem; letter-spacing: 0.14em; padding-left: 0.85rem; color: var(--ink-faint); text-transform: none; font-style: italic; }
+.rail nav .sub:hover, .rail nav .sub.active { color: var(--accent); }
+@media (min-width: 880px) { .rail { position: sticky; top: 3.5rem; align-self: start; } }
 
-/* center column */
 .col { min-width: 0; }
-
 .typed-wrap { font-size: 1.02rem; line-height: 1.95; margin-bottom: 2.5rem; min-height: 14rem; max-width: 38rem; }
 .typed-wrap p { margin-bottom: 1rem; }
 .typed-wrap p:last-child { margin-bottom: 0; }
@@ -101,13 +67,10 @@ body {
 .cursor.hidden { display: none; }
 @keyframes blink { 50% { opacity: 0; } }
 
-@media (min-width: 600px) { .typed-wrap { font-size: 1.1rem; } }
-
-/* messy desk */
 .desk-wrap { margin-top: 1rem; padding-top: 1.5rem; border-top: 1px dashed var(--rule); }
 .desk-label { font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1rem; }
-.desk { position: relative; width: 100%; height: 30rem; perspective: 800px; }
-@media (min-width: 600px) { .desk { height: 34rem; } }
+.desk { position: relative; width: 100%; height: 38rem; perspective: 800px; }
+@media (min-width: 600px) { .desk { height: 42rem; } }
 .desk-item { position: absolute; opacity: 0; will-change: transform, opacity; }
 .desk-item.settled { animation: drop 1.1s cubic-bezier(0.2, 0.8, 0.3, 1) forwards; }
 @keyframes drop {
@@ -116,143 +79,100 @@ body {
   100% { opacity: 1; transform: translate3d(0, 0, 0) rotate(var(--rot, 0deg)) scale(1); }
 }
 
-.polaroid { background: #fbfaf6; padding: 0.55rem 0.55rem 1.4rem; box-shadow: 0 6px 18px rgba(0,0,0,0.18), 0 1px 2px rgba(0,0,0,0.1); width: 9rem; }
-@media (prefers-color-scheme: dark) { .polaroid { background: #f0e9d8; box-shadow: 0 6px 22px rgba(0,0,0,0.55), 0 1px 2px rgba(0,0,0,0.4); } }
-.polaroid .frame { display: flex; align-items: center; justify-content: center; width: 100%; height: 7.5rem; background-image: linear-gradient(135deg, #ece5d3 25%, #e3dac4 25%, #e3dac4 50%, #ece5d3 50%, #ece5d3 75%, #e3dac4 75%); background-size: 14px 14px; color: #9d8f76; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; }
-.polaroid img { display: block; width: 100%; height: 7.5rem; object-fit: cover; filter: saturate(0.94) contrast(0.97); }
-.polaroid .cap { font-family: 'Caveat', cursive; font-size: 1.05rem; color: #2a2418; text-align: center; margin-top: 0.45rem; line-height: 1.1; }
-.polaroid::before { content: ''; position: absolute; top: -0.4rem; left: 50%; transform: translateX(-50%) rotate(-3deg); width: 2.6rem; height: 0.65rem; background: var(--tape); box-shadow: 0 1px 2px rgba(0,0,0,0.08); }
+.polaroid { background: #fbfaf2; padding: 0.55rem 0.55rem 1.4rem; box-shadow: 0 6px 18px rgba(110, 24, 17, 0.18), 0 1px 2px rgba(0,0,0,0.1); }
+.polaroid.sm { width: 7.5rem; }
+.polaroid.md { width: 9.5rem; }
+.polaroid.lg { width: 11.5rem; }
+.polaroid img { display: block; width: 100%; aspect-ratio: 1 / 1.05; object-fit: cover; filter: saturate(0.92) contrast(0.97); }
+.polaroid .frame { display: flex; align-items: center; justify-content: center; width: 100%; aspect-ratio: 1 / 1.05; background-image: linear-gradient(135deg, #ece5d3 25%, #e3dac4 25%, #e3dac4 50%, #ece5d3 50%, #ece5d3 75%, #e3dac4 75%); background-size: 14px 14px; color: #9d8f76; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; }
+.polaroid .cap { font-family: 'Caveat', cursive; font-size: 1rem; color: #1a1410; text-align: center; margin-top: 0.45rem; line-height: 1.1; }
+.polaroid::before { content: ''; position: absolute; top: -0.4rem; left: 50%; transform: translateX(-50%) rotate(-3deg); width: 2.6rem; height: 0.65rem; background: var(--tape); }
 
-.note { width: 11rem; padding: 0.85rem 0.9rem 1rem; font-family: 'Kalam', cursive; font-size: 0.92rem; line-height: 1.35; color: #2a2418; box-shadow: 0 4px 12px rgba(0,0,0,0.14), 0 1px 1px rgba(0,0,0,0.08); position: relative; }
-.note.yellow { background: var(--note-yellow); }
-.note.pink { background: var(--note-pink); }
-.note.blue { background: var(--note-blue); }
-.note.cream { background: var(--note-cream); }
-.note .src { display: block; margin-top: 0.5rem; font-family: 'Courier Prime', monospace; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(42, 36, 24, 0.55); }
-.note::before { content: ''; position: absolute; top: -0.45rem; left: 50%; transform: translateX(-50%) rotate(-2deg); width: 3rem; height: 0.7rem; background: var(--tape); box-shadow: 0 1px 2px rgba(0,0,0,0.08); }
+.note { font-family: 'Kalam', cursive; line-height: 1.35; color: #1a1410; box-shadow: 0 4px 12px rgba(110,24,17,0.14); position: relative; padding: 0.85rem 0.9rem 1rem; }
+.note.sm { width: 8rem; font-size: 0.82rem; }
+.note.md { width: 10.5rem; font-size: 0.92rem; }
+.note.lg { width: 13rem; font-size: 1rem; padding: 1rem 1.1rem 1.2rem; }
+.note.terracotta { background: var(--note-terracotta); }
+.note.rose { background: var(--note-rose); }
+.note.sage { background: var(--note-sage); }
+.note.oat { background: var(--note-oat); }
+.note.wine { background: var(--note-wine); color: #f7f5e8; }
+.note.mustard { background: var(--note-mustard); }
+.note.torn { clip-path: polygon(2% 5%, 8% 0%, 18% 4%, 30% 1%, 45% 5%, 60% 0%, 78% 4%, 92% 1%, 100% 6%, 98% 30%, 100% 55%, 96% 78%, 100% 96%, 88% 100%, 70% 97%, 55% 100%, 38% 96%, 22% 100%, 6% 97%, 0% 88%, 3% 60%, 0% 35%, 2% 5%); }
+.note .src { display: block; margin-top: 0.5rem; font-family: 'Courier Prime', monospace; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(26, 20, 16, 0.55); }
+.note.wine .src { color: rgba(247, 245, 232, 0.7); }
+.note::before { content: ''; position: absolute; top: -0.4rem; left: 50%; transform: translateX(-50%) rotate(-2deg); width: 2.8rem; height: 0.6rem; background: var(--tape); }
+.note.torn::before { display: none; }
 
-.card { width: 12rem; padding: 0.9rem 1rem 1.05rem 1.4rem; background: #fbfaf6; font-family: 'Kalam', cursive; font-size: 0.95rem; line-height: 1.4; color: #2a2418; box-shadow: 0 4px 12px rgba(0,0,0,0.14); background-image: repeating-linear-gradient(transparent, transparent 1.3rem, rgba(120, 130, 180, 0.35) 1.3rem, rgba(120, 130, 180, 0.35) 1.32rem), linear-gradient(to right, transparent 1rem, rgba(200, 80, 80, 0.5) 1rem, rgba(200, 80, 80, 0.5) 1.04rem, transparent 1.04rem); }
-.card .src { display: block; margin-top: 0.4rem; font-family: 'Courier Prime', monospace; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(42, 36, 24, 0.55); }
+.card { padding: 0.9rem 1rem 1.05rem 1.4rem; background: #fbfaf2; font-family: 'Kalam', cursive; line-height: 1.4; color: #1a1410; box-shadow: 0 4px 12px rgba(110,24,17,0.14); background-image: repeating-linear-gradient(transparent, transparent 1.3rem, rgba(110, 24, 17, 0.18) 1.3rem, rgba(110, 24, 17, 0.2) 1.32rem), linear-gradient(to right, transparent 1rem, rgba(110, 24, 17, 0.5) 1rem, rgba(110, 24, 17, 0.5) 1.04rem, transparent 1.04rem); }
+.card.sm { width: 9rem; font-size: 0.82rem; }
+.card.md { width: 11.5rem; font-size: 0.92rem; }
+.card .src { display: block; margin-top: 0.4rem; font-family: 'Courier Prime', monospace; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(26, 20, 16, 0.55); }
 
-/* devan-style content sections */
+.scribble { font-family: 'Caveat', cursive; font-size: 1.1rem; color: var(--accent); transform-origin: center; padding: 0.3rem 0.5rem; line-height: 1.1; }
+
 .section { margin-top: 4rem; max-width: 38rem; scroll-margin-top: 3rem; }
 .section h2 { font-family: 'Inter', system-ui, sans-serif; font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink); font-weight: 600; margin-bottom: 1.25rem; }
 .section ul { list-style: disc; padding-left: 1.1rem; display: flex; flex-direction: column; gap: 0.45rem; }
 .section li { font-size: 0.95rem; line-height: 1.55; color: var(--ink); }
 .section li .desc { color: var(--ink-soft); }
-.section a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; transition: text-decoration-color 0.18s, color 0.18s; }
+.section a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; transition: color 0.18s, text-decoration-color 0.18s; }
 .section a:hover { color: var(--accent); text-decoration-color: var(--accent); }
-.section .empty { color: var(--ink-faint); font-style: italic; font-size: 0.9rem; }
+.section .empty { color: var(--ink-faint); font-style: italic; font-size: 0.88rem; }
 
-/* guestbook — notepad.txt */
+.subhead { font-family: 'Inter', sans-serif; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink); font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.7rem; }
+.subhead:first-child { margin-top: 0; }
+
+#design .hero { margin-bottom: 1.5rem; position: relative; }
+#design .hero img { width: 100%; max-width: 38rem; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 2px; box-shadow: 0 8px 28px rgba(110, 24, 17, 0.25); }
+#design .hero .cap { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1rem; color: var(--ink-soft); margin-top: 0.5rem; }
+#design .brandcard { padding: 1.4rem 1.5rem; background: var(--accent); color: #f7f5e8; margin-top: 1.25rem; max-width: 38rem; }
+#design .brandcard .label { font-family: 'Inter', sans-serif; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.8; margin-bottom: 0.4rem; }
+#design .brandcard .name { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; line-height: 1.1; margin-bottom: 0.6rem; }
+#design .brandcard p { font-size: 0.92rem; line-height: 1.55; opacity: 0.92; }
+#design .brandcard a { color: #f7f5e8; text-decoration: underline; text-decoration-color: rgba(247,245,232,0.5); }
+#design .brandcard a:hover { text-decoration-color: #f7f5e8; }
+
 #guestbook { margin-top: 4.5rem; max-width: 42rem; }
 #guestbook .lead { font-size: 0.95rem; color: var(--ink-soft); margin-bottom: 1.25rem; }
-.notepad {
-  background: #c0c0c0;
-  border: 2px solid;
-  border-color: #ffffff #808080 #808080 #ffffff;
-  font-family: 'Courier Prime', 'Courier New', monospace;
-  color: #000;
-  box-shadow: 1px 1px 0 #404040;
-}
-.notepad-title {
-  background: linear-gradient(to right, #0a246a, #a6caf0);
-  color: #fff;
-  padding: 0.25rem 0.5rem;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.78rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+.notepad { background: #c0c0c0; border: 2px solid; border-color: #ffffff #808080 #808080 #ffffff; font-family: 'Courier Prime', 'Courier New', monospace; color: #000; box-shadow: 1px 1px 0 #404040; }
+.notepad-title { background: linear-gradient(to right, #0a246a, #a6caf0); color: #fff; padding: 0.25rem 0.5rem; font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 600; display: flex; align-items: center; justify-content: space-between; }
 .notepad-title .name-bar { display: flex; align-items: center; gap: 0.4rem; }
 .notepad-title .icon { width: 0.95rem; height: 0.95rem; background: #fff; border: 1px solid #555; display: inline-block; }
 .notepad-title .ctrls { display: flex; gap: 2px; }
 .notepad-title .ctrls span { width: 1rem; height: 0.9rem; background: #c0c0c0; border: 1px solid; border-color: #fff #808080 #808080 #fff; color: #000; font-size: 0.7rem; line-height: 0.85rem; text-align: center; font-family: 'Courier New', monospace; }
-.notepad-menu {
-  background: #c0c0c0;
-  padding: 0.18rem 0.5rem;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.75rem;
-  color: #000;
-  display: flex;
-  gap: 1rem;
-  border-bottom: 1px solid #808080;
-}
-.notepad-menu span { cursor: default; }
-.notepad-body {
-  background: #ffffff;
-  padding: 0.85rem 1rem;
-  min-height: 16rem;
-  max-height: 26rem;
-  overflow-y: auto;
-  font-size: 0.86rem;
-  line-height: 1.55;
-  color: #000;
-  border: 1px solid;
-  border-color: #808080 #fff #fff #808080;
-  margin: 0.4rem;
-}
+.notepad-menu { background: #c0c0c0; padding: 0.18rem 0.5rem; font-family: 'Inter', sans-serif; font-size: 0.75rem; color: #000; display: flex; gap: 1rem; border-bottom: 1px solid #808080; }
+.notepad-body { background: #ffffff; padding: 0.85rem 1rem; min-height: 16rem; max-height: 26rem; overflow-y: auto; font-size: 0.86rem; line-height: 1.55; color: #000; border: 1px solid; border-color: #808080 #fff #fff #808080; margin: 0.4rem; }
 .notepad-entry { padding-bottom: 0.85rem; margin-bottom: 0.85rem; border-bottom: 1px dotted #c0c0c0; }
 .notepad-entry:last-child { border-bottom: 0; margin-bottom: 0; }
 .notepad-entry .meta { color: #555; font-size: 0.78rem; margin-bottom: 0.15rem; }
 .notepad-entry .body { white-space: pre-wrap; word-break: break-word; }
-.notepad-form { padding: 0.4rem; display: flex; flex-direction: column; gap: 0.4rem; }
-.notepad-form textarea {
-  width: 100%;
-  padding: 0.55rem 0.7rem;
-  font-family: 'Courier Prime', 'Courier New', monospace;
-  font-size: 0.86rem;
-  border: 1px solid;
-  border-color: #808080 #fff #fff #808080;
-  background: #fff;
-  resize: vertical;
-  min-height: 3.25rem;
-  color: #000;
-}
-.notepad-foot {
-  padding: 0.25rem 0.5rem 0.45rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 0.75rem;
-  color: #2a2418;
-  font-family: 'Courier Prime', monospace;
-}
-.notepad-foot button {
-  background: #c0c0c0;
-  border: 2px solid;
-  border-color: #fff #808080 #808080 #fff;
-  padding: 0.2rem 0.9rem;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.78rem;
-  cursor: pointer;
-  color: #000;
-}
+.notepad-form { padding: 0.4rem; }
+.notepad-form textarea { width: 100%; padding: 0.55rem 0.7rem; font-family: 'Courier Prime', monospace; font-size: 0.86rem; border: 1px solid; border-color: #808080 #fff #fff #808080; background: #fff; resize: vertical; min-height: 3.25rem; color: #000; }
+.notepad-foot { padding: 0.25rem 0.5rem 0.45rem; display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; color: #2a2418; font-family: 'Courier Prime', monospace; }
+.notepad-foot button { background: #c0c0c0; border: 2px solid; border-color: #fff #808080 #808080 #fff; padding: 0.2rem 0.9rem; font-family: 'Inter', sans-serif; font-size: 0.78rem; cursor: pointer; color: #000; }
 .notepad-foot button:active { border-color: #808080 #fff #fff #808080; }
-.notepad-foot .count { color: #555; }
 
 .foot { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); font-size: 0.78rem; color: var(--ink-faint); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
 .foot .left { font-style: italic; color: var(--ink-soft); }
 
-@media (prefers-reduced-motion: reduce) {
-  .cursor { animation: none; }
-  .desk-item { opacity: 1 !important; animation: none !important; transform: rotate(var(--rot, 0deg)) !important; }
-  html { scroll-behavior: auto; }
-}
+@media (prefers-reduced-motion: reduce) { .cursor { animation: none; } .desk-item { opacity: 1 !important; animation: none !important; transform: rotate(var(--rot, 0deg)) !important; } html { scroll-behavior: auto; } }
 </style>
 </head>
 <body>
 <div class="page">
 
   <aside class="rail">
-    <div class="thumb" aria-hidden="true"></div>
+    <div class="thumb" aria-label="riya"></div>
     <div class="name">riya</div>
     <nav aria-label="sections">
       <a href="#about" class="navlink">about</a>
       <a href="#writing" class="navlink">writing</a>
+      <a href="#writing" class="navlink sub">essays &amp; op-eds</a>
+      <a href="#writing" class="navlink sub">memos</a>
+      <a href="#writing" class="navlink sub">medium</a>
       <a href="#books" class="navlink">books</a>
+      <a href="#design" class="navlink">design</a>
       <a href="#favorites" class="navlink">favorites</a>
       <a href="#guestbook" class="navlink">guestbook</a>
     </nav>
@@ -270,10 +190,15 @@ body {
 
     <section id="writing" class="section">
       <h2>Writing</h2>
+      <div class="subhead">Essays &amp; Op-Eds</div>
+      <ul>
+        <li><a href="#">Medium</a> <span class="desc empty">(add link)</span></li>
+        <li><a href="#">Op-eds</a> <span class="desc empty">(add link)</span></li>
+      </ul>
+      <div class="subhead">Memos</div>
       <ul>
         <li><a href="/swan-memo.html">Swan Beauty</a> &mdash; <span class="desc">the family office is the new pe.</span></li>
-        <li><a href="#">Essays &amp; op-eds</a> <span class="desc empty">(add link)</span></li>
-        <li><a href="#">Medium</a> <span class="desc empty">(add link)</span></li>
+        <li><a href="#">More memos</a> <span class="desc empty">(coming)</span></li>
       </ul>
     </section>
 
@@ -285,21 +210,49 @@ body {
       </ul>
     </section>
 
-    <section id="favorites" class="section">
-      <h2>Favorites</h2>
-      <ul>
-        <li><a href="#">Books I return to</a> <span class="desc empty">(coming soon)</span></li>
-        <li><a href="#">Writers I steal from</a> <span class="desc empty">(coming soon)</span></li>
-        <li><a href="#">Cafes in soho</a> <span class="desc empty">(coming soon)</span></li>
-      </ul>
+    <section id="design" class="section">
+      <h2>Design</h2>
+      <div class="hero">
+        <img src="https://sxhodsrixg8meuri.public.blob.vercel-storage.com/workshop/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.18.47_am-4esuFEHWYuyQb2wWvFoycrkuCl8Top.png" alt="riya block printing in jaipur" />
+        <div class="cap">— jaipur, with the block-printers.</div>
+      </div>
+      <div class="brandcard">
+        <div class="label">founder</div>
+        <div class="name">Indiya NYC</div>
+        <p>sustainable clothing, made for you. limited drops, exclusive designs. research-focused &amp; uplifting artisans. <a href="https://indiyanyc.com" target="_blank" rel="noopener">indiyanyc.com →</a></p>
+      </div>
     </section>
 
-    <section id="elsewhere" class="section">
-      <h2>Elsewhere</h2>
+    <section id="favorites" class="section">
+      <h2>Favorites</h2>
+      <div class="subhead">Writers</div>
       <ul>
-        <li><a href="https://www.linkedin.com/in/riyagoel103">LinkedIn</a></li>
-        <li><a href="https://x.com/riyalityg">Twitter</a></li>
-        <li><a href="mailto:hello@riya-goel.com">Email</a> <span class="desc empty">(confirm address)</span></li>
+        <li>Joan Didion</li>
+        <li>Zadie Smith</li>
+        <li>Arundhati Roy</li>
+        <li>Jhumpa Lahiri</li>
+        <li>Ottessa Moshfegh</li>
+      </ul>
+      <div class="subhead">Cities</div>
+      <ul>
+        <li>New York</li>
+        <li>Jaipur</li>
+        <li>Delhi</li>
+        <li>Lisbon</li>
+        <li>Mexico City</li>
+      </ul>
+      <div class="subhead">Cafes</div>
+      <ul>
+        <li>Sant Ambroeus in West Village</li>
+        <li>Bluestone Lane in Soho</li>
+        <li>Maman in Tribeca</li>
+        <li>Café Mogador in East Village</li>
+      </ul>
+      <div class="subhead">Reads</div>
+      <ul>
+        <li><span class="desc">Bluets</span> by Maggie Nelson</li>
+        <li><span class="desc">The Year of Magical Thinking</span> by Joan Didion</li>
+        <li><span class="desc">A Little Life</span> by Hanya Yanagihara</li>
       </ul>
     </section>
 
@@ -311,182 +264,103 @@ body {
           <div class="name-bar"><span class="icon"></span> Guestbook.txt - Notepad</div>
           <div class="ctrls"><span>_</span><span>□</span><span>×</span></div>
         </div>
-        <div class="notepad-menu">
-          <span>File</span><span>Edit</span><span>Format</span><span>View</span><span>Help</span>
-        </div>
+        <div class="notepad-menu"><span>File</span><span>Edit</span><span>Format</span><span>View</span><span>Help</span></div>
         <div class="notepad-body" id="gb-body"></div>
-        <div class="notepad-form">
-          <textarea id="gb-input" maxlength="280" placeholder="Type your message here..."></textarea>
-        </div>
-        <div class="notepad-foot">
-          <span class="count"><span id="gb-count">0</span>/280</span>
-          <button id="gb-add" type="button">Add Entry</button>
-        </div>
+        <div class="notepad-form"><textarea id="gb-input" maxlength="280" placeholder="Type your message here..."></textarea></div>
+        <div class="notepad-foot"><span class="count"><span id="gb-count">0</span>/280</span><button id="gb-add" type="button">Add Entry</button></div>
       </div>
     </section>
 
-    <footer class="foot">
-      <div class="left">— riya, new york city</div>
-      <div>2026</div>
-    </footer>
-
+    <footer class="foot"><div class="left">— riya, new york city</div><div>2026</div></footer>
   </main>
-
 </div>
 
 <script>
-// --- typed bio ---
 (function () {
   var target = document.getElementById('typed');
   var paragraphs = [
-    [
-      "hi, i'm riya. i write, i build, and right now i'm an investment banking analyst at ",
-      { link: "bank of america", href: "https://www.bankofamerica.com/" },
-      ", on the consumer & retail team."
-    ],
-    [
-      "before this i spent years inside the ",
-      { link: "united nations", href: "https://www.unwomen.org/en" },
-      " — beijing 25+, generation equality, csw — and founded ",
-      { link: "barnard's first women-focused investment club", href: "https://www.columbiaspectator.com/news/2024/01/31/barnard-investment-group-seeks-to-empower-women-in-finance/" },
-      " because no one was going to build it for us."
-    ],
-    [
-      "i wrote ",
-      { link: "the gen-z book", href: "#books" },
-      " at eighteen, and a second one called ",
-      { link: "brewing community", href: "#books" },
-      ". on the side, i angel invest in people i've watched build for years."
-    ],
-    [
-      "the rest of this page is the short version of the longer one."
-    ]
+    ["hi, i'm riya. i write, i build, and right now i'm an investment banking analyst at ", { link: "bank of america", href: "https://www.bankofamerica.com/" }, ", on the consumer & retail team."],
+    ["before this i spent years inside the ", { link: "united nations", href: "https://www.unwomen.org/en" }, ", and founded ", { link: "barnard's first women-focused investment club", href: "https://www.columbiaspectator.com/news/2024/01/31/barnard-investment-group-seeks-to-empower-women-in-finance/" }, " because no one was going to build it for us."],
+    ["i wrote ", { link: "the gen-z book", href: "#books" }, " at eighteen, and i run ", { link: "indiya nyc", href: "#design" }, " — sustainable clothing made with block-printers in jaipur."],
+    ["the rest of this page is the short version of the longer one."]
   ];
   var pIdx = 0, chunkIdx = 0, cIdx = 0, currentP = null, cursor = null;
-  var typeSpeed = 18, pausePara = 360;
-  function ensureCursor() {
-    if (cursor && cursor.parentNode) cursor.parentNode.removeChild(cursor);
-    cursor = document.createElement('span');
-    cursor.className = 'cursor';
-    cursor.setAttribute('aria-hidden', 'true');
-    if (currentP) currentP.appendChild(cursor);
-  }
-  function startNextParagraph() {
-    currentP = document.createElement('p');
-    target.appendChild(currentP);
-    chunkIdx = 0; cIdx = 0;
-    ensureCursor();
-    typeChunk();
-  }
+  function ensureCursor() { if (cursor && cursor.parentNode) cursor.parentNode.removeChild(cursor); cursor = document.createElement('span'); cursor.className = 'cursor'; cursor.setAttribute('aria-hidden', 'true'); if (currentP) currentP.appendChild(cursor); }
+  function startNextParagraph() { currentP = document.createElement('p'); target.appendChild(currentP); chunkIdx = 0; cIdx = 0; ensureCursor(); typeChunk(); }
   function typeChunk() {
     var para = paragraphs[pIdx];
-    if (chunkIdx >= para.length) {
-      pIdx++;
-      if (pIdx < paragraphs.length) setTimeout(startNextParagraph, pausePara);
-      else if (cursor) cursor.classList.add('hidden');
-      return;
-    }
+    if (chunkIdx >= para.length) { pIdx++; if (pIdx < paragraphs.length) setTimeout(startNextParagraph, 360); else if (cursor) cursor.classList.add('hidden'); return; }
     var chunk = para[chunkIdx];
     if (typeof chunk === 'string') {
-      if (cIdx < chunk.length) {
-        var ch = document.createTextNode(chunk.charAt(cIdx));
-        currentP.insertBefore(ch, cursor);
-        cIdx++;
-        var delay = typeSpeed + (Math.random() * 26 - 8);
-        var lastChar = chunk.charAt(cIdx - 1);
-        if (lastChar === '.' || lastChar === ',' || lastChar === '?' || lastChar === '—') delay += 90;
-        setTimeout(typeChunk, delay);
-      } else { chunkIdx++; cIdx = 0; setTimeout(typeChunk, 30); }
-    } else {
-      var a = document.createElement('a');
-      a.href = chunk.href; a.textContent = chunk.link;
-      currentP.insertBefore(a, cursor);
-      chunkIdx++; cIdx = 0;
-      setTimeout(typeChunk, 60);
-    }
+      if (cIdx < chunk.length) { var ch = document.createTextNode(chunk.charAt(cIdx)); currentP.insertBefore(ch, cursor); cIdx++; var delay = 18 + (Math.random() * 26 - 8); var lc = chunk.charAt(cIdx - 1); if (lc === '.' || lc === ',' || lc === '—') delay += 90; setTimeout(typeChunk, delay); }
+      else { chunkIdx++; cIdx = 0; setTimeout(typeChunk, 30); }
+    } else { var a = document.createElement('a'); a.href = chunk.href; a.textContent = chunk.link; currentP.insertBefore(a, cursor); chunkIdx++; cIdx = 0; setTimeout(typeChunk, 60); }
   }
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    paragraphs.forEach(function (para) {
-      var p = document.createElement('p');
-      para.forEach(function (chunk) {
-        if (typeof chunk === 'string') p.appendChild(document.createTextNode(chunk));
-        else { var a = document.createElement('a'); a.href = chunk.href; a.textContent = chunk.link; p.appendChild(a); }
-      });
-      target.appendChild(p);
-    });
+    paragraphs.forEach(function (para) { var p = document.createElement('p'); para.forEach(function (chunk) { if (typeof chunk === 'string') p.appendChild(document.createTextNode(chunk)); else { var a = document.createElement('a'); a.href = chunk.href; a.textContent = chunk.link; p.appendChild(a); } }); target.appendChild(p); });
     return;
   }
   startNextParagraph();
 })();
 
-// --- messy desk ---
 (function () {
   var desk = document.getElementById('desk');
   if (!desk) return;
+  var FABRIC = 'https://sxhodsrixg8meuri.public.blob.vercel-storage.com/workshop/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.05.17_am-egEt3Yos5R5VN2jdDwULd4oicLVr2V.png';
+  var PJ = 'https://sxhodsrixg8meuri.public.blob.vercel-storage.com/workshop/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.07.56_am-NFaJH6hVnYc3UrAKp9XIUpbnj7pLYt.png';
   var items = [
-    { kind: 'polaroid', cap: 'soho mornings', tag: 'photo 1', x: 4,  y: 6,  rot: -6 },
-    { kind: 'note', tone: 'yellow', text: "the family office is the new pe — quietly, then suddenly.", src: 'swan memo', x: 38, y: 2, rot: 4 },
-    { kind: 'card', text: "being the youngest in the room is a superpower if you use it right.", src: 'gen-z book', x: 64, y: 8, rot: -3 },
-    { kind: 'polaroid', cap: 'drafts & daydreams', tag: 'photo 2', x: 22, y: 30, rot: 5 },
-    { kind: 'note', tone: 'pink', text: "capital follows conviction, but conviction has to be written down first.", src: 'field notes', x: 50, y: 36, rot: -6 },
-    { kind: 'polaroid', cap: 'tsundoku', tag: 'photo 3', x: 2,  y: 56, rot: 3 },
-    { kind: 'note', tone: 'blue', text: "i think more clearly with a cursor blinking at me.", src: '— r.g.', x: 30, y: 62, rot: 6 },
-    { kind: 'polaroid', cap: 'home, for now', tag: 'photo 4', x: 60, y: 58, rot: -4 },
-    { kind: 'note', tone: 'cream', text: "build the room you wished existed when you were sixteen.", src: 'barnard, 2024', x: 12, y: 84, rot: -2 }
+    { kind: 'note', tone: 'wine', size: 'lg', text: "the family office is the new pe — quietly, then suddenly.", src: 'swan memo', x: 38, y: 1, rot: 5 },
+    { kind: 'polaroid', size: 'md', src: FABRIC, cap: 'soho fabric runs', x: 2,  y: 4,  rot: -7 },
+    { kind: 'note', tone: 'rose', size: 'sm', text: "call mom. send draft.", src: 'todo', x: 70, y: 16, rot: -5 },
+    { kind: 'card', size: 'md', text: "being the youngest in the room is a superpower if you use it right.", src: 'gen-z book', x: 18, y: 28, rot: 4 },
+    { kind: 'note', tone: 'sage', size: 'md', torn: true, text: "capital follows conviction, but conviction has to be written down first.", src: 'field notes', x: 50, y: 32, rot: -3 },
+    { kind: 'polaroid', size: 'sm', src: PJ, cap: 'amsterdam mornings', x: 76, y: 36, rot: 6 },
+    { kind: 'scribble', text: '!! follow up w/ jaipur', color: 'accent', x: 4, y: 52, rot: -8 },
+    { kind: 'note', tone: 'terracotta', size: 'md', text: "every drop should feel like the artisan's name is on it. because it is.", src: 'indiya, draft', x: 28, y: 56, rot: 3 },
+    { kind: 'card', size: 'sm', text: "i think more clearly with a cursor blinking at me.", src: '— r.g.', x: 60, y: 60, rot: 7 },
+    { kind: 'note', tone: 'oat', size: 'sm', torn: true, text: "build the room you wished existed when you were sixteen.", src: 'barnard 2024', x: 8, y: 80, rot: -4 },
+    { kind: 'note', tone: 'mustard', size: 'sm', text: "chai. always chai.", src: '!', x: 70, y: 84, rot: 9 }
   ];
   var deskW = desk.clientWidth;
   var isNarrow = deskW < 540;
-  function buildPolaroid(item) { var fig = document.createElement('figure'); fig.className = 'desk-item polaroid'; var f = document.createElement('div'); f.className = 'frame'; f.textContent = item.tag; fig.appendChild(f); var c = document.createElement('figcaption'); c.className = 'cap'; c.textContent = item.cap; fig.appendChild(c); return fig; }
-  function buildNote(item) { var n = document.createElement('div'); n.className = 'desk-item note ' + item.tone; var t = document.createElement('div'); t.textContent = item.text; var s = document.createElement('span'); s.className = 'src'; s.textContent = item.src; n.appendChild(t); n.appendChild(s); return n; }
-  function buildCard(item) { var n = document.createElement('div'); n.className = 'desk-item card'; var t = document.createElement('div'); t.textContent = item.text; var s = document.createElement('span'); s.className = 'src'; s.textContent = item.src; n.appendChild(t); n.appendChild(s); return n; }
+  function buildPolaroid(item) { var fig = document.createElement('figure'); fig.className = 'desk-item polaroid ' + item.size; var img = document.createElement('img'); img.src = item.src; img.alt = item.cap; img.loading = 'lazy'; fig.appendChild(img); var c = document.createElement('figcaption'); c.className = 'cap'; c.textContent = item.cap; fig.appendChild(c); return fig; }
+  function buildNote(item) { var n = document.createElement('div'); n.className = 'desk-item note ' + item.size + ' ' + item.tone + (item.torn ? ' torn' : ''); var t = document.createElement('div'); t.textContent = item.text; var s = document.createElement('span'); s.className = 'src'; s.textContent = item.src; n.appendChild(t); n.appendChild(s); return n; }
+  function buildCard(item) { var n = document.createElement('div'); n.className = 'desk-item card ' + item.size; var t = document.createElement('div'); t.textContent = item.text; var s = document.createElement('span'); s.className = 'src'; s.textContent = item.src; n.appendChild(t); n.appendChild(s); return n; }
+  function buildScribble(item) { var n = document.createElement('div'); n.className = 'desk-item scribble'; n.textContent = item.text; return n; }
   var nodes = [];
   items.forEach(function (item, i) {
-    var el = item.kind === 'polaroid' ? buildPolaroid(item) : item.kind === 'note' ? buildNote(item) : buildCard(item);
+    var el = item.kind === 'polaroid' ? buildPolaroid(item) : item.kind === 'note' ? buildNote(item) : item.kind === 'card' ? buildCard(item) : buildScribble(item);
     var x = item.x, y = item.y;
-    if (isNarrow) { x = (i % 2 === 0) ? 4 : 46; y = Math.floor(i / 2) * 16 + 2; }
-    el.style.left = x + '%';
-    el.style.top = y + '%';
+    if (isNarrow) { x = (i % 2 === 0) ? 2 : 50; y = Math.floor(i / 2) * 14 + 1; }
+    el.style.left = x + '%'; el.style.top = y + '%';
     el.style.setProperty('--rot', item.rot + 'deg');
     var fromX = (Math.random() < 0.5 ? -1 : 1) * (40 + Math.random() * 30);
     var fromY = -(60 + Math.random() * 60);
     var fromR = (Math.random() < 0.5 ? -1 : 1) * (25 + Math.random() * 35);
-    el.style.setProperty('--fx', fromX + 'vw');
-    el.style.setProperty('--fy', fromY + 'vh');
-    el.style.setProperty('--fr', fromR + 'deg');
+    el.style.setProperty('--fx', fromX + 'vw'); el.style.setProperty('--fy', fromY + 'vh'); el.style.setProperty('--fr', fromR + 'deg');
     el.style.zIndex = String(i + 1);
-    desk.appendChild(el);
-    nodes.push(el);
+    desk.appendChild(el); nodes.push(el);
   });
-  function trigger() { nodes.forEach(function (el, i) { setTimeout(function () { el.classList.add('settled'); }, 250 + i * 130); }); }
-  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    nodes.forEach(function (el) { el.classList.add('settled'); });
-    return;
-  }
+  function trigger() { nodes.forEach(function (el, i) { setTimeout(function () { el.classList.add('settled'); }, 200 + i * 110); }); }
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { nodes.forEach(function (el) { el.classList.add('settled'); }); return; }
   setTimeout(trigger, 600);
 })();
 
-// --- side rail active link ---
 (function () {
   var links = Array.prototype.slice.call(document.querySelectorAll('.navlink'));
   if (!('IntersectionObserver' in window) || !links.length) return;
-  var byId = {};
-  links.forEach(function (l) { byId[l.getAttribute('href')] = l; });
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
       if (e.isIntersecting) {
         links.forEach(function (l) { l.classList.remove('active'); });
-        var l = byId['#' + e.target.id];
-        if (l) l.classList.add('active');
+        var matches = links.filter(function (l) { return l.getAttribute('href') === '#' + e.target.id; });
+        matches.forEach(function (l) { l.classList.add('active'); });
       }
     });
   }, { rootMargin: '-30% 0px -55% 0px', threshold: 0 });
-  ['about','writing','books','favorites','guestbook'].forEach(function (id) {
-    var s = document.getElementById(id);
-    if (s) io.observe(s);
-  });
+  ['about','writing','books','design','favorites','guestbook'].forEach(function (id) { var s = document.getElementById(id); if (s) io.observe(s); });
 })();
 
-// --- guestbook (localStorage; TODO: wire to backend) ---
 (function () {
   var KEY = 'rg_guestbook_v1';
   var body = document.getElementById('gb-body');
@@ -494,63 +368,21 @@ body {
   var btn = document.getElementById('gb-add');
   var counter = document.getElementById('gb-count');
   if (!body || !input || !btn) return;
-
   var seedEntries = [
     { ts: Date.parse('2026-04-12T08:30:00Z'), text: "obsessed with the polaroid notes — stealing the energy. xx" },
     { ts: Date.parse('2026-04-15T14:21:00Z'), text: "finally a personal site that doesn't read like a resume" },
     { ts: Date.parse('2026-04-22T19:05:00Z'), text: "send the brewing community link when it's live!" }
   ];
-
-  function load() {
-    try {
-      var raw = localStorage.getItem(KEY);
-      if (!raw) {
-        localStorage.setItem(KEY, JSON.stringify(seedEntries));
-        return seedEntries.slice();
-      }
-      var arr = JSON.parse(raw);
-      return Array.isArray(arr) ? arr : seedEntries.slice();
-    } catch (_) { return seedEntries.slice(); }
-  }
+  function load() { try { var raw = localStorage.getItem(KEY); if (!raw) { localStorage.setItem(KEY, JSON.stringify(seedEntries)); return seedEntries.slice(); } var arr = JSON.parse(raw); return Array.isArray(arr) ? arr : seedEntries.slice(); } catch (_) { return seedEntries.slice(); } }
   function save(arr) { try { localStorage.setItem(KEY, JSON.stringify(arr)); } catch (_) {} }
-
-  function fmt(ts) {
-    var d = new Date(ts);
-    var pad = function (n) { return n < 10 ? '0' + n : '' + n; };
-    return '[' + pad(d.getMonth() + 1) + '/' + pad(d.getDate()) + '/' + d.getFullYear() + ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes()) + ']';
-  }
-
+  function fmt(ts) { var d = new Date(ts); var pad = function (n) { return n < 10 ? '0' + n : '' + n; }; return '[' + pad(d.getMonth() + 1) + '/' + pad(d.getDate()) + '/' + d.getFullYear() + ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes()) + ']'; }
   function render() {
     var entries = load().slice().sort(function (a, b) { return b.ts - a.ts; });
     body.innerHTML = '';
-    entries.forEach(function (e, i) {
-      var n = entries.length - i;
-      var wrap = document.createElement('div');
-      wrap.className = 'notepad-entry';
-      var meta = document.createElement('div');
-      meta.className = 'meta';
-      meta.textContent = fmt(e.ts) + ' Entry #' + n;
-      var txt = document.createElement('div');
-      txt.className = 'body';
-      txt.textContent = e.text;
-      wrap.appendChild(meta); wrap.appendChild(txt);
-      body.appendChild(wrap);
-    });
+    entries.forEach(function (e, i) { var n = entries.length - i; var w = document.createElement('div'); w.className = 'notepad-entry'; var m = document.createElement('div'); m.className = 'meta'; m.textContent = fmt(e.ts) + ' Entry #' + n; var t = document.createElement('div'); t.className = 'body'; t.textContent = e.text; w.appendChild(m); w.appendChild(t); body.appendChild(w); });
   }
-
   input.addEventListener('input', function () { counter.textContent = String(input.value.length); });
-
-  btn.addEventListener('click', function () {
-    var text = input.value.trim();
-    if (!text) return;
-    var arr = load();
-    arr.push({ ts: Date.now(), text: text });
-    save(arr);
-    input.value = ''; counter.textContent = '0';
-    render();
-    body.scrollTop = 0;
-  });
-
+  btn.addEventListener('click', function () { var text = input.value.trim(); if (!text) return; var arr = load(); arr.push({ ts: Date.now(), text: text }); save(arr); input.value = ''; counter.textContent = '0'; render(); body.scrollTop = 0; });
   render();
 })();
 </script>
