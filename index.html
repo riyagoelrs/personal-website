@@ -9,140 +9,112 @@
 <meta property="og:description" content="writer, builder, investor. new york city.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Kalam:wght@300;400&family=Inter:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Kalam:wght@300;400;700&family=Kantumruy+Pro:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
   --paper: #f7f5e8;
+  --paper-2: #efe9d4;
   --ink: #1a1410;
-  --ink-soft: #4a3f33;
-  --ink-faint: #8a7a64;
-  --rule: #d8cfb8;
-  --accent: #6e1811;
-  --accent-soft: #9c3a2a;
-  --tape: rgba(220, 198, 138, 0.55);
-  --note-terracotta: #d4896b;
-  --note-rose: #e6b8b0;
-  --note-sage: #b8c4a0;
-  --note-oat: #ebe0c4;
-  --note-wine: #8a3a30;
-  --note-mustard: #d4a850;
+  --ink-soft: #5a4a3a;
+  --ink-faint: #9a8a72;
+  --rule: #d8cdb0;
+  --wine: #6e1811;
+  --wine-soft: #9c3b2a;
+  --terracotta: #c97a4f;
+  --sage: #8a9b7a;
+  --rose: #d4a5a0;
+  --oat: #d8c8a8;
+  --tape: rgba(110, 24, 17, 0.18);
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --paper: #14110d;
-    --ink: #ebe2d0;
-    --ink-soft: #b5a98f;
-    --ink-faint: #6b6051;
-    --rule: #3a3225;
-    --accent: #d4896b;
-    --accent-soft: #e6b8b0;
-    --tape: rgba(180, 150, 90, 0.4);
+    --paper: #1a1410;
+    --paper-2: #251c16;
+    --ink: #f0e8d4;
+    --ink-soft: #c8b89a;
+    --ink-faint: #7a6a52;
+    --rule: #3a2e22;
+    --wine: #d4564a;
+    --wine-soft: #e8a87c;
   }
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 16px; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
-body { font-family: 'Courier Prime', ui-monospace, monospace; background: var(--paper); color: var(--ink); line-height: 1.8; min-height: 100vh; overflow-x: hidden; }
-
+body { font-family: 'Kantumruy Pro', 'Inter', system-ui, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; min-height: 100vh; overflow-x: hidden; }
 .page { display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 64rem; margin: 0 auto; padding: 2rem 1.25rem 5rem; }
-@media (min-width: 880px) { .page { grid-template-columns: 12rem 1fr; gap: 4rem; padding: 3.5rem 2.5rem 6rem; } }
-
+@media (min-width: 880px) { .page { grid-template-columns: 13rem 1fr; gap: 4rem; padding: 3.5rem 2.5rem 6rem; } }
 .rail { display: flex; flex-direction: column; gap: 1rem; }
-.rail .thumb { width: 5.5rem; height: 5.5rem; border-radius: 0.25rem; background-image: url('https://sxhodsrixg8meuri.public.blob.vercel-storage.com/workshop/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.05.17_am-egEt3Yos5R5VN2jdDwULd4oicLVr2V.png'); background-size: cover; background-position: center; }
-.rail .name { font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin-top: 0.25rem; }
-.rail nav { display: flex; flex-direction: column; gap: 0.4rem; margin-top: 0.6rem; }
-.rail nav a { font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-faint); text-decoration: none; transition: color 0.18s; padding: 0.05rem 0; }
+.rail .thumb { width: 5.5rem; height: 5.5rem; border-radius: 0.25rem; background: var(--paper-2) center/cover no-repeat; background-image: url('https://sxhodsrixg8meuri.public.blob.vercel-storage.com/workshop/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.05.17_am-egEt3Yos5R5VN2jdDwULd4oicLVr2V.png'); }
+.rail .name { font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin-top: 0.25rem; font-weight: 600; }
+.rail nav { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.75rem; }
+.rail nav a { font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-faint); text-decoration: none; transition: color 0.18s; padding: 0.1rem 0; font-weight: 500; }
 .rail nav a:hover, .rail nav a.active { color: var(--ink); }
-.rail nav .sub { font-size: 0.7rem; letter-spacing: 0.14em; padding-left: 0.85rem; color: var(--ink-faint); text-transform: none; font-style: italic; }
-.rail nav .sub:hover, .rail nav .sub.active { color: var(--accent); }
+.rail nav .sub { display: flex; flex-direction: column; gap: 0.3rem; padding-left: 0.75rem; margin: 0.15rem 0 0.35rem; }
+.rail nav .sub a { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: none; color: var(--ink-faint); }
 @media (min-width: 880px) { .rail { position: sticky; top: 3.5rem; align-self: start; } }
-
 .col { min-width: 0; }
-.typed-wrap { font-size: 1.02rem; line-height: 1.95; margin-bottom: 2.5rem; min-height: 14rem; max-width: 38rem; }
+.typed-wrap { font-family: 'Courier Prime', monospace; font-size: 1.02rem; line-height: 1.95; margin-bottom: 2.5rem; min-height: 14rem; max-width: 38rem; }
 .typed-wrap p { margin-bottom: 1rem; }
-.typed-wrap p:last-child { margin-bottom: 0; }
-.typed-wrap a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--rule); }
-.typed-wrap a:hover { border-bottom-color: var(--accent); color: var(--accent-soft); }
-
+.typed-wrap a { color: var(--wine); text-decoration: none; border-bottom: 1px solid var(--rule); }
+.typed-wrap a:hover { border-bottom-color: var(--wine); color: var(--wine-soft); }
 .cursor { display: inline-block; width: 0.55ch; height: 1.05em; background: var(--ink); vertical-align: text-bottom; margin-left: 1px; animation: blink 1s step-end infinite; }
 .cursor.hidden { display: none; }
 @keyframes blink { 50% { opacity: 0; } }
-
+@media (min-width: 600px) { .typed-wrap { font-size: 1.08rem; } }
 .desk-wrap { margin-top: 1rem; padding-top: 1.5rem; border-top: 1px dashed var(--rule); }
 .desk-label { font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1rem; }
-.desk { position: relative; width: 100%; height: 38rem; perspective: 800px; }
-@media (min-width: 600px) { .desk { height: 42rem; } }
+.desk { position: relative; width: 100%; height: 36rem; perspective: 800px; }
+@media (min-width: 600px) { .desk { height: 40rem; } }
 .desk-item { position: absolute; opacity: 0; will-change: transform, opacity; }
 .desk-item.settled { animation: drop 1.1s cubic-bezier(0.2, 0.8, 0.3, 1) forwards; }
-@keyframes drop {
-  0% { opacity: 0; transform: translate3d(var(--fx, 0), var(--fy, -120vh), 0) rotate(var(--fr, -40deg)) scale(0.85); }
-  60% { opacity: 1; }
-  100% { opacity: 1; transform: translate3d(0, 0, 0) rotate(var(--rot, 0deg)) scale(1); }
-}
-
-.polaroid { background: #fbfaf2; padding: 0.55rem 0.55rem 1.4rem; box-shadow: 0 6px 18px rgba(110, 24, 17, 0.18), 0 1px 2px rgba(0,0,0,0.1); }
+@keyframes drop { 0% { opacity: 0; transform: translate3d(var(--fx, 0), var(--fy, -120vh), 0) rotate(var(--fr, -40deg)) scale(0.85); } 60% { opacity: 1; } 100% { opacity: 1; transform: translate3d(0, 0, 0) rotate(var(--rot, 0deg)) scale(1); } }
+.polaroid { background: #fbfaf6; padding: 0.55rem 0.55rem 1.4rem; box-shadow: 0 8px 22px rgba(0,0,0,0.22), 0 1px 2px rgba(0,0,0,0.1); }
 .polaroid.sm { width: 7.5rem; }
 .polaroid.md { width: 9.5rem; }
 .polaroid.lg { width: 11.5rem; }
-.polaroid img { display: block; width: 100%; aspect-ratio: 1 / 1.05; object-fit: cover; filter: saturate(0.92) contrast(0.97); }
-.polaroid .frame { display: flex; align-items: center; justify-content: center; width: 100%; aspect-ratio: 1 / 1.05; background-image: linear-gradient(135deg, #ece5d3 25%, #e3dac4 25%, #e3dac4 50%, #ece5d3 50%, #ece5d3 75%, #e3dac4 75%); background-size: 14px 14px; color: #9d8f76; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; }
-.polaroid .cap { font-family: 'Caveat', cursive; font-size: 1rem; color: #1a1410; text-align: center; margin-top: 0.45rem; line-height: 1.1; }
+.polaroid img { display: block; width: 100%; height: 8.5rem; object-fit: cover; filter: saturate(0.96) contrast(0.98); }
+.polaroid.sm img { height: 7rem; }
+.polaroid.lg img { height: 10.5rem; }
+.polaroid .cap { font-family: 'Caveat', cursive; font-size: 1.1rem; color: #1a1410; text-align: center; margin-top: 0.45rem; line-height: 1.1; }
 .polaroid::before { content: ''; position: absolute; top: -0.4rem; left: 50%; transform: translateX(-50%) rotate(-3deg); width: 2.6rem; height: 0.65rem; background: var(--tape); }
-
-.note { font-family: 'Kalam', cursive; line-height: 1.35; color: #1a1410; box-shadow: 0 4px 12px rgba(110,24,17,0.14); position: relative; padding: 0.85rem 0.9rem 1rem; }
-.note.sm { width: 8rem; font-size: 0.82rem; }
-.note.md { width: 10.5rem; font-size: 0.92rem; }
-.note.lg { width: 13rem; font-size: 1rem; padding: 1rem 1.1rem 1.2rem; }
-.note.terracotta { background: var(--note-terracotta); }
-.note.rose { background: var(--note-rose); }
-.note.sage { background: var(--note-sage); }
-.note.oat { background: var(--note-oat); }
-.note.wine { background: var(--note-wine); color: #f7f5e8; }
-.note.mustard { background: var(--note-mustard); }
-.note.torn { clip-path: polygon(2% 5%, 8% 0%, 18% 4%, 30% 1%, 45% 5%, 60% 0%, 78% 4%, 92% 1%, 100% 6%, 98% 30%, 100% 55%, 96% 78%, 100% 96%, 88% 100%, 70% 97%, 55% 100%, 38% 96%, 22% 100%, 6% 97%, 0% 88%, 3% 60%, 0% 35%, 2% 5%); }
-.note .src { display: block; margin-top: 0.5rem; font-family: 'Courier Prime', monospace; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(26, 20, 16, 0.55); }
-.note.wine .src { color: rgba(247, 245, 232, 0.7); }
-.note::before { content: ''; position: absolute; top: -0.4rem; left: 50%; transform: translateX(-50%) rotate(-2deg); width: 2.8rem; height: 0.6rem; background: var(--tape); }
-.note.torn::before { display: none; }
-
-.card { padding: 0.9rem 1rem 1.05rem 1.4rem; background: #fbfaf2; font-family: 'Kalam', cursive; line-height: 1.4; color: #1a1410; box-shadow: 0 4px 12px rgba(110,24,17,0.14); background-image: repeating-linear-gradient(transparent, transparent 1.3rem, rgba(110, 24, 17, 0.18) 1.3rem, rgba(110, 24, 17, 0.2) 1.32rem), linear-gradient(to right, transparent 1rem, rgba(110, 24, 17, 0.5) 1rem, rgba(110, 24, 17, 0.5) 1.04rem, transparent 1.04rem); }
-.card.sm { width: 9rem; font-size: 0.82rem; }
-.card.md { width: 11.5rem; font-size: 0.92rem; }
-.card .src { display: block; margin-top: 0.4rem; font-family: 'Courier Prime', monospace; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(26, 20, 16, 0.55); }
-
-.scribble { font-family: 'Caveat', cursive; font-size: 1.1rem; color: var(--accent); transform-origin: center; padding: 0.3rem 0.5rem; line-height: 1.1; }
-
+.note { padding: 0.85rem 0.9rem 1rem; font-family: 'Kalam', cursive; line-height: 1.35; color: #1a1410; box-shadow: 0 4px 14px rgba(0,0,0,0.16), 0 1px 1px rgba(0,0,0,0.08); position: relative; }
+.note.sticky { background: var(--oat); width: 9rem; font-size: 0.88rem; }
+.note.sticky-sm { background: var(--rose); width: 7rem; font-size: 0.82rem; padding: 0.6rem 0.7rem 0.75rem; }
+.note.lined { background: #fbfaf6; width: 12rem; font-size: 0.95rem; padding: 0.9rem 1rem 1.05rem 1.4rem; background-image: repeating-linear-gradient(transparent, transparent 1.3rem, rgba(110, 24, 17, 0.18) 1.3rem, rgba(110, 24, 17, 0.18) 1.32rem), linear-gradient(to right, transparent 1rem, rgba(200, 80, 80, 0.5) 1rem, rgba(200, 80, 80, 0.5) 1.04rem, transparent 1.04rem); }
+.note.torn { background: var(--sage); width: 10rem; font-size: 0.9rem; clip-path: polygon(0 4%, 8% 0, 22% 5%, 38% 1%, 55% 4%, 72% 0, 88% 6%, 100% 2%, 98% 95%, 90% 100%, 75% 96%, 60% 100%, 42% 96%, 25% 100%, 10% 96%, 2% 100%); }
+.note.craft { background: var(--terracotta); color: #f7f5e8; width: 8.5rem; font-size: 0.85rem; }
+.note .src { display: block; margin-top: 0.5rem; font-family: 'Courier Prime', monospace; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.7; }
+.note::before { content: ''; position: absolute; top: -0.45rem; left: 50%; transform: translateX(-50%) rotate(-2deg); width: 3rem; height: 0.7rem; background: var(--tape); }
+.scribble { font-family: 'Caveat', cursive; font-size: 1.4rem; color: var(--wine); width: 6rem; line-height: 1; transform-origin: center; }
 .section { margin-top: 4rem; max-width: 38rem; scroll-margin-top: 3rem; }
-.section h2 { font-family: 'Inter', system-ui, sans-serif; font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink); font-weight: 600; margin-bottom: 1.25rem; }
+.section h2 { font-family: 'Kantumruy Pro', sans-serif; font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink); font-weight: 700; margin-bottom: 1.25rem; }
 .section ul { list-style: disc; padding-left: 1.1rem; display: flex; flex-direction: column; gap: 0.45rem; }
 .section li { font-size: 0.95rem; line-height: 1.55; color: var(--ink); }
 .section li .desc { color: var(--ink-soft); }
-.section a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; transition: color 0.18s, text-decoration-color 0.18s; }
-.section a:hover { color: var(--accent); text-decoration-color: var(--accent); }
-.section .empty { color: var(--ink-faint); font-style: italic; font-size: 0.88rem; }
-
-.subhead { font-family: 'Inter', sans-serif; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink); font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.7rem; }
-.subhead:first-child { margin-top: 0; }
-
-#design .hero { margin-bottom: 1.5rem; position: relative; }
-#design .hero img { width: 100%; max-width: 38rem; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 2px; box-shadow: 0 8px 28px rgba(110, 24, 17, 0.25); }
-#design .hero .cap { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1rem; color: var(--ink-soft); margin-top: 0.5rem; }
-#design .brandcard { padding: 1.4rem 1.5rem; background: var(--accent); color: #f7f5e8; margin-top: 1.25rem; max-width: 38rem; }
-#design .brandcard .label { font-family: 'Inter', sans-serif; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.8; margin-bottom: 0.4rem; }
-#design .brandcard .name { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; line-height: 1.1; margin-bottom: 0.6rem; }
-#design .brandcard p { font-size: 0.92rem; line-height: 1.55; opacity: 0.92; }
-#design .brandcard a { color: #f7f5e8; text-decoration: underline; text-decoration-color: rgba(247,245,232,0.5); }
-#design .brandcard a:hover { text-decoration-color: #f7f5e8; }
-
+.section a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; transition: text-decoration-color 0.18s, color 0.18s; }
+.section a:hover { color: var(--wine); text-decoration-color: var(--wine); }
+.section .empty { color: var(--ink-faint); font-style: italic; font-size: 0.9rem; }
+.fav-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+@media (min-width: 600px) { .fav-grid { grid-template-columns: 1fr 1fr; } }
+.fav-block h3 { font-family: 'Kantumruy Pro', sans-serif; font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink); font-weight: 700; margin-bottom: 0.6rem; }
+.fav-block ul { list-style: disc; padding-left: 1.1rem; display: flex; flex-direction: column; gap: 0.3rem; }
+.fav-block li { font-size: 0.92rem; color: var(--ink); }
+.design-hero { display: grid; grid-template-columns: 1fr; gap: 1.25rem; margin-bottom: 1.25rem; }
+@media (min-width: 600px) { .design-hero { grid-template-columns: 14rem 1fr; align-items: start; } }
+.design-hero img { width: 100%; height: auto; display: block; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+.design-hero .copy { font-size: 0.95rem; line-height: 1.6; color: var(--ink-soft); }
+.design-hero .copy strong { color: var(--ink); font-weight: 600; }
+.design-hero .copy a { color: var(--wine); }
 #guestbook { margin-top: 4.5rem; max-width: 42rem; }
 #guestbook .lead { font-size: 0.95rem; color: var(--ink-soft); margin-bottom: 1.25rem; }
-.notepad { background: #c0c0c0; border: 2px solid; border-color: #ffffff #808080 #808080 #ffffff; font-family: 'Courier Prime', 'Courier New', monospace; color: #000; box-shadow: 1px 1px 0 #404040; }
+.notepad { background: #c0c0c0; border: 2px solid; border-color: #ffffff #808080 #808080 #ffffff; font-family: 'Courier Prime', monospace; color: #000; box-shadow: 1px 1px 0 #404040; }
 .notepad-title { background: linear-gradient(to right, #0a246a, #a6caf0); color: #fff; padding: 0.25rem 0.5rem; font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 600; display: flex; align-items: center; justify-content: space-between; }
 .notepad-title .name-bar { display: flex; align-items: center; gap: 0.4rem; }
-.notepad-title .icon { width: 0.95rem; height: 0.95rem; background: #fff; border: 1px solid #555; display: inline-block; }
+.notepad-title .icon { width: 0.95rem; height: 0.95rem; background: #fff; border: 1px solid #555; }
 .notepad-title .ctrls { display: flex; gap: 2px; }
 .notepad-title .ctrls span { width: 1rem; height: 0.9rem; background: #c0c0c0; border: 1px solid; border-color: #fff #808080 #808080 #fff; color: #000; font-size: 0.7rem; line-height: 0.85rem; text-align: center; font-family: 'Courier New', monospace; }
 .notepad-menu { background: #c0c0c0; padding: 0.18rem 0.5rem; font-family: 'Inter', sans-serif; font-size: 0.75rem; color: #000; display: flex; gap: 1rem; border-bottom: 1px solid #808080; }
-.notepad-body { background: #ffffff; padding: 0.85rem 1rem; min-height: 16rem; max-height: 26rem; overflow-y: auto; font-size: 0.86rem; line-height: 1.55; color: #000; border: 1px solid; border-color: #808080 #fff #fff #808080; margin: 0.4rem; }
+.notepad-body { background: #fff; padding: 0.85rem 1rem; min-height: 16rem; max-height: 26rem; overflow-y: auto; font-size: 0.86rem; line-height: 1.55; color: #000; border: 1px solid; border-color: #808080 #fff #fff #808080; margin: 0.4rem; }
 .notepad-entry { padding-bottom: 0.85rem; margin-bottom: 0.85rem; border-bottom: 1px dotted #c0c0c0; }
 .notepad-entry:last-child { border-bottom: 0; margin-bottom: 0; }
 .notepad-entry .meta { color: #555; font-size: 0.78rem; margin-bottom: 0.15rem; }
@@ -152,34 +124,31 @@ body { font-family: 'Courier Prime', ui-monospace, monospace; background: var(--
 .notepad-foot { padding: 0.25rem 0.5rem 0.45rem; display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; color: #2a2418; font-family: 'Courier Prime', monospace; }
 .notepad-foot button { background: #c0c0c0; border: 2px solid; border-color: #fff #808080 #808080 #fff; padding: 0.2rem 0.9rem; font-family: 'Inter', sans-serif; font-size: 0.78rem; cursor: pointer; color: #000; }
 .notepad-foot button:active { border-color: #808080 #fff #fff #808080; }
-
 .foot { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); font-size: 0.78rem; color: var(--ink-faint); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
 .foot .left { font-style: italic; color: var(--ink-soft); }
-
 @media (prefers-reduced-motion: reduce) { .cursor { animation: none; } .desk-item { opacity: 1 !important; animation: none !important; transform: rotate(var(--rot, 0deg)) !important; } html { scroll-behavior: auto; } }
 </style>
 </head>
 <body>
 <div class="page">
-
   <aside class="rail">
-    <div class="thumb" aria-label="riya"></div>
+    <div class="thumb" aria-hidden="true"></div>
     <div class="name">riya</div>
     <nav aria-label="sections">
       <a href="#about" class="navlink">about</a>
       <a href="#writing" class="navlink">writing</a>
-      <a href="#writing" class="navlink sub">essays &amp; op-eds</a>
-      <a href="#writing" class="navlink sub">memos</a>
-      <a href="#writing" class="navlink sub">medium</a>
+      <div class="sub">
+        <a href="#writing">essays &amp; op-eds</a>
+        <a href="#writing">medium</a>
+        <a href="#writing">memos</a>
+      </div>
       <a href="#books" class="navlink">books</a>
       <a href="#design" class="navlink">design</a>
       <a href="#favorites" class="navlink">favorites</a>
       <a href="#guestbook" class="navlink">guestbook</a>
     </nav>
   </aside>
-
   <main class="col">
-
     <section id="about">
       <div class="typed-wrap" id="typed" aria-live="polite"></div>
       <div class="desk-wrap">
@@ -187,21 +156,18 @@ body { font-family: 'Courier Prime', ui-monospace, monospace; background: var(--
         <div class="desk" id="desk" aria-label="scrapbook desk"></div>
       </div>
     </section>
-
     <section id="writing" class="section">
       <h2>Writing</h2>
-      <div class="subhead">Essays &amp; Op-Eds</div>
       <ul>
+        <li><a href="#">Essays &amp; Op-Eds</a> <span class="desc empty">(add link)</span></li>
         <li><a href="#">Medium</a> <span class="desc empty">(add link)</span></li>
-        <li><a href="#">Op-eds</a> <span class="desc empty">(add link)</span></li>
       </ul>
-      <div class="subhead">Memos</div>
+      <h2 style="margin-top:2rem">Memos</h2>
       <ul>
         <li><a href="/swan-memo.html">Swan Beauty</a> &mdash; <span class="desc">the family office is the new pe.</span></li>
-        <li><a href="#">More memos</a> <span class="desc empty">(coming)</span></li>
+        <li><a href="#">More memos</a> <span class="desc empty">(coming soon)</span></li>
       </ul>
     </section>
-
     <section id="books" class="section">
       <h2>Books</h2>
       <ul>
@@ -209,173 +175,141 @@ body { font-family: 'Courier Prime', ui-monospace, monospace; background: var(--
         <li><a href="#">Brewing Community</a> &mdash; <span class="desc">the latte effect.</span></li>
       </ul>
     </section>
-
     <section id="design" class="section">
       <h2>Design</h2>
-      <div class="hero">
-        <img src="https://sxhodsrixg8meuri.public.blob.vercel-storage.com/workshop/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.18.47_am-4esuFEHWYuyQb2wWvFoycrkuCl8Top.png" alt="riya block printing in jaipur" />
-        <div class="cap">— jaipur, with the block-printers.</div>
-      </div>
-      <div class="brandcard">
-        <div class="label">founder</div>
-        <div class="name">Indiya NYC</div>
-        <p>sustainable clothing, made for you. limited drops, exclusive designs. research-focused &amp; uplifting artisans. <a href="https://indiyanyc.com" target="_blank" rel="noopener">indiyanyc.com →</a></p>
+      <div class="design-hero">
+        <img src="https://sxhodsrixg8meuri.public.blob.vercel-storage.com/workshop/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.18.47_am-4esuFEHWYuyQb2wWvFoycrkuCl8Top.png" alt="riya block printing in workshop">
+        <div class="copy">
+          <p><strong><a href="https://indiyanyc.com">Indiya NYC</a></strong> &mdash; sustainable clothing, made for you. limited drops, exclusive designs. research focused &amp; uplifting artisans.</p>
+          <p style="margin-top:0.75rem">i co-build the brand &mdash; sourcing block prints from jaipur ateliers, designing the cuts, writing the copy. the photo is me at one of our workshops choosing wood blocks.</p>
+          <p style="margin-top:0.75rem"><a href="https://indiyanyc.com">visit indiyanyc.com &rarr;</a></p>
+        </div>
       </div>
     </section>
-
     <section id="favorites" class="section">
       <h2>Favorites</h2>
-      <div class="subhead">Writers</div>
-      <ul>
-        <li>Joan Didion</li>
-        <li>Zadie Smith</li>
-        <li>Arundhati Roy</li>
-        <li>Jhumpa Lahiri</li>
-        <li>Ottessa Moshfegh</li>
-      </ul>
-      <div class="subhead">Cities</div>
-      <ul>
-        <li>New York</li>
-        <li>Jaipur</li>
-        <li>Delhi</li>
-        <li>Lisbon</li>
-        <li>Mexico City</li>
-      </ul>
-      <div class="subhead">Cafes</div>
-      <ul>
-        <li>Sant Ambroeus in West Village</li>
-        <li>Bluestone Lane in Soho</li>
-        <li>Maman in Tribeca</li>
-        <li>Café Mogador in East Village</li>
-      </ul>
-      <div class="subhead">Reads</div>
-      <ul>
-        <li><span class="desc">Bluets</span> by Maggie Nelson</li>
-        <li><span class="desc">The Year of Magical Thinking</span> by Joan Didion</li>
-        <li><span class="desc">A Little Life</span> by Hanya Yanagihara</li>
-      </ul>
+      <div class="fav-grid">
+        <div class="fav-block">
+          <h3>Writers</h3>
+          <ul><li>Joan Didion</li><li>Zadie Smith</li><li>Jhumpa Lahiri</li><li>Ottessa Moshfegh</li><li>Arundhati Roy</li></ul>
+        </div>
+        <div class="fav-block">
+          <h3>Cities</h3>
+          <ul><li>New York</li><li>Jaipur</li><li>Lisbon</li><li>Mumbai</li><li>Mexico City</li></ul>
+        </div>
+        <div class="fav-block">
+          <h3>Cafes</h3>
+          <ul><li>Devoción in Soho</li><li>Maman on Mulberry</li><li>Sant Ambroeus</li><li>Bluestone Lane</li><li>Café Habana</li></ul>
+        </div>
+        <div class="fav-block">
+          <h3>Reads</h3>
+          <ul><li>The White Album</li><li>The Namesake</li><li>The God of Small Things</li><li>Bel Canto</li><li>The Idiot &mdash; Batuman</li></ul>
+        </div>
+      </div>
+      <p class="desc empty" style="margin-top:1rem">(swap any of these &mdash; placeholders for now)</p>
     </section>
-
     <section id="guestbook" class="section">
       <h2>Guestbook</h2>
       <p class="lead">leave a note, say hi, share a thought :)</p>
       <div class="notepad">
-        <div class="notepad-title">
-          <div class="name-bar"><span class="icon"></span> Guestbook.txt - Notepad</div>
-          <div class="ctrls"><span>_</span><span>□</span><span>×</span></div>
-        </div>
+        <div class="notepad-title"><div class="name-bar"><span class="icon"></span> Guestbook.txt - Notepad</div><div class="ctrls"><span>_</span><span>□</span><span>×</span></div></div>
         <div class="notepad-menu"><span>File</span><span>Edit</span><span>Format</span><span>View</span><span>Help</span></div>
         <div class="notepad-body" id="gb-body"></div>
         <div class="notepad-form"><textarea id="gb-input" maxlength="280" placeholder="Type your message here..."></textarea></div>
         <div class="notepad-foot"><span class="count"><span id="gb-count">0</span>/280</span><button id="gb-add" type="button">Add Entry</button></div>
       </div>
     </section>
-
     <footer class="foot"><div class="left">— riya, new york city</div><div>2026</div></footer>
   </main>
 </div>
-
 <script>
 (function () {
   var target = document.getElementById('typed');
   var paragraphs = [
     ["hi, i'm riya. i write, i build, and right now i'm an investment banking analyst at ", { link: "bank of america", href: "https://www.bankofamerica.com/" }, ", on the consumer & retail team."],
-    ["before this i spent years inside the ", { link: "united nations", href: "https://www.unwomen.org/en" }, ", and founded ", { link: "barnard's first women-focused investment club", href: "https://www.columbiaspectator.com/news/2024/01/31/barnard-investment-group-seeks-to-empower-women-in-finance/" }, " because no one was going to build it for us."],
-    ["i wrote ", { link: "the gen-z book", href: "#books" }, " at eighteen, and i run ", { link: "indiya nyc", href: "#design" }, " — sustainable clothing made with block-printers in jaipur."],
+    ["before this i spent years inside the ", { link: "united nations", href: "https://www.unwomen.org/en" }, " — beijing 25+, generation equality, csw — and founded ", { link: "barnard's first women-focused investment club", href: "https://www.columbiaspectator.com/news/2024/01/31/barnard-investment-group-seeks-to-empower-women-in-finance/" }, " because no one was going to build it for us."],
+    ["i wrote ", { link: "the gen-z book", href: "#books" }, " at eighteen, and a second one called ", { link: "brewing community", href: "#books" }, ". on the side, i co-build ", { link: "indiya nyc", href: "#design" }, " and angel invest in people i've watched build for years."],
     ["the rest of this page is the short version of the longer one."]
   ];
   var pIdx = 0, chunkIdx = 0, cIdx = 0, currentP = null, cursor = null;
-  function ensureCursor() { if (cursor && cursor.parentNode) cursor.parentNode.removeChild(cursor); cursor = document.createElement('span'); cursor.className = 'cursor'; cursor.setAttribute('aria-hidden', 'true'); if (currentP) currentP.appendChild(cursor); }
+  function ensureCursor() { if (cursor && cursor.parentNode) cursor.parentNode.removeChild(cursor); cursor = document.createElement('span'); cursor.className = 'cursor'; if (currentP) currentP.appendChild(cursor); }
   function startNextParagraph() { currentP = document.createElement('p'); target.appendChild(currentP); chunkIdx = 0; cIdx = 0; ensureCursor(); typeChunk(); }
   function typeChunk() {
     var para = paragraphs[pIdx];
     if (chunkIdx >= para.length) { pIdx++; if (pIdx < paragraphs.length) setTimeout(startNextParagraph, 360); else if (cursor) cursor.classList.add('hidden'); return; }
     var chunk = para[chunkIdx];
     if (typeof chunk === 'string') {
-      if (cIdx < chunk.length) { var ch = document.createTextNode(chunk.charAt(cIdx)); currentP.insertBefore(ch, cursor); cIdx++; var delay = 18 + (Math.random() * 26 - 8); var lc = chunk.charAt(cIdx - 1); if (lc === '.' || lc === ',' || lc === '—') delay += 90; setTimeout(typeChunk, delay); }
+      if (cIdx < chunk.length) { var ch = document.createTextNode(chunk.charAt(cIdx)); currentP.insertBefore(ch, cursor); cIdx++; var d = 18 + (Math.random() * 26 - 8); var lc = chunk.charAt(cIdx - 1); if (lc === '.' || lc === ',' || lc === '?' || lc === '—') d += 90; setTimeout(typeChunk, d); }
       else { chunkIdx++; cIdx = 0; setTimeout(typeChunk, 30); }
     } else { var a = document.createElement('a'); a.href = chunk.href; a.textContent = chunk.link; currentP.insertBefore(a, cursor); chunkIdx++; cIdx = 0; setTimeout(typeChunk, 60); }
   }
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    paragraphs.forEach(function (para) { var p = document.createElement('p'); para.forEach(function (chunk) { if (typeof chunk === 'string') p.appendChild(document.createTextNode(chunk)); else { var a = document.createElement('a'); a.href = chunk.href; a.textContent = chunk.link; p.appendChild(a); } }); target.appendChild(p); });
-    return;
+    paragraphs.forEach(function (para) { var p = document.createElement('p'); para.forEach(function (chunk) { if (typeof chunk === 'string') p.appendChild(document.createTextNode(chunk)); else { var a = document.createElement('a'); a.href = chunk.href; a.textContent = chunk.link; p.appendChild(a); } }); target.appendChild(p); }); return;
   }
   startNextParagraph();
 })();
-
 (function () {
   var desk = document.getElementById('desk');
   if (!desk) return;
-  var FABRIC = 'https://sxhodsrixg8meuri.public.blob.vercel-storage.com/workshop/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.05.17_am-egEt3Yos5R5VN2jdDwULd4oicLVr2V.png';
-  var PJ = 'https://sxhodsrixg8meuri.public.blob.vercel-storage.com/workshop/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.07.56_am-NFaJH6hVnYc3UrAKp9XIUpbnj7pLYt.png';
+  var P_FABRIC = 'https://sxhodsrixg8meuri.public.blob.vercel-storage.com/workshop/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.05.17_am-egEt3Yos5R5VN2jdDwULd4oicLVr2V.png';
+  var P_PJ = 'https://sxhodsrixg8meuri.public.blob.vercel-storage.com/workshop/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.07.56_am-NFaJH6hVnYc3UrAKp9XIUpbnj7pLYt.png';
+  var P_BLOCK = 'https://sxhodsrixg8meuri.public.blob.vercel-storage.com/workshop/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.18.47_am-4esuFEHWYuyQb2wWvFoycrkuCl8Top.png';
   var items = [
-    { kind: 'note', tone: 'wine', size: 'lg', text: "the family office is the new pe — quietly, then suddenly.", src: 'swan memo', x: 38, y: 1, rot: 5 },
-    { kind: 'polaroid', size: 'md', src: FABRIC, cap: 'soho fabric runs', x: 2,  y: 4,  rot: -7 },
-    { kind: 'note', tone: 'rose', size: 'sm', text: "call mom. send draft.", src: 'todo', x: 70, y: 16, rot: -5 },
-    { kind: 'card', size: 'md', text: "being the youngest in the room is a superpower if you use it right.", src: 'gen-z book', x: 18, y: 28, rot: 4 },
-    { kind: 'note', tone: 'sage', size: 'md', torn: true, text: "capital follows conviction, but conviction has to be written down first.", src: 'field notes', x: 50, y: 32, rot: -3 },
-    { kind: 'polaroid', size: 'sm', src: PJ, cap: 'amsterdam mornings', x: 76, y: 36, rot: 6 },
-    { kind: 'scribble', text: '!! follow up w/ jaipur', color: 'accent', x: 4, y: 52, rot: -8 },
-    { kind: 'note', tone: 'terracotta', size: 'md', text: "every drop should feel like the artisan's name is on it. because it is.", src: 'indiya, draft', x: 28, y: 56, rot: 3 },
-    { kind: 'card', size: 'sm', text: "i think more clearly with a cursor blinking at me.", src: '— r.g.', x: 60, y: 60, rot: 7 },
-    { kind: 'note', tone: 'oat', size: 'sm', torn: true, text: "build the room you wished existed when you were sixteen.", src: 'barnard 2024', x: 8, y: 80, rot: -4 },
-    { kind: 'note', tone: 'mustard', size: 'sm', text: "chai. always chai.", src: '!', x: 70, y: 84, rot: 9 }
+    { kind: 'polaroid', size: 'lg', cap: 'fabric district', img: P_FABRIC, x: 2,  y: 4,  rot: -7 },
+    { kind: 'note', cls: 'sticky', text: "the family office is the new pe — quietly, then suddenly.", src: 'swan memo', x: 46, y: 2, rot: 4 },
+    { kind: 'note', cls: 'craft', text: "capital follows conviction.", src: 'field notes', x: 73, y: 6, rot: -5 },
+    { kind: 'note', cls: 'lined', text: "being the youngest in the room is a superpower if you use it right.", src: 'gen-z book', x: 38, y: 22, rot: -3 },
+    { kind: 'scribble', text: 'write more!', x: 78, y: 28, rot: -8 },
+    { kind: 'polaroid', size: 'md', cap: 'soho mornings', img: P_PJ, x: 4, y: 38, rot: 6 },
+    { kind: 'note', cls: 'sticky-sm', text: "i think clearly with a cursor blinking.", src: '— r.g.', x: 50, y: 44, rot: 7 },
+    { kind: 'note', cls: 'torn', text: "build the room you wished existed at sixteen.", src: 'barnard ‘24', x: 70, y: 48, rot: -4 },
+    { kind: 'polaroid', size: 'sm', cap: 'jaipur', img: P_BLOCK, x: 28, y: 70, rot: 9 },
+    { kind: 'note', cls: 'sticky', text: "limited drops > infinite scroll.", src: 'indiya nyc', x: 56, y: 76, rot: -6 },
+    { kind: 'scribble', text: 'xoxo', x: 84, y: 78, rot: 12 }
   ];
   var deskW = desk.clientWidth;
   var isNarrow = deskW < 540;
-  function buildPolaroid(item) { var fig = document.createElement('figure'); fig.className = 'desk-item polaroid ' + item.size; var img = document.createElement('img'); img.src = item.src; img.alt = item.cap; img.loading = 'lazy'; fig.appendChild(img); var c = document.createElement('figcaption'); c.className = 'cap'; c.textContent = item.cap; fig.appendChild(c); return fig; }
-  function buildNote(item) { var n = document.createElement('div'); n.className = 'desk-item note ' + item.size + ' ' + item.tone + (item.torn ? ' torn' : ''); var t = document.createElement('div'); t.textContent = item.text; var s = document.createElement('span'); s.className = 'src'; s.textContent = item.src; n.appendChild(t); n.appendChild(s); return n; }
-  function buildCard(item) { var n = document.createElement('div'); n.className = 'desk-item card ' + item.size; var t = document.createElement('div'); t.textContent = item.text; var s = document.createElement('span'); s.className = 'src'; s.textContent = item.src; n.appendChild(t); n.appendChild(s); return n; }
+  function buildPolaroid(item) { var fig = document.createElement('figure'); fig.className = 'desk-item polaroid ' + (item.size || 'md'); var im = document.createElement('img'); im.src = item.img; im.alt = item.cap; im.loading = 'lazy'; fig.appendChild(im); var c = document.createElement('figcaption'); c.className = 'cap'; c.textContent = item.cap; fig.appendChild(c); return fig; }
+  function buildNote(item) { var n = document.createElement('div'); n.className = 'desk-item note ' + item.cls; var t = document.createElement('div'); t.textContent = item.text; var s = document.createElement('span'); s.className = 'src'; s.textContent = item.src; n.appendChild(t); n.appendChild(s); return n; }
   function buildScribble(item) { var n = document.createElement('div'); n.className = 'desk-item scribble'; n.textContent = item.text; return n; }
   var nodes = [];
   items.forEach(function (item, i) {
-    var el = item.kind === 'polaroid' ? buildPolaroid(item) : item.kind === 'note' ? buildNote(item) : item.kind === 'card' ? buildCard(item) : buildScribble(item);
+    var el = item.kind === 'polaroid' ? buildPolaroid(item) : item.kind === 'scribble' ? buildScribble(item) : buildNote(item);
     var x = item.x, y = item.y;
-    if (isNarrow) { x = (i % 2 === 0) ? 2 : 50; y = Math.floor(i / 2) * 14 + 1; }
-    el.style.left = x + '%'; el.style.top = y + '%';
-    el.style.setProperty('--rot', item.rot + 'deg');
-    var fromX = (Math.random() < 0.5 ? -1 : 1) * (40 + Math.random() * 30);
-    var fromY = -(60 + Math.random() * 60);
-    var fromR = (Math.random() < 0.5 ? -1 : 1) * (25 + Math.random() * 35);
-    el.style.setProperty('--fx', fromX + 'vw'); el.style.setProperty('--fy', fromY + 'vh'); el.style.setProperty('--fr', fromR + 'deg');
+    if (isNarrow) { x = (i % 2 === 0) ? 4 : 50; y = Math.floor(i / 2) * 13 + 2; }
+    el.style.left = x + '%'; el.style.top = y + '%'; el.style.setProperty('--rot', item.rot + 'deg');
+    var fx = (Math.random() < 0.5 ? -1 : 1) * (40 + Math.random() * 30);
+    var fy = -(60 + Math.random() * 60);
+    var fr = (Math.random() < 0.5 ? -1 : 1) * (25 + Math.random() * 35);
+    el.style.setProperty('--fx', fx + 'vw'); el.style.setProperty('--fy', fy + 'vh'); el.style.setProperty('--fr', fr + 'deg');
     el.style.zIndex = String(i + 1);
     desk.appendChild(el); nodes.push(el);
   });
-  function trigger() { nodes.forEach(function (el, i) { setTimeout(function () { el.classList.add('settled'); }, 200 + i * 110); }); }
+  function trigger() { nodes.forEach(function (el, i) { setTimeout(function () { el.classList.add('settled'); }, 250 + i * 110); }); }
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { nodes.forEach(function (el) { el.classList.add('settled'); }); return; }
   setTimeout(trigger, 600);
 })();
-
 (function () {
   var links = Array.prototype.slice.call(document.querySelectorAll('.navlink'));
   if (!('IntersectionObserver' in window) || !links.length) return;
+  var byId = {}; links.forEach(function (l) { byId[l.getAttribute('href')] = l; });
   var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting) {
-        links.forEach(function (l) { l.classList.remove('active'); });
-        var matches = links.filter(function (l) { return l.getAttribute('href') === '#' + e.target.id; });
-        matches.forEach(function (l) { l.classList.add('active'); });
-      }
-    });
+    entries.forEach(function (e) { if (e.isIntersecting) { links.forEach(function (l) { l.classList.remove('active'); }); var l = byId['#' + e.target.id]; if (l) l.classList.add('active'); } });
   }, { rootMargin: '-30% 0px -55% 0px', threshold: 0 });
   ['about','writing','books','design','favorites','guestbook'].forEach(function (id) { var s = document.getElementById(id); if (s) io.observe(s); });
 })();
-
 (function () {
   var KEY = 'rg_guestbook_v1';
-  var body = document.getElementById('gb-body');
-  var input = document.getElementById('gb-input');
-  var btn = document.getElementById('gb-add');
-  var counter = document.getElementById('gb-count');
+  var body = document.getElementById('gb-body'), input = document.getElementById('gb-input'), btn = document.getElementById('gb-add'), counter = document.getElementById('gb-count');
   if (!body || !input || !btn) return;
-  var seedEntries = [
+  var seed = [
     { ts: Date.parse('2026-04-12T08:30:00Z'), text: "obsessed with the polaroid notes — stealing the energy. xx" },
     { ts: Date.parse('2026-04-15T14:21:00Z'), text: "finally a personal site that doesn't read like a resume" },
-    { ts: Date.parse('2026-04-22T19:05:00Z'), text: "send the brewing community link when it's live!" }
+    { ts: Date.parse('2026-04-22T19:05:00Z'), text: "the indiya nyc workshop photo — stunning. when's the next drop?" }
   ];
-  function load() { try { var raw = localStorage.getItem(KEY); if (!raw) { localStorage.setItem(KEY, JSON.stringify(seedEntries)); return seedEntries.slice(); } var arr = JSON.parse(raw); return Array.isArray(arr) ? arr : seedEntries.slice(); } catch (_) { return seedEntries.slice(); } }
+  function load() { try { var raw = localStorage.getItem(KEY); if (!raw) { localStorage.setItem(KEY, JSON.stringify(seed)); return seed.slice(); } var arr = JSON.parse(raw); return Array.isArray(arr) ? arr : seed.slice(); } catch (_) { return seed.slice(); } }
   function save(arr) { try { localStorage.setItem(KEY, JSON.stringify(arr)); } catch (_) {} }
-  function fmt(ts) { var d = new Date(ts); var pad = function (n) { return n < 10 ? '0' + n : '' + n; }; return '[' + pad(d.getMonth() + 1) + '/' + pad(d.getDate()) + '/' + d.getFullYear() + ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes()) + ']'; }
+  function fmt(ts) { var d = new Date(ts); var p = function (n) { return n < 10 ? '0' + n : '' + n; }; return '[' + p(d.getMonth() + 1) + '/' + p(d.getDate()) + '/' + d.getFullYear() + ' ' + p(d.getHours()) + ':' + p(d.getMinutes()) + ']'; }
   function render() {
     var entries = load().slice().sort(function (a, b) { return b.ts - a.ts; });
     body.innerHTML = '';
