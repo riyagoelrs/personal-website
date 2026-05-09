@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>writing — riya goel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Kantumruy+Pro:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root { --paper:#f7f5e8; --paper-2:#efe9d4; --ink:#1a1410; --ink-soft:#5a4a3a; --ink-faint:#9a8a72; --rule:#d8cdb0; --wine:#6e1811; --wine-soft:#9c3b2a; }
+@media (prefers-color-scheme: dark){:root{--paper:#1a1410;--paper-2:#251c16;--ink:#f0e8d4;--ink-soft:#c8b89a;--ink-faint:#7a6a52;--rule:#3a2e22;--wine:#d4564a;--wine-soft:#e8a87c;}}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+body{font-family:'Kantumruy Pro',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;min-height:100vh}
+.page{display:grid;grid-template-columns:1fr;gap:2rem;max-width:64rem;margin:0 auto;padding:2rem 1.25rem 4rem}
+@media(min-width:880px){.page{grid-template-columns:13rem 1fr;gap:4rem;padding:3.5rem 2.5rem 5rem}}
+.rail{display:flex;flex-direction:column;gap:1rem}
+.rail .thumb{width:5.5rem;height:5.5rem;border-radius:0.25rem;background:var(--paper-2) center/cover no-repeat;background-image:url('https://sxhodsrixg8meuri.public.blob.vercel-storage.com/workshop/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.05.17_am-egEt3Yos5R5VN2jdDwULd4oicLVr2V.png')}
+.rail .name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink);margin-top:0.4rem;font-weight:500}
+.rail nav{display:flex;flex-direction:column;gap:0.55rem;margin-top:0.85rem}
+.rail nav a{font-family:'Cormorant Garamond',serif;font-size:0.95rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-faint);text-decoration:none;transition:color 0.18s;font-weight:500}
+.rail nav a:hover,.rail nav a.active{color:var(--ink)}
+@media(min-width:880px){.rail{position:sticky;top:3.5rem;align-self:start}}
+.col{min-width:0}
+h1{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:400;letter-spacing:0.02em;margin-bottom:0.5rem}
+.tag{font-family:'Courier Prime',monospace;font-size:0.85rem;color:var(--ink-soft);margin-bottom:2.5rem;font-style:italic}
+h2{font-family:'Kantumruy Pro',sans-serif;font-size:0.78rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink);font-weight:700;margin:2.5rem 0 1.25rem}
+h2:first-of-type{margin-top:0}
+ul{list-style:disc;padding-left:1.1rem;display:flex;flex-direction:column;gap:0.5rem;max-width:38rem}
+li{font-size:0.98rem;line-height:1.55;color:var(--ink)}
+li .desc{color:var(--ink-soft)}
+li .empty{color:var(--ink-faint);font-style:italic;font-size:0.9rem}
+a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:3px;transition:color 0.18s,text-decoration-color 0.18s}
+a:hover{color:var(--wine);text-decoration-color:var(--wine)}
+.foot{margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--rule);font-size:0.78rem;color:var(--ink-faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem}
+.foot .left{font-style:italic;color:var(--ink-soft)}
+</style>
+</head>
+<body>
+<div class="page">
+  <aside class="rail">
+    <div class="thumb" aria-hidden="true"></div>
+    <div class="name">riya</div>
+    <nav>
+      <a href="./">about</a>
+      <a href="./writing.html" class="active">writing</a>
+      <a href="./design.html">design</a>
+      <a href="./favorites.html">favorites</a>
+      <a href="./guestbook.html">guestbook</a>
+    </nav>
+  </aside>
+  <main class="col">
+    <h1>writing</h1>
+    <p class="tag">essays, op-eds, memos, and a couple of books.</p>
+
+    <h2>Essays &amp; Op-Eds</h2>
+    <ul>
+      <li><span class="empty">(add link)</span></li>
+    </ul>
+
+    <h2>Medium</h2>
+    <ul>
+      <li><a href="#">@riyagoel on Medium</a> &mdash; <span class="desc">long-form essays.</span></li>
+    </ul>
+
+    <h2>Memos</h2>
+    <ul>
+      <li><a href="#">Swan Beauty</a> &mdash; <span class="desc">the family office is the new pe.</span></li>
+      <li><a href="#">More memos</a> &mdash; <span class="empty">(coming soon)</span></li>
+    </ul>
+
+    <h2>Books</h2>
+    <ul>
+      <li><a href="#">The Gen-Z Book</a> &mdash; <span class="desc">written at eighteen.</span></li>
+      <li><a href="#">Brewing Community</a> &mdash; <span class="desc">the latte effect.</span></li>
+    </ul>
+
+    <footer class="foot"><div class="left">— riya, new york city</div><div>2026</div></footer>
+  </main>
+</div>
+</body>
+</html>
