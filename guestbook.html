@@ -2,49 +2,48 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>guestbook — riya goel</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Courier+Prime:ital,wght@0,400;0,700&family=Kantumruy+Pro:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400&family=Kantumruy+Pro:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root { --paper: #f7f5e8; --ink: #1a1410; --ink-soft: #5a4a3a; --ink-faint: #9a8a72; --rule: #d8cdb0; --wine: #6e1811; --wine-soft: #9c3b2a; }
-@media (prefers-color-scheme: dark) { :root { --paper: #1a1410; --ink: #f0e8d4; --ink-soft: #c8b89a; --ink-faint: #7a6a52; --rule: #3a2e22; --wine: #d4564a; --wine-soft: #e8a87c; } }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { font-size: 16px; -webkit-font-smoothing: antialiased; }
-body { font-family: 'Kantumruy Pro', system-ui, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; min-height: 100vh; }
-.page { display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 64rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
-@media (min-width: 880px) { .page { grid-template-columns: 13rem 1fr; gap: 4rem; padding: 3.5rem 2.5rem 5rem; } }
-.rail { display: flex; flex-direction: column; gap: 1rem; }
-.rail .thumb { width: 5.5rem; height: 5.5rem; border-radius: 0.25rem; background: center/cover no-repeat url('https://sxhodsrixg8meuri.public.blob.vercel-storage.com/workshop/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.05.17_am-egEt3Yos5R5VN2jdDwULd4oicLVr2V.png'); }
-.rail .name { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); margin-top: 0.4rem; }
-.rail nav { display: flex; flex-direction: column; gap: 0.55rem; margin-top: 0.85rem; }
-.rail nav a { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-faint); text-decoration: none; transition: color 0.18s; }
-.rail nav a:hover, .rail nav a.active { color: var(--ink); }
-@media (min-width: 880px) { .rail { position: sticky; top: 3.5rem; align-self: start; } }
-.col { min-width: 0; max-width: 42rem; }
-.col h1 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 2.2rem; letter-spacing: 0.02em; color: var(--ink); margin-bottom: 0.4rem; }
-.col .lede { font-family: 'Courier Prime', monospace; font-size: 0.95rem; color: var(--ink-soft); margin-bottom: 2rem; max-width: 32rem; }
-.notepad { background: #c0c0c0; border: 2px solid; border-color: #fff #808080 #808080 #fff; font-family: 'Courier Prime', monospace; color: #000; box-shadow: 1px 1px 0 #404040; }
-.notepad-title { background: linear-gradient(to right, #0a246a, #a6caf0); color: #fff; padding: 0.25rem 0.5rem; font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 600; display: flex; align-items: center; justify-content: space-between; }
-.notepad-title .name-bar { display: flex; align-items: center; gap: 0.4rem; }
-.notepad-title .icon { width: 0.95rem; height: 0.95rem; background: #fff; border: 1px solid #555; }
-.notepad-title .ctrls { display: flex; gap: 2px; }
-.notepad-title .ctrls span { width: 1rem; height: 0.9rem; background: #c0c0c0; border: 1px solid; border-color: #fff #808080 #808080 #fff; color: #000; font-size: 0.7rem; line-height: 0.85rem; text-align: center; font-family: 'Courier New', monospace; }
-.notepad-menu { background: #c0c0c0; padding: 0.18rem 0.5rem; font-family: 'Inter', sans-serif; font-size: 0.75rem; color: #000; display: flex; gap: 1rem; border-bottom: 1px solid #808080; }
-.notepad-body { background: #fff; padding: 0.85rem 1rem; min-height: 18rem; max-height: 28rem; overflow-y: auto; font-size: 0.86rem; line-height: 1.55; color: #000; border: 1px solid; border-color: #808080 #fff #fff #808080; margin: 0.4rem; }
-.notepad-entry { padding-bottom: 0.85rem; margin-bottom: 0.85rem; border-bottom: 1px dotted #c0c0c0; }
-.notepad-entry:last-child { border-bottom: 0; margin-bottom: 0; }
-.notepad-entry .meta { color: #555; font-size: 0.78rem; margin-bottom: 0.15rem; }
-.notepad-entry .body { white-space: pre-wrap; word-break: break-word; }
-.notepad-form { padding: 0.4rem; }
-.notepad-form textarea { width: 100%; padding: 0.55rem 0.7rem; font-family: 'Courier Prime', monospace; font-size: 0.86rem; border: 1px solid; border-color: #808080 #fff #fff #808080; background: #fff; resize: vertical; min-height: 3.25rem; color: #000; }
-.notepad-foot { padding: 0.25rem 0.5rem 0.45rem; display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; color: #2a2418; font-family: 'Courier Prime', monospace; }
-.notepad-foot button { background: #c0c0c0; border: 2px solid; border-color: #fff #808080 #808080 #fff; padding: 0.2rem 0.9rem; font-family: 'Inter', sans-serif; font-size: 0.78rem; cursor: pointer; color: #000; }
-.notepad-foot button:active { border-color: #808080 #fff #fff #808080; }
-.note-todo { margin-top: 1rem; font-size: 0.82rem; color: var(--ink-faint); font-style: italic; }
-.foot { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); font-size: 0.78rem; color: var(--ink-faint); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
-.foot .left { font-style: italic; color: var(--ink-soft); }
+:root{--paper:#f7f5e8;--paper-2:#efe9d4;--ink:#1a1410;--ink-soft:#5a4a3a;--ink-faint:#9a8a72;--rule:#d8cdb0;--wine:#6e1811;--wine-soft:#9c3b2a;}
+@media(prefers-color-scheme:dark){:root{--paper:#1a1410;--paper-2:#251c16;--ink:#f0e8d4;--ink-soft:#c8b89a;--ink-faint:#7a6a52;--rule:#3a2e22;--wine:#d4564a;--wine-soft:#e8a87c;}}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;-webkit-font-smoothing:antialiased}
+body{font-family:'Kantumruy Pro',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7}
+.page{display:grid;grid-template-columns:1fr;gap:2rem;max-width:64rem;margin:0 auto;padding:2rem 1.25rem 4rem}
+@media(min-width:880px){.page{grid-template-columns:13rem 1fr;gap:4rem;padding:3.5rem 2.5rem 5rem}}
+.rail{display:flex;flex-direction:column;gap:1rem}
+.rail .thumb{width:5.5rem;height:5.5rem;border-radius:0.25rem;background:var(--paper-2) center/cover no-repeat;background-image:url('https://sxhodsrixg8meuri.public.blob.vercel-storage.com/workshop/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.05.17_am-egEt3Yos5R5VN2jdDwULd4oicLVr2V.png')}
+.rail .name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;letter-spacing:0.06em;text-transform:uppercase;margin-top:0.4rem;font-weight:500}
+.rail nav{display:flex;flex-direction:column;gap:0.55rem;margin-top:0.85rem}
+.rail nav a{font-family:'Cormorant Garamond',serif;font-size:0.95rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-faint);text-decoration:none;font-weight:500}
+.rail nav a:hover,.rail nav a.active{color:var(--ink)}
+@media(min-width:880px){.rail{position:sticky;top:3.5rem;align-self:start}}
+.col{min-width:0}
+h1{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:400;letter-spacing:0.02em;margin-bottom:0.5rem}
+.tag{font-family:'Courier Prime',monospace;font-size:0.85rem;color:var(--ink-soft);margin-bottom:2rem;font-style:italic}
+.notepad{background:#c0c0c0;border:2px solid;border-color:#fff #808080 #808080 #fff;font-family:'Courier Prime',monospace;color:#000;box-shadow:1px 1px 0 #404040;max-width:42rem}
+.notepad-title{background:linear-gradient(to right,#0a246a,#a6caf0);color:#fff;padding:0.25rem 0.5rem;font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:600;display:flex;align-items:center;justify-content:space-between}
+.notepad-title .name-bar{display:flex;align-items:center;gap:0.4rem}
+.notepad-title .icon{width:0.95rem;height:0.95rem;background:#fff;border:1px solid #555}
+.notepad-title .ctrls{display:flex;gap:2px}
+.notepad-title .ctrls span{width:1rem;height:0.9rem;background:#c0c0c0;border:1px solid;border-color:#fff #808080 #808080 #fff;color:#000;font-size:0.7rem;line-height:0.85rem;text-align:center;font-family:'Courier New',monospace}
+.notepad-menu{background:#c0c0c0;padding:0.18rem 0.5rem;font-family:'Inter',sans-serif;font-size:0.75rem;display:flex;gap:1rem;border-bottom:1px solid #808080}
+.notepad-body{background:#fff;padding:0.85rem 1rem;min-height:18rem;max-height:28rem;overflow-y:auto;font-size:0.86rem;line-height:1.55;color:#000;border:1px solid;border-color:#808080 #fff #fff #808080;margin:0.4rem}
+.notepad-entry{padding-bottom:0.85rem;margin-bottom:0.85rem;border-bottom:1px dotted #c0c0c0}
+.notepad-entry:last-child{border-bottom:0;margin-bottom:0}
+.notepad-entry .meta{color:#555;font-size:0.78rem;margin-bottom:0.15rem}
+.notepad-entry .body{white-space:pre-wrap;word-break:break-word}
+.notepad-form{padding:0.4rem}
+.notepad-form textarea{width:100%;padding:0.55rem 0.7rem;font-family:'Courier Prime',monospace;font-size:0.86rem;border:1px solid;border-color:#808080 #fff #fff #808080;background:#fff;resize:vertical;min-height:3.5rem;color:#000}
+.notepad-foot{padding:0.25rem 0.5rem 0.45rem;display:flex;align-items:center;justify-content:space-between;font-size:0.75rem;color:#2a2418;font-family:'Courier Prime',monospace}
+.notepad-foot button{background:#c0c0c0;border:2px solid;border-color:#fff #808080 #808080 #fff;padding:0.2rem 0.9rem;font-family:'Inter',sans-serif;font-size:0.78rem;cursor:pointer;color:#000}
+.notepad-foot button:active{border-color:#808080 #fff #fff #808080}
+.foot{margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--rule);font-size:0.78rem;color:var(--ink-faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem}
+.foot .left{font-style:italic;color:var(--ink-soft)}
 </style>
 </head>
 <body>
@@ -62,8 +61,7 @@ body { font-family: 'Kantumruy Pro', system-ui, sans-serif; background: var(--pa
   </aside>
   <main class="col">
     <h1>guestbook</h1>
-    <p class="lede">leave a note, say hi, share a thought :)</p>
-
+    <p class="tag">leave a note, say hi, share a thought :)</p>
     <div class="notepad">
       <div class="notepad-title"><div class="name-bar"><span class="icon"></span> Guestbook.txt - Notepad</div><div class="ctrls"><span>_</span><span>□</span><span>×</span></div></div>
       <div class="notepad-menu"><span>File</span><span>Edit</span><span>Format</span><span>View</span><span>Help</span></div>
@@ -71,28 +69,24 @@ body { font-family: 'Kantumruy Pro', system-ui, sans-serif; background: var(--pa
       <div class="notepad-form"><textarea id="gb-input" maxlength="280" placeholder="Type your message here..."></textarea></div>
       <div class="notepad-foot"><span class="count"><span id="gb-count">0</span>/280</span><button id="gb-add" type="button">Add Entry</button></div>
     </div>
-
-    <p class="note-todo">stored locally in your browser for now — a real backend's coming.</p>
-
     <footer class="foot"><div class="left">— riya, new york city</div><div>2026</div></footer>
   </main>
 </div>
 <script>
-(function () {
-  var KEY = 'rg_guestbook_v1';
-  var body = document.getElementById('gb-body'), input = document.getElementById('gb-input'), btn = document.getElementById('gb-add'), counter = document.getElementById('gb-count');
-  if (!body || !input || !btn) return;
-  var seed = [
-    { ts: Date.parse('2026-04-12T08:30:00Z'), text: "obsessed with the gallery frames — stealing the energy. xx" },
-    { ts: Date.parse('2026-04-15T14:21:00Z'), text: "finally a personal site that doesn't read like a resume" },
-    { ts: Date.parse('2026-04-22T19:05:00Z'), text: "the indiya nyc workshop photo — stunning. when's the next drop?" }
+(function(){
+  var KEY='rg_guestbook_v1';
+  var body=document.getElementById('gb-body'),input=document.getElementById('gb-input'),btn=document.getElementById('gb-add'),counter=document.getElementById('gb-count');
+  var seed=[
+    {ts:Date.parse('2026-04-12T08:30:00Z'),text:"obsessed with the polaroid notes — stealing the energy. xx"},
+    {ts:Date.parse('2026-04-15T14:21:00Z'),text:"finally a personal site that doesn't read like a resume"},
+    {ts:Date.parse('2026-04-22T19:05:00Z'),text:"the indiya nyc workshop photo — stunning. when's the next drop?"}
   ];
-  function load() { try { var raw = localStorage.getItem(KEY); if (!raw) { localStorage.setItem(KEY, JSON.stringify(seed)); return seed.slice(); } var arr = JSON.parse(raw); return Array.isArray(arr) ? arr : seed.slice(); } catch (_) { return seed.slice(); } }
-  function save(arr) { try { localStorage.setItem(KEY, JSON.stringify(arr)); } catch (_) {} }
-  function fmt(ts) { var d = new Date(ts); var p = function (n) { return n < 10 ? '0' + n : '' + n; }; return '[' + p(d.getMonth() + 1) + '/' + p(d.getDate()) + '/' + d.getFullYear() + ' ' + p(d.getHours()) + ':' + p(d.getMinutes()) + ']'; }
-  function render() { var entries = load().slice().sort(function (a, b) { return b.ts - a.ts; }); body.innerHTML = ''; entries.forEach(function (e, i) { var n = entries.length - i; var w = document.createElement('div'); w.className = 'notepad-entry'; var m = document.createElement('div'); m.className = 'meta'; m.textContent = fmt(e.ts) + ' Entry #' + n; var t = document.createElement('div'); t.className = 'body'; t.textContent = e.text; w.appendChild(m); w.appendChild(t); body.appendChild(w); }); }
-  input.addEventListener('input', function () { counter.textContent = String(input.value.length); });
-  btn.addEventListener('click', function () { var text = input.value.trim(); if (!text) return; var arr = load(); arr.push({ ts: Date.now(), text: text }); save(arr); input.value = ''; counter.textContent = '0'; render(); body.scrollTop = 0; });
+  function load(){try{var raw=localStorage.getItem(KEY);if(!raw){localStorage.setItem(KEY,JSON.stringify(seed));return seed.slice();}var arr=JSON.parse(raw);return Array.isArray(arr)?arr:seed.slice();}catch(_){return seed.slice();}}
+  function save(arr){try{localStorage.setItem(KEY,JSON.stringify(arr));}catch(_){}}
+  function fmt(ts){var d=new Date(ts);var p=function(n){return n<10?'0'+n:''+n;};return '['+p(d.getMonth()+1)+'/'+p(d.getDate())+'/'+d.getFullYear()+' '+p(d.getHours())+':'+p(d.getMinutes())+']';}
+  function render(){var entries=load().slice().sort(function(a,b){return b.ts-a.ts;});body.innerHTML='';entries.forEach(function(e,i){var n=entries.length-i;var w=document.createElement('div');w.className='notepad-entry';var m=document.createElement('div');m.className='meta';m.textContent=fmt(e.ts)+' Entry #'+n;var t=document.createElement('div');t.className='body';t.textContent=e.text;w.appendChild(m);w.appendChild(t);body.appendChild(w);});}
+  input.addEventListener('input',function(){counter.textContent=String(input.value.length);});
+  btn.addEventListener('click',function(){var text=input.value.trim();if(!text)return;var arr=load();arr.push({ts:Date.now(),text:text});save(arr);input.value='';counter.textContent='0';render();body.scrollTop=0;});
   render();
 })();
 </script>
