@@ -3,35 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>riya goel — field notes</title>
+<title>riya goel</title>
 <meta name="description" content="riya goel. writer, builder, investor. new york city.">
 <meta property="og:title" content="riya goel">
 <meta property="og:description" content="writer, builder, investor. new york city.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <style>
 :root {
   --paper: #f7f3ec;
-  --paper-warm: #f0e9dc;
   --ink: #2a2418;
   --ink-soft: #5c5142;
-  --ink-faint: #a89a82;
+  --ink-faint: #9d8f76;
   --rule: #d6c9b2;
   --accent: #9c4221;
   --accent-soft: #c97a4f;
+  --tape: rgba(220, 198, 138, 0.55);
   --max: 38rem;
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --paper: #1a1612;
-    --paper-warm: #221d17;
     --ink: #ebe2d0;
     --ink-soft: #b5a98f;
     --ink-faint: #6b6051;
     --rule: #3a3225;
     --accent: #e8a87c;
     --accent-soft: #c97a4f;
+    --tape: rgba(180, 150, 90, 0.35);
   }
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -40,31 +40,35 @@ body {
   font-family: 'Courier Prime', ui-monospace, 'Courier New', monospace;
   background: var(--paper);
   color: var(--ink);
-  line-height: 1.75;
-  padding: 1.75rem 1.25rem 5rem;
+  line-height: 1.8;
+  padding: 2rem 1.25rem 5rem;
   min-height: 100vh;
 }
 main { max-width: var(--max); margin: 0 auto; }
-.slug {
-  font-size: 0.7rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  margin-bottom: 2.5rem;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-.slug span:last-child { color: var(--ink-soft); }
-.typed-wrap {
-  font-size: 1.05rem;
-  line-height: 1.85;
+
+.name {
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: lowercase;
+  color: var(--ink-soft);
   margin-bottom: 2.75rem;
-  min-height: 9.25rem;
 }
-.typed-wrap p { margin-bottom: 0.85rem; }
+
+.typed-wrap {
+  font-size: 1.02rem;
+  line-height: 1.95;
+  margin-bottom: 3.25rem;
+  min-height: 14rem;
+}
+.typed-wrap p { margin-bottom: 1rem; }
 .typed-wrap p:last-child { margin-bottom: 0; }
+.typed-wrap a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+}
+.typed-wrap a:hover { border-bottom-color: var(--accent); color: var(--accent-soft); }
+
 .cursor {
   display: inline-block;
   width: 0.55ch;
@@ -76,179 +80,218 @@ main { max-width: var(--max); margin: 0 auto; }
 }
 .cursor.hidden { display: none; }
 @keyframes blink { 50% { opacity: 0; } }
-.divider {
-  text-align: center;
-  color: var(--ink-faint);
-  letter-spacing: 0.5em;
-  margin: 2.5rem 0 2rem;
-  font-size: 0.85rem;
+
+.scrapbook {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5rem 1rem;
+  padding: 1.5rem 0 2.5rem;
+  margin-bottom: 2rem;
 }
-.divider::before { content: '— — —'; }
-section { margin-bottom: 2.25rem; }
-h2 {
-  font-size: 0.7rem;
-  letter-spacing: 0.28em;
+.polaroid {
+  background: #fbfaf6;
+  padding: 0.6rem 0.6rem 1.6rem;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.08);
+  position: relative;
+  width: 9.5rem;
+  flex-shrink: 0;
+}
+@media (prefers-color-scheme: dark) {
+  .polaroid { background: #f0e9d8; box-shadow: 0 4px 18px rgba(0,0,0,0.5), 0 1px 2px rgba(0,0,0,0.4); }
+}
+.polaroid:nth-child(1) { transform: rotate(-3.5deg); margin-top: 0.5rem; }
+.polaroid:nth-child(2) { transform: rotate(2.2deg); }
+.polaroid:nth-child(3) { transform: rotate(-1.8deg); margin-top: 0.8rem; }
+.polaroid:nth-child(4) { transform: rotate(3deg); }
+.polaroid img {
+  display: block;
+  width: 100%;
+  height: 8rem;
+  object-fit: cover;
+  background: #ddd5c4;
+  filter: saturate(0.9) contrast(0.96);
+}
+.polaroid .cap {
+  font-family: 'Caveat', cursive;
+  font-size: 1.05rem;
+  color: #2a2418;
+  text-align: center;
+  margin-top: 0.55rem;
+  line-height: 1.1;
+}
+.polaroid::before {
+  content: '';
+  position: absolute;
+  top: -0.45rem;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 2.8rem;
+  height: 0.7rem;
+  background: var(--tape);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+.polaroid:nth-child(2)::before { transform: translateX(-50%) rotate(4deg); }
+.polaroid:nth-child(3)::before { transform: translateX(-50%) rotate(-5deg); }
+.polaroid:nth-child(4)::before { transform: translateX(-50%) rotate(3deg); }
+
+.links {
+  border-top: 1px solid var(--rule);
+  padding-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+.links section { display: flex; flex-direction: column; gap: 0.55rem; }
+.links h2 {
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--ink-faint);
   font-weight: 400;
-  margin-bottom: 1rem;
+  margin-bottom: 0.35rem;
 }
-p { font-size: 0.94rem; color: var(--ink); margin-bottom: 0.85rem; }
-p:last-child { margin-bottom: 0; }
-p.muted { color: var(--ink-soft); }
-.now-list { list-style: none; font-size: 0.92rem; }
-.now-list li {
-  padding: 0.6rem 0;
-  border-bottom: 1px dashed var(--rule);
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-}
-.now-list li:last-child { border-bottom: none; }
-.now-list .when {
-  font-size: 0.7rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.now-list .what { color: var(--ink); }
-.now-list .what em { color: var(--ink-soft); font-style: italic; }
-.also { font-size: 0.9rem; color: var(--ink-soft); line-height: 1.85; }
-.also strong { color: var(--ink); font-weight: 700; }
-.work-list { list-style: none; font-size: 0.92rem; }
-.work-list li { padding: 0.7rem 0; border-bottom: 1px dashed var(--rule); }
-.work-list li:last-child { border-bottom: none; }
-.work-list .work-title { display: block; color: var(--ink); margin-bottom: 0.1rem; }
-.work-list .work-meta { font-size: 0.78rem; color: var(--ink-faint); letter-spacing: 0.05em; }
-a {
-  color: var(--accent);
+.links ul { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+.links li { font-size: 0.95rem; line-height: 1.5; }
+.links li .meta { color: var(--ink-faint); font-size: 0.82rem; margin-left: 0.5rem; }
+.links a {
+  color: var(--ink);
   text-decoration: none;
   border-bottom: 1px solid var(--rule);
   transition: border-color 0.18s, color 0.18s;
 }
-a:hover { border-bottom-color: var(--accent); color: var(--accent-soft); }
-.signoff {
-  margin-top: 3rem;
-  padding-top: 1.75rem;
+.links a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+.foot {
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
   border-top: 1px solid var(--rule);
-  font-size: 0.82rem;
-  color: var(--ink-soft);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.25rem 1.75rem;
-  justify-content: space-between;
-  align-items: baseline;
-}
-.signoff .left { font-style: italic; }
-.signoff nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
-.signoff nav a { color: var(--ink-soft); border-bottom: none; font-size: 0.82rem; }
-.signoff nav a:hover { color: var(--accent); }
-.colophon {
-  margin-top: 2rem;
-  font-size: 0.7rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  font-size: 0.78rem;
   color: var(--ink-faint);
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
+.foot .left { font-style: italic; color: var(--ink-soft); }
+
 @media (min-width: 600px) {
-  body { padding: 3rem 2rem 6rem; }
-  .typed-wrap { font-size: 1.15rem; }
+  body { padding: 3.5rem 2rem 6rem; }
+  .typed-wrap { font-size: 1.1rem; }
+  .polaroid { width: 11rem; }
+  .polaroid img { height: 9rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   .cursor { animation: none; }
+  .polaroid { transform: none !important; }
 }
 </style>
 </head>
 <body>
 <main>
 
-<div class="slug">
-  <span>RIYA GOEL / NEW YORK CITY</span>
-  <span>FIELD NOTES</span>
-</div>
+<div class="name">riya goel</div>
 
 <div class="typed-wrap" id="typed" aria-live="polite"></div>
 
-<div class="divider" aria-hidden="true"></div>
+<div class="scrapbook" aria-label="scrapbook">
+  <figure class="polaroid">
+    <img src="https://files.shapes.inc/api/files/bd3ccd02c2ed1b8743b9ab29e40bb86c25680d75.jpeg" alt="">
+    <figcaption class="cap">soho mornings</figcaption>
+  </figure>
+  <figure class="polaroid">
+    <img src="https://files.shapes.inc/api/files/b870f5893a53b70fe7765be83299ae6ad55f1f55.jpeg" alt="">
+    <figcaption class="cap">drafts &amp; daydreams</figcaption>
+  </figure>
+  <figure class="polaroid">
+    <img src="https://files.shapes.inc/api/files/7c834feefeb4e7054e2406331461531188c7a8b7.png" alt="">
+    <figcaption class="cap">tsundoku</figcaption>
+  </figure>
+  <figure class="polaroid">
+    <img src="https://files.shapes.inc/api/files/88f10c1d64ea6e97694d6a27c52e4f48449b0a95.jpeg" alt="">
+    <figcaption class="cap">home, for now</figcaption>
+  </figure>
+</div>
 
-<section>
-  <h2>now</h2>
-  <ul class="now-list">
-    <li>
-      <span class="when">2025 →</span>
-      <span class="what">investment banking analyst at <strong>bank of america</strong>, consumer &amp; retail. learning the craft of the deal.</span>
-    </li>
-    <li>
-      <span class="when">on the side</span>
-      <span class="what">angel investing. mostly bets on people i've watched build for years.</span>
-    </li>
-    <li>
-      <span class="when">always</span>
-      <span class="what">writing. <em>i think more clearly with a cursor blinking at me.</em></span>
-    </li>
-  </ul>
-</section>
+<div class="links">
 
-<section>
-  <h2>how i got here</h2>
-  <p>i started inside the united nations at sixteen — beijing 25+ task force, generation equality, csw. i learned how institutions breathe, how policy moves from language to lives, and that being the youngest person in the room is a superpower if you use it right.</p>
-  <p>at barnard i studied econ and data science, graduated a semester early, and founded the college's first women-focused investment club because the recruiting process made it painfully clear no one was going to build it for us.</p>
-  <p>now i'm in finance. not because the un work was a phase — because i wanted to learn the side of capital that the rooms i grew up in were always reacting to.</p>
-</section>
+  <section>
+    <h2>writing</h2>
+    <ul>
+      <li><a href="/swan-memo.html">swan beauty — the family office is the new pe</a><span class="meta">deal brief</span></li>
+      <li><a href="#">essays &amp; op-eds</a><span class="meta">add link</span></li>
+      <li><a href="#">medium</a><span class="meta">add link</span></li>
+    </ul>
+  </section>
 
-<section>
-  <h2>selected work</h2>
-  <ul class="work-list">
-    <li>
-      <span class="work-title"><a href="/swan-memo.html">swan beauty — the family office is the new pe</a></span>
-      <span class="work-meta">deal brief · consumer × capital × beauty tech</span>
-    </li>
-    <li>
-      <span class="work-title"><a href="#">the gen-z book</a></span>
-      <span class="work-meta">a book, written when i was 18</span>
-    </li>
-    <li>
-      <span class="work-title"><a href="https://www.columbiaspectator.com/news/2024/01/31/barnard-investment-group-seeks-to-empower-women-in-finance/">columbia spectator profile</a></span>
-      <span class="work-meta">on building a finance club from zero</span>
-    </li>
-    <li>
-      <span class="work-title"><a href="#">essays &amp; op-eds</a></span>
-      <span class="work-meta">on gender, capital, and growing up in public</span>
-    </li>
-  </ul>
-</section>
+  <section>
+    <h2>books</h2>
+    <ul>
+      <li><a href="#">the gen-z book</a><span class="meta">add link</span></li>
+      <li><a href="#">brewing community: the latte effect</a><span class="meta">add link</span></li>
+    </ul>
+  </section>
 
-<section>
-  <h2>also</h2>
-  <p class="also">
-    <strong>davis projects for peace</strong> grant recipient. <strong>athena summer innovation</strong> fellow at barnard. <strong>global innovation fellow</strong> at columbia business school. spoken at <strong>csw</strong> and <strong>we the women</strong>. probably in a café in soho right now.
-  </p>
-</section>
+  <section>
+    <h2>favorites</h2>
+    <ul>
+      <li><a href="#">books i return to</a><span class="meta">coming soon</span></li>
+      <li><a href="#">writers i steal from</a><span class="meta">coming soon</span></li>
+      <li><a href="#">cafes in soho</a><span class="meta">coming soon</span></li>
+    </ul>
+  </section>
 
-<footer class="signoff">
-  <div class="left">— riya</div>
-  <nav>
-    <a href="https://www.linkedin.com/in/riyagoel103">linkedin</a>
-    <a href="https://x.com/riyalityg">twitter</a>
-    <a href="mailto:hello@riya-goel.com">email</a>
-  </nav>
+  <section>
+    <h2>elsewhere</h2>
+    <ul>
+      <li><a href="https://www.linkedin.com/in/riyagoel103">linkedin</a></li>
+      <li><a href="https://x.com/riyalityg">twitter</a></li>
+      <li><a href="mailto:hello@riya-goel.com">email</a><span class="meta">confirm address</span></li>
+    </ul>
+  </section>
+
+</div>
+
+<footer class="foot">
+  <div class="left">— riya, new york city</div>
+  <div>typed, not generated</div>
 </footer>
-
-<div class="colophon">set in courier prime · typed, not generated</div>
 
 </main>
 
 <script>
 (function () {
   var target = document.getElementById('typed');
+  // Bio with inline links. Each "chunk" is either a string (typed char-by-char) or a {link, href} object inserted whole.
   var paragraphs = [
-    "hi, i'm riya. i write, i build, and right now i'm an investment banker in new york.",
-    "before this i spent years at the united nations, founded a finance club at barnard, wrote a book, and did most of my growing up in public.",
-    "this page is the short version. keep scrolling for the longer one."
+    [
+      "hi, i'm riya. i write, i build, and right now i'm an investment banking analyst at ",
+      { link: "bank of america", href: "https://www.bankofamerica.com/" },
+      ", on the consumer & retail team."
+    ],
+    [
+      "before this i spent years inside the ",
+      { link: "united nations", href: "https://www.unwomen.org/en" },
+      " — beijing 25+, generation equality, csw — and founded ",
+      { link: "barnard's first women-focused investment club", href: "https://www.columbiaspectator.com/news/2024/01/31/barnard-investment-group-seeks-to-empower-women-in-finance/" },
+      " because no one was going to build it for us."
+    ],
+    [
+      "i wrote ",
+      { link: "the gen-z book", href: "#" },
+      " at eighteen, and a second one called ",
+      { link: "brewing community", href: "#" },
+      ". on the side, i angel invest in people i've watched build for years."
+    ],
+    [
+      "the rest of this page is the short version of the longer one."
+    ]
   ];
-  var pIdx = 0, cIdx = 0, currentP = null, cursor = null;
-  var typeSpeed = 22, pausePara = 380;
+
+  var pIdx = 0, chunkIdx = 0, cIdx = 0, currentP = null, cursor = null;
+  var typeSpeed = 18, pausePara = 360;
+
   function ensureCursor() {
     if (cursor && cursor.parentNode) cursor.parentNode.removeChild(cursor);
     cursor = document.createElement('span');
@@ -259,33 +302,52 @@ a:hover { border-bottom-color: var(--accent); color: var(--accent-soft); }
   function startNextParagraph() {
     currentP = document.createElement('p');
     target.appendChild(currentP);
-    cIdx = 0;
+    chunkIdx = 0; cIdx = 0;
     ensureCursor();
-    typeChar();
+    typeChunk();
   }
-  function typeChar() {
-    var line = paragraphs[pIdx];
-    if (cIdx < line.length) {
-      var ch = document.createTextNode(line.charAt(cIdx));
-      currentP.insertBefore(ch, cursor);
-      cIdx++;
-      var delay = typeSpeed + (Math.random() * 30 - 10);
-      var lastChar = line.charAt(cIdx - 1);
-      if (lastChar === '.' || lastChar === ',' || lastChar === '?') delay += 90;
-      setTimeout(typeChar, delay);
-    } else {
+  function typeChunk() {
+    var para = paragraphs[pIdx];
+    if (chunkIdx >= para.length) {
       pIdx++;
       if (pIdx < paragraphs.length) {
         setTimeout(startNextParagraph, pausePara);
       } else {
         if (cursor) cursor.classList.add('hidden');
       }
+      return;
+    }
+    var chunk = para[chunkIdx];
+    if (typeof chunk === 'string') {
+      if (cIdx < chunk.length) {
+        var ch = document.createTextNode(chunk.charAt(cIdx));
+        currentP.insertBefore(ch, cursor);
+        cIdx++;
+        var delay = typeSpeed + (Math.random() * 26 - 8);
+        var lastChar = chunk.charAt(cIdx - 1);
+        if (lastChar === '.' || lastChar === ',' || lastChar === '?' || lastChar === '—') delay += 90;
+        setTimeout(typeChunk, delay);
+      } else {
+        chunkIdx++; cIdx = 0;
+        setTimeout(typeChunk, 30);
+      }
+    } else {
+      var a = document.createElement('a');
+      a.href = chunk.href;
+      a.textContent = chunk.link;
+      currentP.insertBefore(a, cursor);
+      chunkIdx++; cIdx = 0;
+      setTimeout(typeChunk, 60);
     }
   }
+
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    paragraphs.forEach(function (txt) {
+    paragraphs.forEach(function (para) {
       var p = document.createElement('p');
-      p.textContent = txt;
+      para.forEach(function (chunk) {
+        if (typeof chunk === 'string') p.appendChild(document.createTextNode(chunk));
+        else { var a = document.createElement('a'); a.href = chunk.href; a.textContent = chunk.link; p.appendChild(a); }
+      });
       target.appendChild(p);
     });
     return;
