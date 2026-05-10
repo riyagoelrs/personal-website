@@ -6,9 +6,9 @@
 <title>design — riya goel</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400&family=Kantumruy+Pro:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Kantumruy+Pro:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#f7f5e8;--paper-2:#efe9d4;--ink:#1a1410;--ink-soft:#5a4a3a;--ink-faint:#9a8a72;--rule:#d8cdb0;--wine:#6e1811;--wine-soft:#9c3b2a;}
+:root{--paper:#f5f0e0;--paper-2:#ede6d0;--ink:#1a1410;--ink-soft:#5a4a3a;--ink-faint:#9a8a72;--rule:#cdc1a4;--wine:#6e1811;--wine-soft:#9c3b2a;--terracotta:#b8633a;--indigo:#2a3656;}
 @media(prefers-color-scheme:dark){:root{--paper:#1a1410;--paper-2:#251c16;--ink:#f0e8d4;--ink-soft:#c8b89a;--ink-faint:#7a6a52;--rule:#3a2e22;--wine:#d4564a;--wine-soft:#e8a87c;}}
 *{box-sizing:border-box;margin:0;padding:0}
 html{font-size:16px;-webkit-font-smoothing:antialiased}
@@ -23,19 +23,36 @@ body{font-family:'Kantumruy Pro',system-ui,sans-serif;background:var(--paper);co
 .rail nav a:hover,.rail nav a.active{color:var(--ink)}
 @media(min-width:880px){.rail{position:sticky;top:3.5rem;align-self:start}}
 .col{min-width:0}
-h1{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:400;letter-spacing:0.02em;margin-bottom:0.5rem}
-.tag{font-family:'Courier Prime',monospace;font-size:0.85rem;color:var(--ink-soft);margin-bottom:2.5rem;font-style:italic}
-.hero{margin-bottom:1.5rem;max-width:38rem}
-.hero img{width:100%;height:auto;display:block;box-shadow:0 8px 24px rgba(0,0,0,0.2)}
-.hero .cap{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.95rem;color:var(--ink-soft);margin-top:0.6rem}
-.brandcard{padding:1.5rem 1.6rem;background:var(--wine);color:#f7f5e8;max-width:38rem;margin-top:1.5rem}
-.brandcard .label{font-family:'Kantumruy Pro',sans-serif;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;opacity:0.8;margin-bottom:0.4rem}
-.brandcard .name-big{font-family:'Cormorant Garamond',serif;font-size:1.9rem;line-height:1.1;margin-bottom:0.7rem}
-.brandcard p{font-size:0.95rem;line-height:1.6;opacity:0.95;margin-bottom:0.6rem}
-.brandcard a{color:#f7f5e8;text-decoration:underline;text-decoration-color:rgba(247,245,232,0.5)}
-.brandcard a:hover{text-decoration-color:#f7f5e8}
-h2{font-family:'Kantumruy Pro',sans-serif;font-size:0.78rem;letter-spacing:0.22em;text-transform:uppercase;font-weight:700;margin:2.5rem 0 1rem}
-p.body{font-size:0.98rem;line-height:1.7;color:var(--ink);max-width:38rem;margin-bottom:1rem}
+h1{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:400;letter-spacing:0.02em;margin-bottom:0.4rem}
+.dateline{font-family:'Courier Prime',monospace;font-size:0.78rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:0.4rem}
+.tag{font-family:'Courier Prime',monospace;font-size:0.9rem;color:var(--ink-soft);margin-bottom:2.5rem;font-style:italic}
+
+.gallery{display:flex;flex-wrap:wrap;gap:2rem 2rem;align-items:flex-end;margin-bottom:2.5rem;max-width:42rem}
+.frame{display:flex;flex-direction:column;align-items:center}
+.frame .matte{padding:0.85rem;background:var(--paper);box-shadow:0 14px 28px -14px rgba(0,0,0,0.35),0 4px 10px rgba(0,0,0,0.12);position:relative;border:1px solid rgba(26,20,16,0.18)}
+.frame .matte::before{content:'';position:absolute;inset:0.4rem;border:1px solid var(--ink);pointer-events:none;opacity:0.85}
+.frame .matte::after{content:'';position:absolute;inset:0.55rem;border:1px solid var(--ink);pointer-events:none;opacity:0.25}
+.frame .matte img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(0.95) contrast(0.97)}
+.frame.lg .matte{width:14rem}.frame.lg .matte img{height:17rem}
+.frame.md .matte{width:11rem}.frame.md .matte img{height:13.5rem}
+.frame .plate{font-family:'Courier Prime',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);text-align:center;margin-top:0.85rem;line-height:1.35}
+.frame .plate em{font-family:'Cormorant Garamond',serif;font-style:italic;text-transform:none;letter-spacing:0.02em;color:var(--ink);display:block;font-size:0.95rem;margin-bottom:0.15rem}
+
+.brand-head{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:500;letter-spacing:0.02em;margin-bottom:0.2rem}
+.brand-sub{font-family:'Courier Prime',monospace;font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:1.25rem}
+.brand-link{display:inline-flex;align-items:baseline;gap:0.45rem;font-family:'Courier Prime',monospace;font-size:0.92rem;letter-spacing:0.06em;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:0.15rem;transition:color 0.18s,border-bottom-color 0.18s;margin-bottom:1.5rem}
+.brand-link:hover{color:var(--wine);border-bottom-color:var(--wine)}
+.brand-link .arrow{font-family:'Cormorant Garamond',serif;font-style:italic}
+
+h2{font-family:'Kantumruy Pro',sans-serif;font-size:0.78rem;letter-spacing:0.22em;text-transform:uppercase;font-weight:700;margin:2.5rem 0 1rem;padding-bottom:0.4rem;border-bottom:1px solid var(--rule)}
+p.body{font-size:0.98rem;line-height:1.75;color:var(--ink);max-width:38rem;margin-bottom:1rem}
+p.body em{color:var(--wine);font-style:italic}
+.pillars{display:grid;grid-template-columns:1fr;gap:1rem;max-width:42rem;margin-bottom:1rem}
+@media(min-width:600px){.pillars{grid-template-columns:1fr 1fr 1fr}}
+.pillar{padding:0.85rem 0.95rem;border:1px solid var(--rule);background:var(--paper-2)}
+.pillar .pn{font-family:'Courier Prime',monospace;font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:0.35rem}
+.pillar .pt{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:var(--ink);line-height:1.35}
+
 .foot{margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--rule);font-size:0.78rem;color:var(--ink-faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem}
 .foot .left{font-style:italic;color:var(--ink-soft)}
 </style>
@@ -55,21 +72,34 @@ p.body{font-size:0.98rem;line-height:1.7;color:var(--ink);max-width:38rem;margin
   </aside>
   <main class="col">
     <h1>design</h1>
-    <p class="tag">made by hand, in jaipur ateliers, for new york.</p>
-    <div class="hero">
-      <img src="https://sxhodsrixg8meuri.public.blob.vercel-storage.com/workshop/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.18.47_am-4esuFEHWYuyQb2wWvFoycrkuCl8Top.png" alt="riya block printing in workshop">
-      <div class="cap">— jaipur, choosing wood blocks at the atelier.</div>
+    <p class="dateline">by riya goel · made by hand, in jaipur ateliers, for new york.</p>
+    <p class="tag">limited drops, traceable artisans, clothes that outlast the season.</p>
+
+    <div class="gallery">
+      <figure class="frame lg">
+        <div class="matte"><img src="https://sxhodsrixg8meuri.public.blob.vercel-storage.com/workshop/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.18.47_am-4esuFEHWYuyQb2wWvFoycrkuCl8Top.png" alt="riya at the jaipur block-printing atelier" loading="lazy"></div>
+        <figcaption class="plate"><em>The Atelier</em>Jaipur · 2024</figcaption>
+      </figure>
+      <figure class="frame md">
+        <div class="matte"><img src="https://sxhodsrixg8meuri.public.blob.vercel-storage.com/workshop/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.05.17_am-egEt3Yos5R5VN2jdDwULd4oicLVr2V.png" alt="fabric district sourcing" loading="lazy"></div>
+        <figcaption class="plate"><em>Sourcing</em>The Fabric District · NYC</figcaption>
+      </figure>
     </div>
-    <div class="brandcard">
-      <div class="label">founder</div>
-      <div class="name-big">Indiya NYC</div>
-      <p>sustainable clothing, made for you.</p>
-      <p>limited drops, exclusive designs.</p>
-      <p>research focused &amp; uplifting artisans.</p>
-      <p style="margin-top:1rem"><a href="https://indiyanyc.com">visit indiyanyc.com &rarr;</a></p>
-    </div>
+
+    <div class="brand-head">Indiya NYC</div>
+    <div class="brand-sub">founder · 2024 &mdash; present</div>
+    <a class="brand-link" href="https://indiyanyc.com" target="_blank" rel="noopener">indiyanyc.com<span class="arrow">&rarr;</span></a>
+
     <h2>About the brand</h2>
-    <p class="body">i co-build indiya nyc &mdash; sourcing block prints from jaipur ateliers, designing the cuts, writing the copy. every piece is a small batch, traceable to the artisan, made to outlast the season.</p>
+    <p class="body">i'm the founder of <em>indiya nyc</em>. i source block prints from jaipur ateliers, design the cuts, write the copy, and ship the orders. every piece is small-batch, traceable to the artisan who made it, and built to outlast the season &mdash; not the algorithm.</p>
+    <p class="body">we're not a brand built on volume. we're a brand built on the slowest, oldest hand in the room.</p>
+
+    <div class="pillars">
+      <div class="pillar"><div class="pn">no. 01</div><div class="pt">made for you, not for the warehouse.</div></div>
+      <div class="pillar"><div class="pn">no. 02</div><div class="pt">limited drops, exclusive designs.</div></div>
+      <div class="pillar"><div class="pn">no. 03</div><div class="pt">research-focused, artisan-uplifting.</div></div>
+    </div>
+
     <footer class="foot"><div class="left">— riya, new york city</div><div>2026</div></footer>
   </main>
 </div>
