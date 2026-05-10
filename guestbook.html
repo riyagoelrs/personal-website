@@ -23,15 +23,26 @@ body{font-family:'Kantumruy Pro',system-ui,sans-serif;background:var(--paper);co
 .rail nav a:hover,.rail nav a.active{color:var(--ink)}
 @media(min-width:880px){.rail{position:sticky;top:3.5rem;align-self:start}}
 .col{min-width:0}
+
 .gb-head{font-family:'Italianno','Mrs Saint Delafield',cursive;font-size:5rem;line-height:1;color:var(--indigo-ink);margin-bottom:0.1rem;letter-spacing:0.01em}
 .gb-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink-soft);margin-bottom:0.6rem}
 .gb-rule{display:flex;align-items:center;gap:0.85rem;color:var(--ink-faint);margin-bottom:2rem;max-width:42rem}
 .gb-rule::before,.gb-rule::after{content:'';flex:1;height:1px;background:var(--rule)}
 .gb-rule .ornament{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.95rem}
-.book{position:relative;max-width:44rem;background:linear-gradient(180deg, rgba(42,54,86,0.02), transparent 30%),repeating-linear-gradient(transparent, transparent 1.95rem, rgba(42,54,86,0.18) 1.95rem, rgba(42,54,86,0.22) 1.97rem),#fbf6e4;border:1px solid var(--rule);box-shadow:0 18px 40px -22px rgba(0,0,0,0.35), 0 4px 14px rgba(0,0,0,0.08);padding:2.25rem 2.4rem 1.75rem 3.4rem;background-attachment:local}
+
+.book{position:relative;max-width:44rem;background:
+  linear-gradient(180deg, rgba(42,54,86,0.02), transparent 30%),
+  repeating-linear-gradient(transparent, transparent 1.95rem, rgba(42,54,86,0.18) 1.95rem, rgba(42,54,86,0.22) 1.97rem),
+  #fbf6e4;
+  border:1px solid var(--rule);
+  box-shadow:0 18px 40px -22px rgba(0,0,0,0.35), 0 4px 14px rgba(0,0,0,0.08);
+  padding:2.25rem 2.4rem 1.75rem 3.4rem;
+  background-attachment:local;
+}
 .book::before{content:'';position:absolute;left:1.85rem;top:0;bottom:0;width:1px;background:var(--wine);opacity:0.55}
 .book-title{font-family:'Italianno',cursive;font-size:1.9rem;color:var(--indigo-ink);text-align:center;margin-bottom:0.4rem;line-height:1}
 .book-byline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.95rem;text-align:center;color:var(--ink-soft);margin-bottom:1.4rem}
+
 .entry{margin-bottom:1.6rem;padding-bottom:1.1rem;border-bottom:1px dashed rgba(42,54,86,0.22)}
 .entry:last-of-type{margin-bottom:0;padding-bottom:0;border-bottom:0}
 .entry .body{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;line-height:1.85;color:var(--ink);white-space:pre-wrap;word-break:break-word}
@@ -39,6 +50,7 @@ body{font-family:'Kantumruy Pro',system-ui,sans-serif;background:var(--paper);co
 .entry .sig{font-family:'Homemade Apple','Caveat',cursive;font-size:1.3rem;color:var(--indigo-ink);line-height:1;letter-spacing:0.01em}
 .entry .when{font-family:'Courier Prime',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-faint)}
 .entry.empty{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ink-faint);text-align:center;padding:0.5rem 0}
+
 .compose{margin-top:2rem;max-width:44rem;background:var(--paper-2);border:1px solid var(--rule);padding:1.25rem 1.4rem 1.4rem;position:relative}
 .compose::before{content:'~ leave a note ~';position:absolute;top:-0.7rem;left:50%;transform:translateX(-50%);background:var(--paper);padding:0 0.8rem;font-family:'Italianno',cursive;font-size:1.4rem;color:var(--indigo-ink);line-height:1}
 .compose .row{display:flex;gap:0.75rem;margin-bottom:0.75rem;flex-wrap:wrap}
@@ -51,6 +63,7 @@ body{font-family:'Kantumruy Pro',system-ui,sans-serif;background:var(--paper);co
 .compose .count{font-family:'Courier Prime',monospace;font-size:0.72rem;color:var(--ink-faint);letter-spacing:0.1em}
 .compose button{font-family:'Italianno',cursive;font-size:1.55rem;color:var(--indigo-ink);background:transparent;border:1px solid var(--indigo-ink);padding:0.15rem 1.1rem 0.25rem;cursor:pointer;line-height:1;letter-spacing:0.02em;transition:background 0.18s,color 0.18s}
 .compose button:hover{background:var(--indigo-ink);color:var(--paper)}
+
 .foot{margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--rule);font-size:0.78rem;color:var(--ink-faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem}
 .foot .left{font-style:italic;color:var(--ink-soft)}
 </style>
@@ -73,30 +86,64 @@ body{font-family:'Kantumruy Pro',system-ui,sans-serif;background:var(--paper);co
     <div class="gb-head">guestbook</div>
     <div class="gb-sub">— a place to leave a note, a thought, a kindness.</div>
     <div class="gb-rule"><span class="ornament">~ please sign &amp; date your entry ~</span></div>
+
     <section class="book">
       <div class="book-title">visitors' book</div>
       <div class="book-byline">no. 1 &mdash; the riya goel residence, new york</div>
       <div id="gb-list"></div>
     </section>
+
     <section class="compose">
-      <div class="row"><div><label for="gb-name">your name</label><input id="gb-name" type="text" maxlength="60" placeholder="who's signing?" autocomplete="name"></div></div>
-      <div><label for="gb-msg">your note</label><textarea id="gb-msg" maxlength="320" placeholder="say something kind, something true."></textarea></div>
-      <div class="foot-row" style="margin-top:0.75rem"><span class="count"><span id="gb-count">0</span>/320</span><button id="gb-add" type="button">sign the book</button></div>
+      <div class="row">
+        <div>
+          <label for="gb-name">your name</label>
+          <input id="gb-name" type="text" maxlength="60" placeholder="who's signing?" autocomplete="name">
+        </div>
+      </div>
+      <div>
+        <label for="gb-msg">your note</label>
+        <textarea id="gb-msg" maxlength="320" placeholder="say something kind, something true."></textarea>
+      </div>
+      <div class="foot-row" style="margin-top:0.75rem">
+        <span class="count"><span id="gb-count">0</span>/320</span>
+        <button id="gb-add" type="button">sign the book</button>
+      </div>
     </section>
+
     <footer class="foot"><div class="left">— riya, new york city</div><div>2026</div></footer>
   </main>
 </div>
 <script>
 (function(){
   var KEY='rg_guestbook_v2';
-  var list=document.getElementById('gb-list'),name=document.getElementById('gb-name'),msg=document.getElementById('gb-msg'),btn=document.getElementById('gb-add'),counter=document.getElementById('gb-count');
-  var seed=[{ts:Date.parse('2026-04-12T08:30:00Z'),name:'noor',text:"obsessed with the gallery wall — stealing the energy. xx"},{ts:Date.parse('2026-04-15T14:21:00Z'),name:'a friend from cambridge',text:"finally a personal site that doesn't read like a resume."},{ts:Date.parse('2026-04-22T19:05:00Z'),name:'devan',text:"the indiya nyc atelier photo — stunning. when's the next drop?"}];
-  function load(){try{var raw=localStorage.getItem(KEY);if(!raw){localStorage.setItem(KEY,JSON.stringify(seed));return seed.slice();}var arr=JSON.parse(raw);return Array.isArray(arr)?arr:seed.slice();}catch(_){return seed.slice();}}
+  var list=document.getElementById('gb-list'),
+      name=document.getElementById('gb-name'),
+      msg=document.getElementById('gb-msg'),
+      btn=document.getElementById('gb-add'),
+      counter=document.getElementById('gb-count');
+  var seed=[
+    {ts:Date.parse('2026-04-12T08:30:00Z'), name:'noor', text:"obsessed with the gallery wall — stealing the energy. xx"},
+    {ts:Date.parse('2026-04-15T14:21:00Z'), name:'a friend from cambridge', text:"finally a personal site that doesn't read like a resume."},
+    {ts:Date.parse('2026-04-22T19:05:00Z'), name:'devan', text:"the indiya nyc atelier photo — stunning. when's the next drop?"}
+  ];
+  function load(){try{var raw=localStorage.getItem(KEY); if(!raw){localStorage.setItem(KEY,JSON.stringify(seed));return seed.slice();} var arr=JSON.parse(raw); return Array.isArray(arr)?arr:seed.slice();}catch(_){return seed.slice();}}
   function save(arr){try{localStorage.setItem(KEY,JSON.stringify(arr));}catch(_){}}
   function fmt(ts){var d=new Date(ts);var months=['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];return months[d.getMonth()]+' '+d.getDate()+', '+d.getFullYear();}
-  function render(){var entries=load().slice().sort(function(a,b){return b.ts-a.ts;});list.innerHTML='';if(!entries.length){var e=document.createElement('div');e.className='entry empty';e.textContent='— no entries yet. be the first to sign. —';list.appendChild(e);return;}entries.forEach(function(e){var w=document.createElement('div');w.className='entry';var b=document.createElement('div');b.className='body';b.textContent='\u201c'+e.text+'\u201d';var sl=document.createElement('div');sl.className='sig-line';var s=document.createElement('div');s.className='sig';s.textContent='— '+(e.name||'a visitor');var w2=document.createElement('div');w2.className='when';w2.textContent=fmt(e.ts);sl.appendChild(s);sl.appendChild(w2);w.appendChild(b);w.appendChild(sl);list.appendChild(w);});}
+  function render(){
+    var entries=load().slice().sort(function(a,b){return b.ts-a.ts;});
+    list.innerHTML='';
+    if(!entries.length){var e=document.createElement('div'); e.className='entry empty'; e.textContent='— no entries yet. be the first to sign. —'; list.appendChild(e); return;}
+    entries.forEach(function(e){
+      var w=document.createElement('div'); w.className='entry';
+      var b=document.createElement('div'); b.className='body'; b.textContent='“'+e.text+'”';
+      var sl=document.createElement('div'); sl.className='sig-line';
+      var s=document.createElement('div'); s.className='sig'; s.textContent='— '+(e.name||'a visitor');
+      var w2=document.createElement('div'); w2.className='when'; w2.textContent=fmt(e.ts);
+      sl.appendChild(s); sl.appendChild(w2); w.appendChild(b); w.appendChild(sl); list.appendChild(w);
+    });
+  }
   msg.addEventListener('input',function(){counter.textContent=String(msg.value.length);});
-  btn.addEventListener('click',function(){var text=msg.value.trim();var who=(name.value||'').trim();if(!text)return;var arr=load();arr.push({ts:Date.now(),name:who||'a visitor',text:text});save(arr);msg.value='';name.value='';counter.textContent='0';render();});
+  btn.addEventListener('click',function(){var text=msg.value.trim(); var who=(name.value||'').trim(); if(!text)return; var arr=load(); arr.push({ts:Date.now(), name:who||'a visitor', text:text}); save(arr); msg.value=''; name.value=''; counter.textContent='0'; render();});
   render();
 })();
 </script>
