@@ -30,7 +30,15 @@ body{font-family:'Kantumruy Pro',system-ui,sans-serif;background:var(--paper);co
 .gb-rule::before,.gb-rule::after{content:'';flex:1;height:1px;background:var(--rule)}
 .gb-rule .ornament{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.95rem}
 
-.book{position:relative;max-width:44rem;background:linear-gradient(180deg,rgba(42,54,86,0.02),transparent 30%),repeating-linear-gradient(transparent,transparent 1.95rem,rgba(42,54,86,0.18) 1.95rem,rgba(42,54,86,0.22) 1.97rem),#fbf6e4;border:1px solid var(--rule);box-shadow:0 18px 40px -22px rgba(0,0,0,0.35),0 4px 14px rgba(0,0,0,0.08);padding:2.25rem 2.4rem 1.75rem 3.4rem;background-attachment:local}
+.book{position:relative;max-width:44rem;background:
+  linear-gradient(180deg, rgba(42,54,86,0.02), transparent 30%),
+  repeating-linear-gradient(transparent, transparent 1.95rem, rgba(42,54,86,0.18) 1.95rem, rgba(42,54,86,0.22) 1.97rem),
+  #fbf6e4;
+  border:1px solid var(--rule);
+  box-shadow:0 18px 40px -22px rgba(0,0,0,0.35), 0 4px 14px rgba(0,0,0,0.08);
+  padding:2.25rem 2.4rem 1.75rem 3.4rem;
+  background-attachment:local;
+}
 .book::before{content:'';position:absolute;left:1.85rem;top:0;bottom:0;width:1px;background:var(--wine);opacity:0.55}
 .book-title{font-family:'Italianno',cursive;font-size:1.9rem;color:var(--indigo-ink);text-align:center;margin-bottom:0.4rem;line-height:1}
 .book-byline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.95rem;text-align:center;color:var(--ink-soft);margin-bottom:1.4rem}
@@ -107,18 +115,34 @@ body{font-family:'Kantumruy Pro',system-ui,sans-serif;background:var(--paper);co
 <script>
 (function(){
   var KEY='rg_guestbook_v2';
-  var list=document.getElementById('gb-list'),name=document.getElementById('gb-name'),msg=document.getElementById('gb-msg'),btn=document.getElementById('gb-add'),counter=document.getElementById('gb-count');
+  var list=document.getElementById('gb-list'),
+      name=document.getElementById('gb-name'),
+      msg=document.getElementById('gb-msg'),
+      btn=document.getElementById('gb-add'),
+      counter=document.getElementById('gb-count');
   var seed=[
-    {ts:Date.parse('2026-04-12T08:30:00Z'),name:'noor',text:"obsessed with the gallery wall — stealing the energy. xx"},
-    {ts:Date.parse('2026-04-15T14:21:00Z'),name:'a friend from cambridge',text:"finally a personal site that doesn't read like a resume."},
-    {ts:Date.parse('2026-04-22T19:05:00Z'),name:'devan',text:"the indiya nyc atelier photo — stunning. when's the next drop?"}
+    {ts:Date.parse('2026-04-12T08:30:00Z'), name:'noor', text:"obsessed with the gallery wall — stealing the energy. xx"},
+    {ts:Date.parse('2026-04-15T14:21:00Z'), name:'a friend from cambridge', text:"finally a personal site that doesn't read like a resume."},
+    {ts:Date.parse('2026-04-22T19:05:00Z'), name:'devan', text:"the indiya nyc atelier photo — stunning. when's the next drop?"}
   ];
-  function load(){try{var raw=localStorage.getItem(KEY);if(!raw){localStorage.setItem(KEY,JSON.stringify(seed));return seed.slice();}var arr=JSON.parse(raw);return Array.isArray(arr)?arr:seed.slice();}catch(_){return seed.slice();}}
+  function load(){try{var raw=localStorage.getItem(KEY); if(!raw){localStorage.setItem(KEY,JSON.stringify(seed));return seed.slice();} var arr=JSON.parse(raw); return Array.isArray(arr)?arr:seed.slice();}catch(_){return seed.slice();}}
   function save(arr){try{localStorage.setItem(KEY,JSON.stringify(arr));}catch(_){}}
   function fmt(ts){var d=new Date(ts);var months=['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];return months[d.getMonth()]+' '+d.getDate()+', '+d.getFullYear();}
-  function render(){var entries=load().slice().sort(function(a,b){return b.ts-a.ts;});list.innerHTML='';if(!entries.length){var e=document.createElement('div');e.className='entry empty';e.textContent='— no entries yet. be the first to sign. —';list.appendChild(e);return;}entries.forEach(function(e){var w=document.createElement('div');w.className='entry';var b=document.createElement('div');b.className='body';b.textContent='\u201c'+e.text+'\u201d';var sl=document.createElement('div');sl.className='sig-line';var s=document.createElement('div');s.className='sig';s.textContent='— '+(e.name||'a visitor');var w2=document.createElement('div');w2.className='when';w2.textContent=fmt(e.ts);sl.appendChild(s);sl.appendChild(w2);w.appendChild(b);w.appendChild(sl);list.appendChild(w);});}
+  function render(){
+    var entries=load().slice().sort(function(a,b){return b.ts-a.ts;});
+    list.innerHTML='';
+    if(!entries.length){var e=document.createElement('div'); e.className='entry empty'; e.textContent='— no entries yet. be the first to sign. —'; list.appendChild(e); return;}
+    entries.forEach(function(e){
+      var w=document.createElement('div'); w.className='entry';
+      var b=document.createElement('div'); b.className='body'; b.textContent='“'+e.text+'”';
+      var sl=document.createElement('div'); sl.className='sig-line';
+      var s=document.createElement('div'); s.className='sig'; s.textContent='— '+(e.name||'a visitor');
+      var w2=document.createElement('div'); w2.className='when'; w2.textContent=fmt(e.ts);
+      sl.appendChild(s); sl.appendChild(w2); w.appendChild(b); w.appendChild(sl); list.appendChild(w);
+    });
+  }
   msg.addEventListener('input',function(){counter.textContent=String(msg.value.length);});
-  btn.addEventListener('click',function(){var text=msg.value.trim();var who=(name.value||'').trim();if(!text)return;var arr=load();arr.push({ts:Date.now(),name:who||'a visitor',text:text});save(arr);msg.value='';name.value='';counter.textContent='0';render();});
+  btn.addEventListener('click',function(){var text=msg.value.trim(); var who=(name.value||'').trim(); if(!text)return; var arr=load(); arr.push({ts:Date.now(), name:who||'a visitor', text:text}); save(arr); msg.value=''; name.value=''; counter.textContent='0'; render();});
   render();
 })();
 </script>
