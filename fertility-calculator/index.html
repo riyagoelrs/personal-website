@@ -8,57 +8,117 @@
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <style>
-body{margin:0;background:#FAF7F2;font-family:Georgia,serif;color:#2A2420}button{cursor:pointer}.wrap{max-width:900px;margin:0 auto;padding:40px}.card{background:white;border:1px solid #E8E0D8;border-radius:6px;padding:28px;margin-top:24px}.hero{font-size:56px;font-weight:300;line-height:1.05}.accent{color:#C9897A;font-style:italic}.btn{background:#2A2420;color:#fff;border:none;padding:16px 24px;border-radius:4px;font-size:15px}.result{font-size:48px;color:#C9897A;font-weight:300}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.input{width:100%;padding:12px;border:1px solid #E8E0D8;background:#FAF7F2}.small{font-size:12px;color:#8B817A;line-height:1.7}
+body{margin:0;background:#FAF7F2;font-family:Georgia,serif;color:#2A2420}*{box-sizing:border-box}.wrap{max-width:1200px;margin:0 auto;padding:40px}.layout{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:start}.card{background:white;border:1px solid #E8E0D8;border-radius:6px;overflow:hidden}.section{padding:32px;border-bottom:1px solid #E8E0D8}.hero{font-size:72px;font-weight:300;line-height:1.05;max-width:700px}.accent{color:#C9897A;font-style:italic}.btn{background:#2A2420;color:#fff;border:none;padding:18px 24px;border-radius:4px;font-size:15px;width:100%}.result{font-size:54px;color:#E8C4B8;font-weight:300}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.input,.select{width:100%;padding:14px;border:1px solid #E8E0D8;background:#FAF7F2;border-radius:4px;font-size:16px}.small{font-size:13px;color:#8B817A;line-height:1.7;font-family:sans-serif}.label{font-size:13px;font-weight:600;margin-bottom:8px;font-family:sans-serif}.sectiontitle{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#8B817A;margin-bottom:24px;font-family:monospace}.pillwrap{display:flex;gap:10px;flex-wrap:wrap}.pill{padding:10px 14px;border:1px solid #E8E0D8;background:#FAF7F2;border-radius:4px;cursor:pointer;font-size:13px;font-family:sans-serif}.active{background:#F5EBE8;border-color:#C9897A;color:#7A3B3B}.sidebar{position:sticky;top:30px;background:#2A2420;color:white;border-radius:6px;overflow:hidden}.sidepad{padding:28px;border-bottom:1px solid rgba(255,255,255,.08)}@media(max-width:900px){.layout{grid-template-columns:1fr}.hero{font-size:54px}}
 </style>
 </head>
 <body>
 <div id="root"></div>
 <script type="text/babel">
 const {useState}=React;
+function Pill({active,onClick,label}){return <button className={active?'pill active':'pill'} onClick={onClick}>{label}</button>}
 function App(){
+const [procedure,setProcedure]=useState('freeze');
 const [cycles,setCycles]=useState(1);
 const [storage,setStorage]=useState(5);
+const [insurance,setInsurance]=useState('employer');
+const [benefits,setBenefits]=useState('none');
+const [sperm,setSperm]=useState('partner');
 const [result,setResult]=useState(null);
 const calculate=()=>{
-const total=(16500*cycles)+(600*storage);
-setResult(total);
+let total=(16500*cycles)+(600*storage);
+if(procedure==='ivf') total+=12000;
+if(procedure==='both') total+=22000;
+if(sperm==='donor') total+=1500;
+if(benefits==='full') total*=0.35;
+if(benefits==='partial') total*=0.65;
+setResult(Math.round(total));
 }
-return (
-<div className='wrap'>
-<div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
-<div style={{fontSize:28,fontWeight:300}}>fern</div>
-<div style={{fontSize:11,letterSpacing:'0.2em',textTransform:'uppercase',color:'#8B817A'}}>Fertility Finance</div>
+return <div className='wrap'>
+<div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:60}}>
+<div style={{fontSize:30,fontWeight:300}}>fern</div>
+<div style={{fontSize:11,letterSpacing:'0.2em',textTransform:'uppercase',color:'#8B817A'}}>Fertility Finance · Beta</div>
 </div>
-<div style={{marginTop:60}}>
-<div style={{fontSize:11,letterSpacing:'0.2em',textTransform:'uppercase',color:'#C9897A',marginBottom:16}}>Know your real number</div>
-<div className='hero'>What will fertility <span className='accent'>actually cost you?</span></div>
-<p className='small' style={{maxWidth:540,marginTop:24}}>Estimate egg freezing and IVF costs, insurance gaps, storage fees, and financing scenarios.</p>
+<div style={{marginBottom:60}}>
+<div style={{fontSize:11,letterSpacing:'0.2em',textTransform:'uppercase',color:'#C9897A',marginBottom:18}}>Know your real number</div>
+<div className='hero'>What will fertility actually <span className='accent'>cost you?</span></div>
+<p className='small' style={{maxWidth:620,fontSize:18,marginTop:24}}>Insurance coverage for egg freezing and IVF is a black box. We decode your plan, your state's mandate coverage, and what you'll actually owe — then show you how to finance it.</p>
 </div>
+<div className='layout'>
 <div className='card'>
+<div className='section'>
+<div className='sectiontitle'>About You</div>
 <div className='grid'>
-<div>
-<label>Egg Freezing Cycles</label>
-<input className='input' type='range' min='1' max='4' value={cycles} onChange={(e)=>setCycles(Number(e.target.value))} />
-<div>{cycles} cycle(s)</div>
+<div><div className='label'>Age</div><input className='input' defaultValue='27' /></div>
+<div><div className='label'>Annual Income</div><input className='input' defaultValue='95000' /></div>
 </div>
-<div>
-<label>Years of Storage</label>
-<input className='input' type='range' min='1' max='10' value={storage} onChange={(e)=>setStorage(Number(e.target.value))} />
-<div>{storage} years</div>
+<div style={{marginTop:18}}><div className='label'>State of Residence</div><select className='select'><option>Select state</option><option>New York</option><option>California</option><option>New Jersey</option></select></div>
+</div>
+<div className='section'>
+<div className='sectiontitle'>Your Procedure</div>
+<div className='label'>What are you planning?</div>
+<div className='pillwrap'>
+<Pill label='Egg Freezing' active={procedure==='freeze'} onClick={()=>setProcedure('freeze')} />
+<Pill label='IVF' active={procedure==='ivf'} onClick={()=>setProcedure('ivf')} />
+<Pill label='Freeze + IVF Later' active={procedure==='both'} onClick={()=>setProcedure('both')} />
+</div>
+<div style={{marginTop:24}}>
+<div className='label'>Number of cycles</div>
+<input type='range' min='1' max='4' value={cycles} onChange={e=>setCycles(Number(e.target.value))} style={{width:'100%'}} />
+<div className='small'>{cycles} cycle(s)</div>
+</div>
+<div style={{marginTop:24}}>
+<div className='label'>Years of storage</div>
+<input type='range' min='1' max='10' value={storage} onChange={e=>setStorage(Number(e.target.value))} style={{width:'100%'}} />
+<div className='small'>{storage} years</div>
 </div>
 </div>
-<button className='btn' style={{marginTop:24}} onClick={calculate}>Calculate Costs →</button>
-{result && (
-<div style={{marginTop:40,paddingTop:24,borderTop:'1px solid #E8E0D8'}}>
-<div style={{fontSize:12,letterSpacing:'0.2em',textTransform:'uppercase',color:'#8B817A'}}>Estimated Out-of-Pocket</div>
-<div className='result'>${result.toLocaleString()}</div>
-<p className='small'>Includes retrieval, medications, monitoring, and storage assumptions.</p>
+<div className='section'>
+<div className='sectiontitle'>Insurance</div>
+<div className='label'>Coverage type</div>
+<div className='pillwrap'>
+<Pill label='Employer Plan' active={insurance==='employer'} onClick={()=>setInsurance('employer')} />
+<Pill label='Marketplace' active={insurance==='market'} onClick={()=>setInsurance('market')} />
+<Pill label='None' active={insurance==='none'} onClick={()=>setInsurance('none')} />
 </div>
-)}
+<div style={{marginTop:24}}>
+<div className='label'>Fertility benefits in your plan?</div>
+<div className='pillwrap'>
+<Pill label='Full Coverage' active={benefits==='full'} onClick={()=>setBenefits('full')} />
+<Pill label='Partial' active={benefits==='partial'} onClick={()=>setBenefits('partial')} />
+<Pill label='No Benefits' active={benefits==='none'} onClick={()=>setBenefits('none')} />
 </div>
 </div>
-)
-}
+</div>
+<div className='section'>
+<div className='sectiontitle'>Partner / Sperm</div>
+<div className='pillwrap'>
+<Pill label='Partner' active={sperm==='partner'} onClick={()=>setSperm('partner')} />
+<Pill label='Donor Bank' active={sperm==='donor'} onClick={()=>setSperm('donor')} />
+<Pill label='N/A' active={sperm==='na'} onClick={()=>setSperm('na')} />
+</div>
+<div style={{marginTop:28}}>
+<button className='btn' onClick={calculate}>Calculate My Costs →</button>
+</div>
+</div>
+</div>
+<div className='sidebar'>
+<div className='sidepad'>
+<div style={{fontSize:10,letterSpacing:'0.2em',textTransform:'uppercase',color:'rgba(255,255,255,.4)',marginBottom:12}}>Your Estimate</div>
+<div style={{fontSize:24,fontWeight:300,marginBottom:22}}>{procedure==='freeze'?'Egg Freezing':procedure==='ivf'?'IVF':'Freeze + IVF Later'}</div>
+<div style={{fontSize:12,letterSpacing:'0.15em',textTransform:'uppercase',color:'rgba(255,255,255,.4)',marginBottom:10}}>Estimated Out-of-Pocket</div>
+<div className='result'>${result?result.toLocaleString():'—'}</div>
+</div>
+<div className='sidepad'>
+<div className='small' style={{color:'rgba(255,255,255,.7)'}}>Includes medications, monitoring, retrieval procedures, storage assumptions, and financing projections.</div>
+</div>
+<div className='sidepad'>
+<div style={{fontSize:12,color:'rgba(255,255,255,.5)',marginBottom:10}}>Potential Monthly Financing</div>
+<div style={{display:'flex',justifyContent:'space-between',marginBottom:8}}><span>36 mo plan</span><span>${result?Math.round(result/36):0}/mo</span></div>
+<div style={{display:'flex',justifyContent:'space-between'}}><span>60 mo plan</span><span>${result?Math.round(result/60):0}/mo</span></div>
+</div>
+</div>
+</div>
+</div>}
 ReactDOM.createRoot(document.getElementById('root')).render(<App />)
 </script>
 </body>
