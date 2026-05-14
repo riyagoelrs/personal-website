@@ -8,117 +8,72 @@
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <style>
-body{margin:0;background:#FAF7F2;font-family:Georgia,serif;color:#2A2420}*{box-sizing:border-box}.wrap{max-width:1200px;margin:0 auto;padding:40px}.layout{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:start}.card{background:white;border:1px solid #E8E0D8;border-radius:6px;overflow:hidden}.section{padding:32px;border-bottom:1px solid #E8E0D8}.hero{font-size:72px;font-weight:300;line-height:1.05;max-width:700px}.accent{color:#C9897A;font-style:italic}.btn{background:#2A2420;color:#fff;border:none;padding:18px 24px;border-radius:4px;font-size:15px;width:100%}.result{font-size:54px;color:#E8C4B8;font-weight:300}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.input,.select{width:100%;padding:14px;border:1px solid #E8E0D8;background:#FAF7F2;border-radius:4px;font-size:16px}.small{font-size:13px;color:#8B817A;line-height:1.7;font-family:sans-serif}.label{font-size:13px;font-weight:600;margin-bottom:8px;font-family:sans-serif}.sectiontitle{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#8B817A;margin-bottom:24px;font-family:monospace}.pillwrap{display:flex;gap:10px;flex-wrap:wrap}.pill{padding:10px 14px;border:1px solid #E8E0D8;background:#FAF7F2;border-radius:4px;cursor:pointer;font-size:13px;font-family:sans-serif}.active{background:#F5EBE8;border-color:#C9897A;color:#7A3B3B}.sidebar{position:sticky;top:30px;background:#2A2420;color:white;border-radius:6px;overflow:hidden}.sidepad{padding:28px;border-bottom:1px solid rgba(255,255,255,.08)}@media(max-width:900px){.layout{grid-template-columns:1fr}.hero{font-size:54px}}
+*{margin:0;padding:0;box-sizing:border-box}body{background:#FAF7F2;color:#2A2420;font-family:Georgia,serif}input,select{font-family:inherit}button{cursor:pointer}.page{min-height:100vh}.header{display:flex;justify-content:space-between;align-items:center;padding:22px 42px;border-bottom:1px solid #E8E0D8;background:#FAF7F2;position:sticky;top:0}.brand{font-size:28px;font-weight:300;letter-spacing:.08em}.hero{max-width:920px;margin:0 auto;padding:60px 40px 40px}.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#C9897A;margin-bottom:18px;font-family:monospace}.title{font-size:76px;font-weight:300;line-height:1.05;letter-spacing:-.03em;max-width:760px}.accent{color:#C9897A;font-style:italic}.subtitle{font-size:18px;line-height:1.8;color:#8B817A;max-width:620px;margin-top:28px;font-family:sans-serif;font-weight:300}.layout{max-width:1200px;margin:0 auto;padding:0 40px 80px;display:grid;grid-template-columns:1fr 390px;gap:32px;align-items:start}.panel{background:#fff;border:1px solid #E8E0D8;border-radius:6px;overflow:hidden}.section{padding:32px;border-bottom:1px solid #E8E0D8}.sectionlabel{font-family:monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#9A8F88;margin-bottom:24px;display:flex;align-items:center;gap:12px}.line{height:1px;background:#E8E0D8;flex:1}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.field{margin-bottom:18px}.label{font-size:13px;font-weight:600;color:#2A2420;margin-bottom:8px;font-family:sans-serif}.hint{font-size:11px;color:#9A8F88;margin-top:6px;font-family:sans-serif}.input,.select{width:100%;padding:14px;border:1px solid #E8E0D8;border-radius:4px;background:#FAF7F2;font-size:15px}.pillrow{display:flex;gap:10px;flex-wrap:wrap}.pill{padding:11px 14px;border:1px solid #E8E0D8;background:#FAF7F2;border-radius:4px;font-size:13px;color:#8B817A}.pill.active{background:#F5EBE8;border-color:#C9897A;color:#7A3B3B}.calcbtn{width:100%;padding:18px;background:#2A2420;color:#FAF7F2;border:none;border-radius:4px;font-size:14px;letter-spacing:.05em}.sidebar{position:sticky;top:90px;background:#2A2420;color:white;border-radius:6px;overflow:hidden}.side{padding:28px;border-bottom:1px solid rgba(255,255,255,.08)}.sideeyebrow{font-family:monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:14px}.big{font-size:52px;font-weight:300;color:#E8C4B8;line-height:1}.small{font-size:13px;line-height:1.7;color:rgba(255,255,255,.65);font-family:sans-serif}.row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06)}@media(max-width:960px){.layout{grid-template-columns:1fr}.title{font-size:56px}}
 </style>
 </head>
 <body>
-<div id="root"></div>
-<script type="text/babel">
+<div id='root'></div>
+<script type='text/babel'>
 const {useState}=React;
-function Pill({active,onClick,label}){return <button className={active?'pill active':'pill'} onClick={onClick}>{label}</button>}
+const states=['New York','New Jersey','California','Texas','Florida','Illinois','Massachusetts'];
+function Pill({active,label,onClick}){return <button className={active?'pill active':'pill'} onClick={onClick}>{label}</button>}
+function Section({title,children}){return <div className='section'><div className='sectionlabel'>{title}<div className='line'></div></div>{children}</div>}
 function App(){
-const [procedure,setProcedure]=useState('freeze');
-const [cycles,setCycles]=useState(1);
-const [storage,setStorage]=useState(5);
-const [insurance,setInsurance]=useState('employer');
-const [benefits,setBenefits]=useState('none');
-const [sperm,setSperm]=useState('partner');
-const [result,setResult]=useState(null);
+const [form,setForm]=useState({age:27,income:95000,state:'',procedure:'freeze',cycles:1,storage:5,insurance:'employer',benefits:'none',deductible:1500,oop:6000,sperm:'partner',mfi:'no'});
+const [result,setResult]=useState(0);
+const set=(k,v)=>setForm(f=>({...f,[k]:v}));
 const calculate=()=>{
-let total=(16500*cycles)+(600*storage);
-if(procedure==='ivf') total+=12000;
-if(procedure==='both') total+=22000;
-if(sperm==='donor') total+=1500;
-if(benefits==='full') total*=0.35;
-if(benefits==='partial') total*=0.65;
+let total=0;
+if(form.procedure==='freeze') total=16500*form.cycles;
+if(form.procedure==='ivf') total=24000;
+if(form.procedure==='both') total=42000;
+if(form.sperm==='donor') total+=1500;
+if(form.mfi!=='no') total+=1800;
+total+=form.storage*600;
+if(form.benefits==='full') total*=0.3;
+if(form.benefits==='partial') total*=0.6;
 setResult(Math.round(total));
 }
-return <div className='wrap'>
-<div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:60}}>
-<div style={{fontSize:30,fontWeight:300}}>fern</div>
-<div style={{fontSize:11,letterSpacing:'0.2em',textTransform:'uppercase',color:'#8B817A'}}>Fertility Finance · Beta</div>
-</div>
-<div style={{marginBottom:60}}>
-<div style={{fontSize:11,letterSpacing:'0.2em',textTransform:'uppercase',color:'#C9897A',marginBottom:18}}>Know your real number</div>
-<div className='hero'>What will fertility actually <span className='accent'>cost you?</span></div>
-<p className='small' style={{maxWidth:620,fontSize:18,marginTop:24}}>Insurance coverage for egg freezing and IVF is a black box. We decode your plan, your state's mandate coverage, and what you'll actually owe — then show you how to finance it.</p>
+return <div className='page'>
+<div className='header'><div className='brand'>fern</div><div style={{fontFamily:'monospace',fontSize:10,letterSpacing:'.15em',textTransform:'uppercase',color:'#9A8F88'}}>Fertility Finance · Beta</div></div>
+<div className='hero'>
+<div className='eyebrow'>Know your real number</div>
+<div className='title'>What will fertility actually <span className='accent'>cost you?</span></div>
+<div className='subtitle'>Insurance coverage for egg freezing and IVF is a black box. We decode your plan, your state's mandate coverage, and what you'll actually owe — then show you how to finance it.</div>
 </div>
 <div className='layout'>
-<div className='card'>
-<div className='section'>
-<div className='sectiontitle'>About You</div>
+<div className='panel'>
+<Section title='About You'>
 <div className='grid'>
-<div><div className='label'>Age</div><input className='input' defaultValue='27' /></div>
-<div><div className='label'>Annual Income</div><input className='input' defaultValue='95000' /></div>
+<div className='field'><div className='label'>Age</div><input className='input' value={form.age} onChange={e=>set('age',e.target.value)} /></div>
+<div className='field'><div className='label'>Annual Income</div><input className='input' value={form.income} onChange={e=>set('income',e.target.value)} /><div className='hint'>Used for financing estimates</div></div>
 </div>
-<div style={{marginTop:18}}><div className='label'>State of Residence</div><select className='select'><option>Select state</option><option>New York</option><option>California</option><option>New Jersey</option></select></div>
-</div>
-<div className='section'>
-<div className='sectiontitle'>Your Procedure</div>
-<div className='label'>What are you planning?</div>
-<div className='pillwrap'>
-<Pill label='Egg Freezing' active={procedure==='freeze'} onClick={()=>setProcedure('freeze')} />
-<Pill label='IVF' active={procedure==='ivf'} onClick={()=>setProcedure('ivf')} />
-<Pill label='Freeze + IVF Later' active={procedure==='both'} onClick={()=>setProcedure('both')} />
-</div>
-<div style={{marginTop:24}}>
-<div className='label'>Number of cycles</div>
-<input type='range' min='1' max='4' value={cycles} onChange={e=>setCycles(Number(e.target.value))} style={{width:'100%'}} />
-<div className='small'>{cycles} cycle(s)</div>
-</div>
-<div style={{marginTop:24}}>
-<div className='label'>Years of storage</div>
-<input type='range' min='1' max='10' value={storage} onChange={e=>setStorage(Number(e.target.value))} style={{width:'100%'}} />
-<div className='small'>{storage} years</div>
-</div>
-</div>
-<div className='section'>
-<div className='sectiontitle'>Insurance</div>
-<div className='label'>Coverage type</div>
-<div className='pillwrap'>
-<Pill label='Employer Plan' active={insurance==='employer'} onClick={()=>setInsurance('employer')} />
-<Pill label='Marketplace' active={insurance==='market'} onClick={()=>setInsurance('market')} />
-<Pill label='None' active={insurance==='none'} onClick={()=>setInsurance('none')} />
-</div>
-<div style={{marginTop:24}}>
-<div className='label'>Fertility benefits in your plan?</div>
-<div className='pillwrap'>
-<Pill label='Full Coverage' active={benefits==='full'} onClick={()=>setBenefits('full')} />
-<Pill label='Partial' active={benefits==='partial'} onClick={()=>setBenefits('partial')} />
-<Pill label='No Benefits' active={benefits==='none'} onClick={()=>setBenefits('none')} />
-</div>
-</div>
-</div>
-<div className='section'>
-<div className='sectiontitle'>Partner / Sperm</div>
-<div className='pillwrap'>
-<Pill label='Partner' active={sperm==='partner'} onClick={()=>setSperm('partner')} />
-<Pill label='Donor Bank' active={sperm==='donor'} onClick={()=>setSperm('donor')} />
-<Pill label='N/A' active={sperm==='na'} onClick={()=>setSperm('na')} />
-</div>
-<div style={{marginTop:28}}>
-<button className='btn' onClick={calculate}>Calculate My Costs →</button>
-</div>
-</div>
+<div className='field'><div className='label'>State of Residence</div><select className='select' value={form.state} onChange={e=>set('state',e.target.value)}><option>Select state</option>{states.map(s=><option key={s}>{s}</option>)}</select></div>
+</Section>
+<Section title='Your Procedure'>
+<div className='field'><div className='label'>What are you planning?</div><div className='pillrow'><Pill label='Egg Freezing' active={form.procedure==='freeze'} onClick={()=>set('procedure','freeze')} /><Pill label='IVF' active={form.procedure==='ivf'} onClick={()=>set('procedure','ivf')} /><Pill label='Freeze + IVF later' active={form.procedure==='both'} onClick={()=>set('procedure','both')} /></div></div>
+<div className='field'><div className='label'>Number of cycles</div><input type='range' min='1' max='4' value={form.cycles} onChange={e=>set('cycles',Number(e.target.value))} style={{width:'100%'}} /><div className='hint'>{form.cycles} cycle(s)</div></div>
+<div className='field'><div className='label'>Years of storage</div><input type='range' min='1' max='10' value={form.storage} onChange={e=>set('storage',Number(e.target.value))} style={{width:'100%'}} /><div className='hint'>{form.storage} years</div></div>
+</Section>
+<Section title='Insurance'>
+<div className='field'><div className='label'>Coverage type</div><div className='pillrow'><Pill label='Employer plan' active={form.insurance==='employer'} onClick={()=>set('insurance','employer')} /><Pill label='Marketplace' active={form.insurance==='market'} onClick={()=>set('insurance','market')} /><Pill label='None' active={form.insurance==='none'} onClick={()=>set('insurance','none')} /></div></div>
+<div className='field'><div className='label'>Fertility benefits in your plan?</div><div className='pillrow'><Pill label='Full Coverage' active={form.benefits==='full'} onClick={()=>set('benefits','full')} /><Pill label='Partial' active={form.benefits==='partial'} onClick={()=>set('benefits','partial')} /><Pill label='No Benefits' active={form.benefits==='none'} onClick={()=>set('benefits','none')} /></div></div>
+<div className='grid'><div className='field'><div className='label'>Deductible Remaining</div><input className='input' value={form.deductible} onChange={e=>set('deductible',e.target.value)} /></div><div className='field'><div className='label'>Out-of-pocket max</div><input className='input' value={form.oop} onChange={e=>set('oop',e.target.value)} /></div></div>
+</Section>
+<Section title='Partner / Sperm'>
+<div className='field'><div className='label'>Sperm source</div><div className='pillrow'><Pill label='Partner' active={form.sperm==='partner'} onClick={()=>set('sperm','partner')} /><Pill label='Donor bank' active={form.sperm==='donor'} onClick={()=>set('sperm','donor')} /><Pill label='Not applicable' active={form.sperm==='na'} onClick={()=>set('sperm','na')} /></div></div>
+<div className='field'><div className='label'>Male factor infertility involved?</div><div className='pillrow'><Pill label='Yes' active={form.mfi==='yes'} onClick={()=>set('mfi','yes')} /><Pill label='No' active={form.mfi==='no'} onClick={()=>set('mfi','no')} /><Pill label='Unknown' active={form.mfi==='unknown'} onClick={()=>set('mfi','unknown')} /></div></div>
+<button className='calcbtn' onClick={calculate}>Calculate My Costs →</button>
+</Section>
 </div>
 <div className='sidebar'>
-<div className='sidepad'>
-<div style={{fontSize:10,letterSpacing:'0.2em',textTransform:'uppercase',color:'rgba(255,255,255,.4)',marginBottom:12}}>Your Estimate</div>
-<div style={{fontSize:24,fontWeight:300,marginBottom:22}}>{procedure==='freeze'?'Egg Freezing':procedure==='ivf'?'IVF':'Freeze + IVF Later'}</div>
-<div style={{fontSize:12,letterSpacing:'0.15em',textTransform:'uppercase',color:'rgba(255,255,255,.4)',marginBottom:10}}>Estimated Out-of-Pocket</div>
-<div className='result'>${result?result.toLocaleString():'—'}</div>
-</div>
-<div className='sidepad'>
-<div className='small' style={{color:'rgba(255,255,255,.7)'}}>Includes medications, monitoring, retrieval procedures, storage assumptions, and financing projections.</div>
-</div>
-<div className='sidepad'>
-<div style={{fontSize:12,color:'rgba(255,255,255,.5)',marginBottom:10}}>Potential Monthly Financing</div>
-<div style={{display:'flex',justifyContent:'space-between',marginBottom:8}}><span>36 mo plan</span><span>${result?Math.round(result/36):0}/mo</span></div>
-<div style={{display:'flex',justifyContent:'space-between'}}><span>60 mo plan</span><span>${result?Math.round(result/60):0}/mo</span></div>
+<div className='side'><div className='sideeyebrow'>Your Cost Estimate</div><div style={{fontSize:26,fontWeight:300,marginBottom:18}}>{form.procedure==='freeze'?'Egg Freezing':form.procedure==='ivf'?'IVF':'Freeze + IVF'}</div><div className='sideeyebrow'>Out-of-Pocket Total</div><div className='big'>${result?result.toLocaleString():'—'}</div></div>
+<div className='side'><div className='small'>Includes retrieval, medications, monitoring, embryo handling, storage, and financing assumptions.</div></div>
+<div className='side'><div className='sideeyebrow'>Financing Options</div><div className='row'><span>36 mo plan</span><span>${result?Math.round(result/36):0}/mo</span></div><div className='row'><span>60 mo plan</span><span>${result?Math.round(result/60):0}/mo</span></div><div className='row'><span>Clinic payment plan</span><span>${result?Math.round(result/12):0}/mo</span></div></div>
 </div>
 </div>
 </div>
-</div>}
+}
 ReactDOM.createRoot(document.getElementById('root')).render(<App />)
 </script>
 </body>
