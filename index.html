@@ -32,8 +32,8 @@ a{color:inherit}
 .kicker{font-size:0.72rem;color:var(--wine);margin-bottom:0.8rem}
 h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.7rem,8vw,5rem);font-weight:400;line-height:0.98;letter-spacing:0.01em;max-width:12ch;margin-bottom:1rem}
 .dek{font-family:'Courier Prime',monospace;color:var(--ink-soft);font-size:1rem;line-height:1.85;max-width:40rem}
-.dek a,.typed-note a{color:var(--wine);text-decoration:none;border-bottom:1px solid var(--rule)}
-.dek a:hover,.typed-note a:hover{color:var(--wine-soft);border-bottom-color:var(--wine)}
+.dek a,.typed-wrap a{color:var(--wine);text-decoration:none;border-bottom:1px solid var(--rule)}
+.dek a:hover,.typed-wrap a:hover{color:var(--wine-soft);border-bottom-color:var(--wine)}
 .quick-links{display:flex;flex-wrap:wrap;gap:0.55rem;margin:1.2rem 0 1.35rem}
 .quick-links a{font-size:0.74rem;text-decoration:none;border:1px solid var(--rule);padding:0.5rem 0.65rem;background:rgba(255,255,255,0.12)}
 .quick-links a.primary{background:var(--ink);border-color:var(--ink);color:var(--paper)}
@@ -43,7 +43,11 @@ h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.7rem,8vw,5rem);font-
 .proof-card{min-width:0;border:1px solid var(--rule);background:rgba(237,230,208,0.46);padding:0.85rem}
 .proof-card strong{display:block;font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500;line-height:1.15;margin-bottom:0.28rem}
 .proof-card span{display:block;color:var(--ink-faint);font-size:0.68rem;line-height:1.45}
-.typed-note{font-family:'Courier Prime',monospace;font-size:0.96rem;line-height:1.8;color:var(--ink-soft);max-width:40rem;margin:0 0 2.25rem}
+.typed-wrap{font-family:'Courier Prime',monospace;font-size:1.02rem;line-height:1.95;min-height:8rem;max-width:40rem;margin:0 0 2.25rem;color:var(--ink-soft)}
+.typed-wrap p{margin-bottom:1rem}
+.cursor{display:inline-block;width:0.55ch;height:1.05em;background:var(--ink);vertical-align:text-bottom;margin-left:1px;animation:blink 1s step-end infinite}
+.cursor.hidden{display:none}
+@keyframes blink{50%{opacity:0}}
 .section{margin-top:2.5rem}
 .section-label{font-size:0.72rem;color:var(--ink-faint);margin-bottom:1.5rem;padding-bottom:0.6rem;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
 .section-label .meta{font-style:italic;text-transform:none;letter-spacing:0.06em;color:var(--ink-faint)}
@@ -71,7 +75,8 @@ h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.7rem,8vw,5rem);font-
 .desk-note:nth-child(1){--rot:-2deg}.desk-note:nth-child(2){--rot:1.5deg}.desk-note:nth-child(3){--rot:-1deg}.desk-note:nth-child(4){--rot:2deg}
 .foot{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid var(--rule);font-size:0.78rem;color:var(--ink-faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem}
 .foot .left{font-style:italic;color:var(--ink-soft)}
-@media(max-width:700px){.page{padding:1.35rem 1rem 4rem;gap:1.4rem}.rail{gap:0.65rem}.rail .thumb{width:3.8rem;height:3.8rem}.rail .name{margin-top:0}.rail nav{flex-direction:row;flex-wrap:wrap;gap:0.35rem 0.75rem;margin-top:0.25rem}.rail nav a{font-size:0.76rem;letter-spacing:0.11em}h1{font-size:clamp(2.2rem,11vw,2.9rem);line-height:1.05;max-width:100%}.proof-grid,.work-grid,.contact-grid,.desk-strip{grid-template-columns:1fr}.section-label{flex-direction:column;align-items:flex-start;gap:0.25rem;letter-spacing:0.16em}.gallery{justify-content:center}.quick-links a{flex:1 1 auto;text-align:center}}
+@media(max-width:700px){.page{padding:1.35rem 1rem 4rem;gap:1.4rem}.rail{gap:0.65rem}.rail .thumb{width:3.8rem;height:3.8rem}.rail .name{margin-top:0}.rail nav{flex-direction:row;flex-wrap:wrap;gap:0.35rem 0.75rem;margin-top:0.25rem}.rail nav a{font-size:0.76rem;letter-spacing:0.11em}h1{font-size:clamp(2.2rem,11vw,2.9rem);line-height:1.05;max-width:100%}.proof-grid,.work-grid,.contact-grid,.desk-strip{grid-template-columns:1fr}.typed-wrap{min-height:0;font-size:0.95rem;line-height:1.75;overflow-wrap:anywhere}.section-label{flex-direction:column;align-items:flex-start;gap:0.25rem;letter-spacing:0.16em}.gallery{justify-content:center}.quick-links a{flex:1 1 auto;text-align:center}}
+@media(prefers-reduced-motion:reduce){.cursor{animation:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -106,7 +111,7 @@ h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.7rem,8vw,5rem);font-
         <div class="proof-card"><strong>2 books</strong><span>gen-z culture and nyc coffee communities</span></div>
         <div class="proof-card"><strong>founder</strong><span>indiya nyc and barnard investment group</span></div>
       </div>
-      <p class="typed-note">i write memos, build consumer experiments, and keep a small archive of ideas that started as notes on a desk. less algorithm, more taste.</p>
+      <div class="typed-wrap" id="typed" aria-live="polite"></div>
     </section>
 
     <section class="section" aria-labelledby="gallery-title">
@@ -149,5 +154,32 @@ h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.7rem,8vw,5rem);font-
     <footer class="foot"><div class="left">- riya, new york city</div><div>2026</div></footer>
   </main>
 </div>
+<script>
+(function(){
+  var target=document.getElementById('typed');
+  if(!target)return;
+  var paragraphs=[
+    ["hi, i'm riya. i write, i build, and right now i'm an investment banking analyst at ",{link:"bank of america",href:"https://www.bankofamerica.com/"},", on the consumer & retail team."],
+    ["i'm the founder of ",{link:"indiya nyc",href:"https://indiyanyc.com"}," — sustainable clothing made with block-printers in jaipur — and on the side, angel invest in people i've watched build for years."],
+    ["i write memos, build consumer experiments, and keep a small archive of ideas that started as notes on a desk. less algorithm, more taste."]
+  ];
+  var pIdx=0,chunkIdx=0,cIdx=0,currentP=null,cursor=null;
+  function addLink(chunk,p){var a=document.createElement('a');a.href=chunk.href;a.textContent=chunk.link;if(chunk.href.indexOf('http')===0){a.target='_blank';a.rel='noopener';}p.appendChild(a);}
+  function renderStatic(){paragraphs.forEach(function(para){var p=document.createElement('p');para.forEach(function(chunk){if(typeof chunk==='string')p.appendChild(document.createTextNode(chunk));else addLink(chunk,p);});target.appendChild(p);});}
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){renderStatic();return;}
+  function ensureCursor(){if(cursor&&cursor.parentNode)cursor.parentNode.removeChild(cursor);cursor=document.createElement('span');cursor.className='cursor';if(currentP)currentP.appendChild(cursor);}
+  function startNextParagraph(){currentP=document.createElement('p');target.appendChild(currentP);chunkIdx=0;cIdx=0;ensureCursor();typeChunk();}
+  function typeChunk(){
+    var para=paragraphs[pIdx];
+    if(chunkIdx>=para.length){pIdx++;if(pIdx<paragraphs.length)setTimeout(startNextParagraph,320);else if(cursor)cursor.classList.add('hidden');return;}
+    var chunk=para[chunkIdx];
+    if(typeof chunk==='string'){
+      if(cIdx<chunk.length){currentP.insertBefore(document.createTextNode(chunk.charAt(cIdx)),cursor);cIdx++;var d=16+(Math.random()*22-6);var lc=chunk.charAt(cIdx-1);if(lc==='.'||lc===','||lc==='?'||lc==='\u2014')d+=70;setTimeout(typeChunk,d);}
+      else{chunkIdx++;cIdx=0;setTimeout(typeChunk,22);}
+    }else{var a=document.createElement('a');a.href=chunk.href;a.textContent=chunk.link;if(chunk.href.indexOf('http')===0){a.target='_blank';a.rel='noopener';}currentP.insertBefore(a,cursor);chunkIdx++;cIdx=0;setTimeout(typeChunk,50);}
+  }
+  startNextParagraph();
+})();
+</script>
 </body>
 </html>
