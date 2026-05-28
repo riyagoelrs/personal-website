@@ -1,185 +1,166 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>riya goel</title>
-<meta name="description" content="riya goel. investment banking analyst, writer, founder of indiya nyc, and builder of consumer concepts in new york city.">
-<meta property="og:title" content="riya goel">
-<meta property="og:description" content="investment banking analyst, writer, founder, and builder. new york city.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Kantumruy+Pro:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Homemade+Apple&display=swap" rel="stylesheet">
-<style>
-:root{--paper:#f5f0e0;--paper-2:#ede6d0;--ink:#1a1410;--ink-soft:#5a4a3a;--ink-faint:#9a8a72;--rule:#cdc1a4;--wine:#6e1811;--wine-soft:#9c3b2a;--indigo:#2a3656;--sage:#768967}
-@media(prefers-color-scheme:dark){:root{--paper:#1a1410;--paper-2:#251c16;--ink:#f0e8d4;--ink-soft:#c8b89a;--ink-faint:#7a6a52;--rule:#3a2e22;--wine:#d4564a;--wine-soft:#e8a87c;--indigo:#9fb0d6;--sage:#a6b995}}
-*{box-sizing:border-box;margin:0;padding:0}
-html{font-size:16px;-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
-body{font-family:'Kantumruy Pro',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;min-height:100vh;overflow-x:hidden}
-a{color:inherit}
-.page{display:grid;grid-template-columns:1fr;gap:2rem;max-width:64rem;margin:0 auto;padding:2rem 1.25rem 4rem}
-@media(min-width:880px){.page{grid-template-columns:13rem 1fr;gap:4rem;padding:3.5rem 2.5rem 5rem}}
-.rail{display:flex;flex-direction:column;gap:1rem}
-.rail .thumb{width:5.5rem;height:5.5rem;border-radius:0.25rem;background:var(--paper-2) center/cover no-repeat;background-image:url('https://sxhodsrixg8meuri.public.blob.vercel-storage.com/workshop/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.05.17_am-egEt3Yos5R5VN2jdDwULd4oicLVr2V.png')}
-.rail .name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;letter-spacing:0.06em;text-transform:uppercase;margin-top:0.4rem;font-weight:500}
-.rail nav{display:flex;flex-direction:column;gap:0.55rem;margin-top:0.85rem}
-.rail nav a{font-family:'Cormorant Garamond',serif;font-size:0.95rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-faint);text-decoration:none;transition:color 0.18s;font-weight:500}
-.rail nav a:hover,.rail nav a.active{color:var(--ink)}
-@media(min-width:880px){.rail{position:sticky;top:3.5rem;align-self:start}}
-.col{min-width:0}
-.intro{max-width:43rem;margin-bottom:1.9rem}
-.kicker,.section-label,.quick-links a,.proof-card span,.contact-card a{font-family:'Courier Prime',monospace;letter-spacing:0.14em;text-transform:uppercase}
-.kicker{font-size:0.72rem;color:var(--wine);margin-bottom:0.8rem}
-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.7rem,8vw,5rem);font-weight:400;line-height:0.98;letter-spacing:0.01em;max-width:12ch;margin-bottom:1rem}
-.dek{font-family:'Courier Prime',monospace;color:var(--ink-soft);font-size:1rem;line-height:1.85;max-width:40rem}
-.dek a,.typed-wrap a{color:var(--wine);text-decoration:none;border-bottom:1px solid var(--rule)}
-.dek a:hover,.typed-wrap a:hover{color:var(--wine-soft);border-bottom-color:var(--wine)}
-.quick-links{display:flex;flex-wrap:wrap;gap:0.55rem;margin:1.2rem 0 1.35rem}
-.quick-links a{font-size:0.74rem;text-decoration:none;border:1px solid var(--rule);padding:0.5rem 0.65rem;background:rgba(255,255,255,0.12)}
-.quick-links a.primary{background:var(--ink);border-color:var(--ink);color:var(--paper)}
-.quick-links a:hover{border-color:var(--wine);color:var(--wine)}
-.quick-links a.primary:hover{background:var(--wine);border-color:var(--wine);color:var(--paper)}
-.proof-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0.7rem;margin:1.25rem 0 1.8rem}
-.proof-card{min-width:0;border:1px solid var(--rule);background:rgba(237,230,208,0.46);padding:0.85rem}
-.proof-card strong{display:block;font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500;line-height:1.15;margin-bottom:0.28rem}
-.proof-card span{display:block;color:var(--ink-faint);font-size:0.68rem;line-height:1.45}
-.typed-wrap{font-family:'Courier Prime',monospace;font-size:1.02rem;line-height:1.95;min-height:8rem;max-width:40rem;margin:0 0 2.25rem;color:var(--ink-soft)}
-.typed-wrap p{margin-bottom:1rem}
-.cursor{display:inline-block;width:0.55ch;height:1.05em;background:var(--ink);vertical-align:text-bottom;margin-left:1px;animation:blink 1s step-end infinite}
-.cursor.hidden{display:none}
-@keyframes blink{50%{opacity:0}}
-.section{margin-top:2.5rem}
-.section-label{font-size:0.72rem;color:var(--ink-faint);margin-bottom:1.5rem;padding-bottom:0.6rem;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
-.section-label .meta{font-style:italic;text-transform:none;letter-spacing:0.06em;color:var(--ink-faint)}
-.gallery{display:flex;flex-wrap:wrap;gap:1.5rem 1.4rem;align-items:flex-end;padding:0.25rem 0}
-.frame{display:flex;flex-direction:column;align-items:center}
-.frame .matte{padding:0.9rem;background:var(--paper);box-shadow:0 14px 28px -14px rgba(0,0,0,0.35),0 4px 10px rgba(0,0,0,0.12);position:relative;border:1px solid rgba(26,20,16,0.18)}
-.frame .matte:before{content:'';position:absolute;inset:0.4rem;border:1px solid var(--ink);pointer-events:none;opacity:0.85}
-.frame .matte:after{content:'';position:absolute;inset:0.55rem;border:1px solid var(--ink);pointer-events:none;opacity:0.25}
-.frame img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(0.95) contrast(0.97)}
-.frame.sm .matte{width:8.5rem}.frame.sm img{height:11rem}
-.frame.md .matte{width:11rem}.frame.md img{height:13.5rem}
-.frame.lg .matte{width:14rem}.frame.lg img{height:17.5rem}
-.plate{font-family:'Courier Prime',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);text-align:center;margin-top:0.85rem;line-height:1.35;max-width:14rem}
-.plate em{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;color:var(--ink);margin-bottom:0.15rem}
-.work-grid,.contact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0.85rem}
-.work-card,.contact-card{min-width:0;border:1px solid var(--rule);padding:0.95rem;background:rgba(237,230,208,0.38)}
-.work-card h2,.contact-card h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.28rem;line-height:1.2;margin-bottom:0.45rem}
-.work-card p,.contact-card p{color:var(--ink-soft);font-size:0.9rem;line-height:1.58}
-.work-card a,.contact-card a{display:inline-block;margin-top:0.7rem;color:var(--wine);text-decoration:none;border-bottom:1px solid var(--rule)}
-.work-card a{font-family:'Courier Prime',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase}
-.work-card a:hover,.contact-card a:hover{border-bottom-color:var(--wine);color:var(--wine-soft)}
-.desk-strip{border:1px solid var(--rule);background:var(--paper-2);padding:1rem;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0.7rem;box-shadow:inset 0 0 60px rgba(110,24,17,0.04)}
-.desk-note{min-width:0;background:#fbf6e8;color:#2a2018;padding:0.78rem 0.85rem;font-family:'Courier Prime',monospace;font-size:0.74rem;line-height:1.48;box-shadow:0 8px 16px rgba(0,0,0,0.14);border:1px solid rgba(58,46,34,0.08);transform:rotate(var(--rot,0deg))}
-.desk-note em{display:block;font-family:'Cormorant Garamond',serif;font-size:0.95rem;color:#3a2010;margin-bottom:0.25rem}
-.desk-note:nth-child(1){--rot:-2deg}.desk-note:nth-child(2){--rot:1.5deg}.desk-note:nth-child(3){--rot:-1deg}.desk-note:nth-child(4){--rot:2deg}
-.foot{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid var(--rule);font-size:0.78rem;color:var(--ink-faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem}
-.foot .left{font-style:italic;color:var(--ink-soft)}
-@media(max-width:700px){.page{padding:1.35rem 1rem 4rem;gap:1.4rem}.rail{gap:0.65rem}.rail .thumb{width:3.8rem;height:3.8rem}.rail .name{margin-top:0}.rail nav{flex-direction:row;flex-wrap:wrap;gap:0.35rem 0.75rem;margin-top:0.25rem}.rail nav a{font-size:0.76rem;letter-spacing:0.11em}h1{font-size:clamp(2.2rem,11vw,2.9rem);line-height:1.05;max-width:100%}.proof-grid,.work-grid,.contact-grid,.desk-strip{grid-template-columns:1fr}.typed-wrap{min-height:0;font-size:0.95rem;line-height:1.75;overflow-wrap:anywhere}.section-label{flex-direction:column;align-items:flex-start;gap:0.25rem;letter-spacing:0.16em}.gallery{justify-content:center}.quick-links a{flex:1 1 auto;text-align:center}}
-@media(prefers-reduced-motion:reduce){.cursor{animation:none}html{scroll-behavior:auto}}
-</style>
-</head>
-<body>
-<div class="page">
-  <aside class="rail">
-    <div class="thumb" aria-hidden="true"></div>
-    <div class="name">riya</div>
-    <nav aria-label="sections">
-      <a href="./" class="active">about</a>
-      <a href="./writing.html">writing</a>
-      <a href="./design.html">design</a>
-      <a href="./concepts.html">concepts</a>
-      <a href="./favorites.html">favorites</a>
-      <a href="#contact">contact</a>
-      <a href="./guestbook.html">guestbook</a>
-    </nav>
-  </aside>
-
-  <main class="col">
-    <section class="intro" id="about">
-      <p class="kicker">finance / fashion / consumer culture</p>
-      <h1>riya goel writes and builds around what people buy, signal, and believe.</h1>
-      <p class="dek">i'm an investment banking analyst at <a href="https://www.bankofamerica.com/" target="_blank" rel="noopener">bank of america</a>, founder of <a href="https://indiyanyc.com" target="_blank" rel="noopener">indiya nyc</a>, and the person behind memos and concepts on consumer behavior, beauty, fertility, ai, fashion, and taste.</p>
-      <div class="quick-links" aria-label="primary links">
-        <a class="primary" href="./writing.html">read writing</a>
-        <a href="./concepts.html">see concepts</a>
-        <a href="https://indiyanyc.com" target="_blank" rel="noopener">indiya nyc</a>
-        <a href="#contact">contact</a>
-      </div>
-      <div class="proof-grid" aria-label="quick proof points">
-        <div class="proof-card"><strong>BofA C&amp;R</strong><span>investment banking analyst, consumer and retail</span></div>
-        <div class="proof-card"><strong>2 books</strong><span>gen-z culture and nyc coffee communities</span></div>
-        <div class="proof-card"><strong>founder</strong><span>indiya nyc and barnard investment group</span></div>
-      </div>
-      <div class="typed-wrap" id="typed" aria-live="polite"></div>
-    </section>
-
-    <section class="section" aria-labelledby="gallery-title">
-      <div class="section-label"><span id="gallery-title">the gallery</span><span class="meta">jaipur / soho / the garment district</span></div>
-      <div class="gallery">
-        <figure class="frame lg"><div class="matte"><img src="https://sxhodsrixg8meuri.public.blob.vercel-storage.com/workshop/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.05.17_am-egEt3Yos5R5VN2jdDwULd4oicLVr2V.png" alt="riya in the garment district" loading="lazy"></div><figcaption class="plate"><em>The Garment District</em>New York / 2026</figcaption></figure>
-        <figure class="frame md"><div class="matte"><img src="https://sxhodsrixg8meuri.public.blob.vercel-storage.com/workshop/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.18.47_am-4esuFEHWYuyQb2wWvFoycrkuCl8Top.png" alt="riya choosing wood blocks in jaipur" loading="lazy"></div><figcaption class="plate"><em>Choosing Blocks</em>Jaipur Atelier / 2024</figcaption></figure>
-        <figure class="frame sm"><div class="matte"><img src="https://sxhodsrixg8meuri.public.blob.vercel-storage.com/workshop/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.07.56_am-NFaJH6hVnYc3UrAKp9XIUpbnj7pLYt.png" alt="soho mornings" loading="lazy"></div><figcaption class="plate"><em>Soho Mornings</em>2025</figcaption></figure>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="work-title">
-      <div class="section-label"><span id="work-title">selected work</span><span class="meta">proof, not just atmosphere</span></div>
-      <div class="work-grid">
-        <article class="work-card"><h2>writing</h2><p>Memos on GLP-1s, fertility finance, blue-collar AI, beauty rollups, and post-diet consumer culture.</p><a href="./writing.html">read memos</a></article>
-        <article class="work-card"><h2>indiya nyc</h2><p>Sustainable clothing built with block-printers in Jaipur, small-batch pieces, and a sharper point of view on Indo-Western dressing.</p><a href="https://indiyanyc.com" target="_blank" rel="noopener">visit brand</a></article>
-        <article class="work-card"><h2>concepts</h2><p>Product and brand experiments including TAPÉ, OUT, COMB, and the fertility calculator.</p><a href="./concepts.html">see concepts</a></article>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="desk-title">
-      <div class="section-label"><span id="desk-title">on the desk</span><span class="meta">notes, ticket stubs, second thoughts</span></div>
-      <div class="desk-strip" aria-label="desk notes">
-        <div class="desk-note"><em>GLP-1, reshaped</em>reshapes the menu before it reshapes the body. start there.</div>
-        <div class="desk-note"><em>fertility &amp; finance</em>egg quantity falls fastest from 32. the math is the memo.</div>
-        <div class="desk-note"><em>COMB / v0</em>diagnostic: porosity &gt; density &gt; scalp. ship in that order.</div>
-        <div class="desk-note"><em>OUT / draft 3</em>less algorithm, more taste.</div>
-      </div>
-    </section>
-
-    <section class="section" id="contact" aria-labelledby="contact-title">
-      <div class="section-label"><span id="contact-title">contact</span><span class="meta">professional links, less scavenger hunt</span></div>
-      <div class="contact-grid">
-        <article class="contact-card"><h2>talk shop</h2><p>finance, consumer, investing, writing, or anything at the intersection of taste and markets.</p><a href="https://www.linkedin.com/in/riyagoel103" target="_blank" rel="noopener">linkedin</a></article>
-        <article class="contact-card"><h2>read more</h2><p>memos live here; essays and stray dispatches live on medium.</p><a href="https://medium.com/@riyagoel" target="_blank" rel="noopener">medium</a></article>
-        <article class="contact-card"><h2>leave a note</h2><p>the guestbook stays, because not every useful message has to look like a calendar invite.</p><a href="./guestbook.html">guestbook</a></article>
-      </div>
-    </section>
-
-    <footer class="foot"><div class="left">- riya, new york city</div><div>2026</div></footer>
-  </main>
-</div>
-<script>
-(function(){
-  var target=document.getElementById('typed');
-  if(!target)return;
-  var paragraphs=[
-    ["hi, i'm riya. i write, i build, and right now i'm an investment banking analyst at ",{link:"bank of america",href:"https://www.bankofamerica.com/"},", on the consumer & retail team."],
-    ["i'm the founder of ",{link:"indiya nyc",href:"https://indiyanyc.com"}," — sustainable clothing made with block-printers in jaipur — and on the side, angel invest in people i've watched build for years."],
-    ["i write memos, build consumer experiments, and keep a small archive of ideas that started as notes on a desk. less algorithm, more taste."]
-  ];
-  var pIdx=0,chunkIdx=0,cIdx=0,currentP=null,cursor=null;
-  function addLink(chunk,p){var a=document.createElement('a');a.href=chunk.href;a.textContent=chunk.link;if(chunk.href.indexOf('http')===0){a.target='_blank';a.rel='noopener';}p.appendChild(a);}
-  function renderStatic(){paragraphs.forEach(function(para){var p=document.createElement('p');para.forEach(function(chunk){if(typeof chunk==='string')p.appendChild(document.createTextNode(chunk));else addLink(chunk,p);});target.appendChild(p);});}
-  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){renderStatic();return;}
-  function ensureCursor(){if(cursor&&cursor.parentNode)cursor.parentNode.removeChild(cursor);cursor=document.createElement('span');cursor.className='cursor';if(currentP)currentP.appendChild(cursor);}
-  function startNextParagraph(){currentP=document.createElement('p');target.appendChild(currentP);chunkIdx=0;cIdx=0;ensureCursor();typeChunk();}
-  function typeChunk(){
-    var para=paragraphs[pIdx];
-    if(chunkIdx>=para.length){pIdx++;if(pIdx<paragraphs.length)setTimeout(startNextParagraph,320);else if(cursor)cursor.classList.add('hidden');return;}
-    var chunk=para[chunkIdx];
-    if(typeof chunk==='string'){
-      if(cIdx<chunk.length){currentP.insertBefore(document.createTextNode(chunk.charAt(cIdx)),cursor);cIdx++;var d=16+(Math.random()*22-6);var lc=chunk.charAt(cIdx-1);if(lc==='.'||lc===','||lc==='?'||lc==='\u2014')d+=70;setTimeout(typeChunk,d);}
-      else{chunkIdx++;cIdx=0;setTimeout(typeChunk,22);}
-    }else{var a=document.createElement('a');a.href=chunk.href;a.textContent=chunk.link;if(chunk.href.indexOf('http')===0){a.target='_blank';a.rel='noopener';}currentP.insertBefore(a,cursor);chunkIdx++;cIdx=0;setTimeout(typeChunk,50);}
-  }
-  startNextParagraph();
-})();
-</script>
-</body>
-</html>
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">  
+<title>riya goel</title>  
+<meta name="description" content="riya goel. investment banking analyst, writer, founder of indiya nyc, and builder of consumer concepts in new york city.">  
+<meta property="og:title" content="riya goel">  
+<meta property="og:description" content="investment banking analyst, writer, founder, and builder. new york city.">  
+<link rel="preconnect" href="https://fonts.googleapis.com">  
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=kantumruy+pro:wght@400;500;600;700&family=cormorant+garamond:ital,wght@0,400;0,500;1,400&family=homemade+apple&display=swap" rel="stylesheet">  
+<style>  
+:root{--paper:#f5f0e0;--paper-2:#ede6d0;--ink:#1a1410;--ink-soft:#5a4a3a;--ink-faint:#9a8a72;--rule:#cdc1a4;--wine:#6e1811;--wine-soft:#9c3b2a;--indigo:#2a3656;--sage:#768967}  
+@media(prefers-color-scheme:dark){:root{--paper:#1a1410;--paper-2:#251c16;--ink:#f0e8d4;--ink-soft:#c8b89a;--ink-faint:#7a6a52;--rule:#3a2e22;--wine:#d4564a;--wine-soft:#e8a87c;--indigo:#9fb0d6;--sage:#a6b995}}  
+*{box-sizing:border-box;margin:0;padding:0}  
+html{font-size:16px;-webkit-font-smoothing:antialiased;scroll-behavior:smooth}  
+body{font-family:'Kantumruy Pro',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;min-height:100vh;overflow-x:hidden}  
+a{color:inherit}  
+.page{display:grid;grid-template-columns:1fr;gap:2rem;max-width:64rem;margin:0 auto;padding:2rem 1.25rem 4rem}  
+@media(min-width:880px){.page{grid-template-columns:13rem 1fr;gap:4rem;padding:3.5rem 2.5rem 5rem}}  
+.rail{display:flex;flex-direction:column;gap:1rem}  
+.rail .thumb{width:5.5rem;height:5.5rem;border-radius:0.25rem;background:var(--paper-2) center/cover no-repeat;background-image:url('https://sxhodsrixg8meuri.public.blob.vercel-storage.com/workshop/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.05.17_am-egEt3Yos5R5VN2jdDwULd4oicLVr2V.png')}  
+.rail .name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;letter-spacing:0.06em;text-transform:uppercase;margin-top:0.4rem;font-weight:500}  
+.railnav{display:flex;flex-direction:column;gap:0.55rem;margin-top:0.85rem}  
+.railnav a{font-family:'Cormorant Garamond',serif;font-size:0.95rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-faint);text-decoration:none;transition:color 0.18s;font-weight:500}  
+.railnav a:hover,.railnav a.active{color:var(--ink)}  
+@media(min-width:880px){.rail{position:sticky;top:3.5rem;align-self:start}}  
+.col{min-width:0}  
+.intro{max-width:43rem;margin-bottom:1.9rem}  
+.kicker,.section-label,.quick-links a,.proof-card span,.contact-card a{font-family:'Courier Prime',monospace;letter-spacing:0.14em;text-transform:uppercase}  
+.kicker{font-size:0.72rem;color:var(--wine);margin-bottom:0.8rem}  
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.7rem,8vw,5rem);font-weight:400;line-height:0.98;letter-spacing:0.01em;max-width:12ch;margin-bottom:1rem}  
+.dek{font-family:'Courier Prime',monospace;color:var(--ink-soft);font-size:1rem;line-height:1.85;max-width:40rem}  
+.dek a,.typed-wrap a{color:var(--wine);text-decoration:none;border-bottom:1px solid var(--rule)}  
+.dek a:hover,.typed-wrap a:hover{color:var(--wine-soft);border-bottom-color:var(--wine)}  
+.quick-links{display:flex;flex-wrap:wrap;gap:0.55rem;margin:1.2rem 0 1.35rem}  
+.quick-links a{font-size:0.74rem;text-decoration:none;border:1px solid var(--rule);padding:0.5rem 0.65rem;background:rgba(255,255,255,0.12)}  
+.quick-links a.primary{background:var(--ink);border-color:var(--ink);color:var(--paper)}  
+.quick-links a:hover{border-color:var(--wine);color:var(--wine)}  
+.quick-links a.primary:hover{background:var(--wine);border-color:var(--wine);color:var(--paper)}  
+.proof-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0.7rem;margin:1.25rem 0 1.8rem}  
+.proof-card{min-width:0;border:1px solid var(--rule);background:rgba(237,230,208,0.46);padding:0.85rem}  
+.proof-card strong{display:block;font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500;line-height:1.15;margin-bottom:0.28rem}  
+.proof-card span{display:block;color:var(--ink-faint);font-size:0.68rem;line-height:1.45}  
+.typed-wrap{font-family:'Courier Prime',monospace;font-size:1.02rem;line-height:1.95;min-height:8rem;max-width:40rem;margin:0 0 2.25rem;color:var(--ink-soft)}  
+.typed-wrap p{margin-bottom:1rem}  
+.cursor{display:inline-block;width:0.55ch;height:1.05em;background:var(--ink);vertical-align:text-bottom;margin-left:1px;animation:blink 1s step-end infinite}  
+.cursor.hidden{display:none}  
+@keyframes blink{50%{opacity:0}}  
+.section{margin-top:2.5rem}  
+.section-label{font-size:0.72rem;color:var(--ink-faint);margin-bottom:1.5rem;padding-bottom:0.6rem;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:baseline;gap:1rem}  
+.section-label .meta{font-style:italic;text-transform:none;letter-spacing:0.06em;color:var(--ink-faint)}  
+.gallery{display:flex;flex-wrap:wrap;gap:1.5rem 1.4rem;align-items:flex-end;padding:0.25rem 0}  
+.frame{display:flex;flex-direction:column;align-items:center}  
+.frame .matte{padding:0.9rem;background:var(--paper);box-shadow:0 14px 28px -14px rgba(0,0,0,0.35),0 4px 10px rgba(0,0,0,0.12);position:relative;border:1px solid rgba(26,20,16,0.18)}  
+.frame .matte:before{content:'';position:absolute;inset:0.4rem;border:1px solid var(--ink);pointer-events:none;opacity:0.85}  
+.frame .matte:after{content:'';position:absolute;inset:0.55rem;border:1px solid var(--ink);pointer-events:none;opacity:0.25}  
+.frame img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(0.95) contrast(0.97)}  
+.frame.sm .matte{width:8.5rem}.frame.sm img{height:11rem}  
+.frame.md .matte{width:11rem}.frame.md img{height:13.5rem}  
+.frame.lg .matte{width:14rem}.frame.lg img{height:17.5rem}  
+.plate{font-family:'Courier Prime',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);text-align:center;margin-top:0.85rem;line-height:1.35;max-width:14rem}  
+.plate em{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;color:var(--ink);margin-bottom:0.15rem}  
+.work-grid,.contact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0.85rem}  
+.work-card,.contact-card{min-width:0;border:1px solid var(--rule);padding:0.95rem;background:rgba(237,230,208,0.38)}  
+.work-card h2,.contact-card h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.28rem;line-height:1.2;margin-bottom:0.45rem}  
+.work-card p,.contact-card p{color:var(--ink-soft);font-size:0.9rem;line-height:1.58}  
+.work-card a,.contact-card a{display:inline-block;margin-top:0.7rem;color:var(--wine);text-decoration:none;border-bottom:1px solid var(--rule)}  
+.work-card a{font-family:'Courier Prime',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase}  
+.work-card a:hover,.contact-card a:hover{border-bottom-color:var(--wine);color:var(--wine-soft)}  
+.desk-strip{border:1px solid var(--rule);background:var(--paper-2);padding:1rem;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0.7rem;box-shadow:inset 0 0 60px rgba(110,24,17,0.04)}  
+.desk-note{min-width:0;background:#fbf6e8;color:#2a2018;padding:0.78rem 0.85rem;font-family:'Courier Prime',monospace;font-size:0.74rem;line-height:1.48;box-shadow:0 8px 16px rgba(0,0,0,0.14);border:1px solid rgba(58,46,34,0.08);transform:rotate(var(--rot,0deg))}  
+.desk-note em{display:block;font-family:'Cormorant Garamond',serif;font-size:0.95rem;color:#3a2010;margin-bottom:0.25rem}  
+.desk-note:nth-child(1){--rot:-2deg}.desk-note:nth-child(2){--rot:1.5deg}.desk-note:nth-child(3){--rot:-1deg}.desk-note:nth-child(4){--rot:2deg}  
+.foot{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid var(--rule);font-size:0.78rem;color:var(--ink-faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem}  
+.foot .left{font-style:italic;color:var(--ink-soft)}  
+@media(max-width:700px){.page{padding:1.35rem 1rem 4rem;gap:1.4rem}.rail{gap:0.65rem}.rail .thumb{width:3.8rem;height:3.8rem}.rail .name{margin-top:0}.railnav{flex-direction:row;flex-wrap:wrap;gap:0.35rem 0.75rem;margin-top:0.25rem}.railnav a{font-size:0.76rem;letter-spacing:0.11em}h1{font-size:clamp(2.2rem,11vw,2.9rem);line-height:1.05;max-width:100%}.proof-grid,.work-grid,.contact-grid,.desk-strip{grid-template-columns:1fr}.typed-wrap{min-height:0;font-size:0.95rem;line-height:1.75;overflow-wrap:anywhere}.section-label{flex-direction:column;align-items:flex-start;gap:0.25rem;letter-spacing:0.16em}.gallery{justify-content:center}.quick-links a{flex:1 1 auto;text-align:center}}  
+@media(prefers-reduced-motion:reduce){.cursor{animation:none}html{scroll-behavior:auto}}  
+</style>  
+</head>  
+<body>  
+<div class="page">  
+<aside class="rail">  
+<div class="thumb" aria-hidden="true"></div>  
+<div class="name">riya</div>  
+<nav aria-label="sections">  
+<a href="./" class="active">about</a>  
+<a href="./writing.html">writing</a>  
+<a href="./design.html">design</a>  
+<a href="./concepts.html">concepts</a>  
+<a href="./favorites.html">favorites</a>  
+<a href="#contact">contact</a>  
+<a href="./guestbook.html">guestbook</a>  
+</nav>  
+</aside>  
+<main class="col">  
+<section class="intro" id="about">  
+<p class="kicker">finance / fashion / consumer culture</p>  
+<div class="typed-wrap" id="typed" aria-live="polite"></div>  
+</section>  
+<section class="section" aria-labelledby="gallery-title">  
+<div class="section-label"><span id="gallery-title">the gallery</span><span class="meta">jaipur / soho / the garment district</span></div>  
+<div class="gallery">  
+<figure class="frame lg"><div class="matte"><img src="https://sxhodsrixg8meuri.public.blob.vercel-storage.com/workshop/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.05.17_am-egEt3Yos5R5VN2jdDwULd4oicLVr2V.png" alt="riya in the garment district" loading="lazy"></div><figcaption class="plate"><em>The Garment District</em>New York / 2026</figcaption></figure>  
+<figure class="frame md"><div class="matte"><img src="https://sxhodsrixg8meuri.public.blob.vercel-storage.com/rank/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.18.47_am-4esuFEHWYuyQb2wWvFoycrkuCl8Top.png" alt="riya choosing wood blocks in jaipur" loading="lazy"></div><figcaption class="plate"><em>Choosing Blocks</em>Jaipur Atelier / 2024</figcaption></figure>  
+<figure class="frame sm"><div class="matte"><img src="https://sxhodsrixg8meuri.public.blob.vercel-storage.com/workshop/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.07.56_am-NFaJH6hVnYc3UrAKp9XIUpbnj7pLYt.png" alt="soho mornings" loading="lazy"></div><figcaption class="plate"><em>Soho Mornings</em>2025</figcaption></figure>  
+</div>  
+</section>  
+<section class="section" aria-labelledby="work-title">  
+<div class="section-label"><span id="work-title">selected work</span><span class="meta">proof, not just atmosphere</span></div>  
+<div class="work-grid">  
+<article class="work-card"><h2>writing</h2><p>Memos on GLP-1s, fertility finance, blue-collar AI, beauty rollups, and post-diet consumer culture.</p><a href="./writing.html">read memos</a></article>  
+<article class="work-card"><h2>indiya nyc</h2><p>Sustainable clothing built with block-printers in Jaipur, small-batch pieces, and a sharper point of view on Indo-Western dressing.</p><a href="https://indiyanyc.com" target="_blank" rel="noopener">visit brand</a></article>  
+<article class="work-card"><h2>concepts</h2><p>Product and brand experiments including TAPÉ, OUT, COMB, and the fertility calculator.</p><a href="./concepts.html">see concepts</a></article>  
+</div>  
+</section>  
+<section class="section" aria-labelledby="desk-title">  
+<div class="section-label"><span id="desk-title">on the desk</span><span class="meta">notes, ticket stubs, second thoughts</span></div>  
+<div class="desk-strip" aria-label="desk notes">  
+<div class="desk-note"><em>GLP-1, reshaped</em>reshapes the menu before it reshapes the body. start there.</div>  
+<div class="desk-note"><em>fertility & finance</em>egg quantity falls fastest from 32. the math is the memo.</div>  
+<div class="desk-note"><em>COMB / v0</em>diagnostic: porosity > density > scalp. ship in that order.</div>  
+<div class="desk-note"><em>OUT / draft 3</em>less algorithm, more taste.</div>  
+</div>  
+</section>  
+<section class="section" id="contact" aria-labelledby="contact-title">  
+<div class="section-label"><span id="contact-title">contact</span><span class="meta">professional links, less scavenger hunt</span></div>  
+<div class="contact-grid">  
+<article class="contact-card"><h2>talk shop</h2><p>finance, consumer, investing, writing, or anything at the intersection of taste and markets.</p><a href="https://www.linkedin.com/in/riyagoel103" target="_blank" rel="noopener">linkedin</a></article>  
+<article class="contact-card"><h2>read more</h2><p>memos live here; essays and stray dispatches live on medium.</p><a href="https://medium.com/@riyagoel" target="_blank" rel="noopener">medium</a></article>  
+<article class="contact-card"><h2>leave a note</h2><p>the guestbook stays, because not every useful message has to look like a calendar invite.</p><a href="./guestbook.html">guestbook</a></article>  
+</div>  
+</section>  
+<footer class="foot"><div class="left">- riya, new york city</div><div>2026</div></footer>  
+</main>  
+</div>  
+<script>  
+(function(){  
+var target=document.getElementById('typed');  
+if(!target)return;  
+var paragraphs=[  
+["hi, i'm riya. i write, i build, and right now i'm an investment banking analyst at ",{link:"bank of america",href:"https://www.bankofamerica.com/"},", on the consumer & retail team."],  
+["i'm the founder of ",{link:"indiya nyc",href:"https://indiyanyc.com"}," — sustainable clothing made with block-printers in jaipur — and on the side, angel invest in people i've watched build for years."],  
+["i write memos, build consumer experiments, and keep a small archive of ideas that started as notes on a desk. less algorithm, more taste."]  
+];  
+var pIdx=0,chunkIdx=0,cIdx=0,currentP=null,cursor=null;  
+function addLink(chunk,p){var a=document.createElement('a');a.href=chunk.href;a.textContent=chunk.link;if(chunk.href.indexOf('http')===0){a.target='_blank';a.rel='noopener';}p.appendChild(a);}  
+function renderStatic(){paragraphs.forEach(function(para){var p=document.createElement('p');para.forEach(function(chunk){if(typeof chunk==='string')p.appendChild(document.createTextNode(chunk));else addLink(chunk,p);});target.appendChild(p);});}  
+if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){renderStatic();return;}  
+function ensureCursor(){if(cursor&&cursor.parentNode)cursor.parentNode.removeChild(cursor);cursor=document.createElement('span');cursor.className='cursor';if(currentP)currentP.appendChild(cursor);}  
+function startNextParagraph(){currentP=document.createElement('p');target.appendChild(currentP);chunkIdx=0;cIdx=0;ensureCursor();typeChunk();}  
+function typeChunk(){  
+var para=paragraphs[pIdx];  
+if(chunkIdx>=para.length){pIdx++;if(pIdx<paragraphs.length)setTimeout(startNextParagraph,320);else if(cursor)cursor.classList.add('hidden');return;}  
+var chunk=para[chunkIdx];  
+if(typeof chunk==='string'){  
+if(cIdx<chunk.length){currentP.insertBefore(document.createTextNode(chunk.charAt(cIdx)),cursor);cIdx++;var d=16+(Math.random()*22-6);var lc=chunk.charAt(cIdx-1);if(lc==='.'||lc===','||lc==='?'||lc==='—')d+=70;setTimeout(typeChunk,d);}  
+else{chunkIdx++;cIdx=0;setTimeout(typeChunk,22);}  
+}else{var a=document.createElement('a');a.href=chunk.href;a.textContent=chunk.link;if(chunk.href.indexOf('http')===0){a.target='_blank';a.rel='noopener';}currentP.insertBefore(a,cursor);chunkIdx++;cIdx=0;setTimeout(typeChunk,50);}  
+}  
+startNextParagraph();  
+})();  
+</script>  
+</body>  
+</html>  
