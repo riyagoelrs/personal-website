@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>models — riya goel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Kantumruy+Pro:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f5f0e0;--paper-2:#ede6d0;--ink:#1a1410;--ink-soft:#5a4a3a;--ink-faint:#9a8a72;--rule:#cdc1a4;--wine:#6e1811;--wine-soft:#9c3b2a;--indigo:#2a3656;--terracotta:#b8633a;--oat:#e6d8b0;--rose:#d4a5a0;--sage:#8a9b7a;}
+@media(prefers-color-scheme:dark){:root{--paper:#1a1410;--paper-2:#251c16;--ink:#f0e8d4;--ink-soft:#c8b89a;--ink-faint:#7a6a52;--rule:#3a2e22;--wine:#d4564a;--wine-soft:#e8a87c;}}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;-webkit-font-smoothing:antialiased}
+body{font-family:'Kantumruy Pro',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;min-height:100vh}
+.page{display:grid;grid-template-columns:1fr;gap:2rem;max-width:64rem;margin:0 auto;padding:2rem 1.25rem 4rem}
+@media(min-width:880px){.page{grid-template-columns:13rem 1fr;gap:4rem;padding:3.5rem 2.5rem 5rem}}
+.rail{display:flex;flex-direction:column;gap:1rem}
+.rail .thumb{width:5.5rem;height:5.5rem;border-radius:0.25rem;background:var(--paper-2) center/cover no-repeat;background-image:url('https://sxhodsrixg8meuri.public.blob.vercel-storage.com/workshop/7814764f-32d2-418c-b945-a9336eda76e9/screenshot_2026-05-09_at_3.05.17_am-egEt3Yos5R5VN2jdDwULd4oicLVr2V.png')}
+.rail .name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;letter-spacing:0.06em;text-transform:uppercase;margin-top:0.4rem;font-weight:500}
+.rail nav{display:flex;flex-direction:column;gap:0.55rem;margin-top:0.85rem}
+.rail nav a{font-family:'Cormorant Garamond',serif;font-size:0.95rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-faint);text-decoration:none;font-weight:500;transition:color 0.18s}
+.rail nav a:hover,.rail nav a.active{color:var(--ink)}
+@media(min-width:880px){.rail{position:sticky;top:3.5rem;align-self:start}}
+.col{min-width:0}
+h1{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:400;letter-spacing:0.02em;margin-bottom:0.4rem}
+.dateline{font-family:'Courier Prime',monospace;font-size:0.78rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:0.4rem}
+.tag{font-family:'Courier Prime',monospace;font-size:0.9rem;color:var(--ink-soft);margin-bottom:2.5rem;font-style:italic}
+.model{display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1.6rem;padding-bottom:1.4rem;border-bottom:1px dashed var(--rule);max-width:42rem}
+.model:last-of-type{border-bottom:0}
+.model .head{display:flex;flex-wrap:wrap;align-items:baseline;gap:0.6rem 0.85rem;margin-bottom:0.15rem}
+.model .name{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:500;color:var(--ink);letter-spacing:0.02em}
+.model .kind{font-family:'Courier Prime',monospace;font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--terracotta);padding:0.15rem 0.5rem;border:1px solid var(--terracotta);border-radius:1px}
+.model .get{font-family:'Courier Prime',monospace;font-size:0.82rem;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:0.1rem;transition:color 0.18s,border-bottom-color 0.18s;margin-left:auto}
+.model .get:hover{color:var(--wine);border-bottom-color:var(--wine)}
+.model .get .arrow{font-family:'Cormorant Garamond',serif;font-style:italic}
+.model .pitch{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:var(--ink);line-height:1.55;margin-bottom:0.4rem}
+.model p.body{font-size:0.96rem;line-height:1.7;color:var(--ink-soft);margin-bottom:0.6rem;max-width:38rem}
+.model p.body em{color:var(--wine);font-style:italic}
+.foot{margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--rule);font-size:0.78rem;color:var(--ink-faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem}
+.foot .left{font-style:italic;color:var(--ink-soft)}
+</style>
+</head>
+<body>
+<div class="page">
+<aside class="rail">
+<div class="thumb" aria-hidden="true"></div>
+<div class="name">riya</div>
+<nav>
+<a href="./">about</a>
+<a href="./writing.html">writing</a>
+<a href="./design.html">design</a>
+<a href="./concepts.html">concepts</a>
+<a href="./models.html" class="active">models</a>
+<a href="./favorites.html">favorites</a>
+<a href="./guestbook.html">guestbook</a>
+</nav>
+</aside>
+<main class="col">
+<h1>models</h1>
+<p class="dateline">by riya goel · financial models i've built — download and poke at the assumptions.</p>
+<p class="tag">every blue cell is an editable input. the black cells are formulas. break them, re-run them, argue with them.</p>
+
+<article class="model">
+<div class="head">
+<span class="name">Coffee Shop Model</span>
+<span class="kind">operating · startup</span>
+<a class="get" href="./coffee_model.xlsx" download>download xlsx <span class="arrow">&rarr;</span></a>
+</div>
+<p class="pitch">the math behind the brew.</p>
+<p class="body">operating &amp; startup financial model for a 1,200 sq ft bed-stuy cafe &mdash; build-out capex, daily transaction volume, ticket size, rent and wage sensitivity, and the month EBITDA finally turns positive. built for anyone who wants to see the unit economics <em>before</em> they sign the lease.</p>
+</article>
+
+<article class="model">
+<div class="head">
+<span class="name">Regulars — Bodega ARR</span>
+<span class="kind">saas · fintech infra</span>
+<a class="get" href="./bodega_.xlsx" download>download xlsx <span class="arrow">&rarr;</span></a>
+</div>
+<p class="pitch">subscription-grade frequency, zero subscription on top of it.</p>
+<p class="body">a loyalty + prepaid wallet layer for NYC's ~13,500 bodegas, modeled as vertical fintech infrastructure &mdash; SaaS fee, take rate on wallet GMV, float yield, and breakage, ramped across a five-year partner build with burn multiple, CAC payback, and an ARR-multiple exit. explicitly <em>pro-bodega</em>, with the 2017 cautionary tale baked into the risk section.</p>
+</article>
+
+<article class="model">
+<div class="head">
+<span class="name">Photo Booth Roll-Up</span>
+<span class="kind">lbo · case study</span>
+<a class="get" href="./photo_booth_.xlsx" download>download xlsx <span class="arrow">&rarr;</span></a>
+</div>
+<p class="pitch">proven, derivative, cash-generating &mdash; boring beats R&amp;D.</p>
+<p class="body">an LBO roll-up of NYC analog photo booths (inspired by Old Friend on Allen St), underwriting a four-to-twelve booth portfolio with a full debt schedule, 100% cash sweep, and a five-year exit. unit economics haircut to 250 strips/day vs. the 400&ndash;700 flagship, with entry/exit multiple sensitivity on MoM and IRR. the thesis: <em>EBITDA quality beats unproven software</em>.</p>
+</article>
+
+<footer class="foot"><div class="left">— riya, new york city</div><div>2026</div></footer>
+</main>
+</div>
+</body>
+</html>
