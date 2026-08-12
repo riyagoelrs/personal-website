@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Licensed Likeness — A Field Thesis</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Mono:wght@400;700&display=swap');
+
+  :root{
+    --cream: #faf6ee;
+    --cream-deep: #f2ead9;
+    --card: #ffffff;
+    --navy: #1f2c3d;
+    --navy-soft: #3c4d63;
+    --matcha: #8a9a72;
+    --matcha-deep: #6d7d57;
+    --matcha-pale: #e7ebdc;
+    --line: #e3dbc8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--navy);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 17px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  img, svg { max-width: 100%; }
+
+  /* ---------- PILLS / EYEBROWS ---------- */
+  .pill {
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: var(--matcha-pale);
+    color: var(--matcha-deep);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-weight: 700;
+  }
+
+  .pill.on-navy { background: rgba(255,255,255,0.12); color: #cfe0bb; }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    padding: 72px 0 44px;
+    text-align: center;
+  }
+
+  .hero .pill { margin-bottom: 22px; }
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 58px;
+    line-height: 1.04;
+    letter-spacing: -0.01em;
+    color: var(--navy);
+    margin: 0 auto 20px;
+    max-width: 620px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--matcha-deep);
+    font-weight: 500;
+  }
+
+  .hero .dek {
+    font-size: 18.5px;
+    line-height: 1.65;
+    color: var(--navy-soft);
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .hero .byline {
+    margin-top: 26px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #9a9078;
+  }
+
+  /* ---------- STAT ROW ---------- */
+  .stat-row {
+    display: flex;
+    gap: 14px;
+    margin: 40px 0 8px;
+    flex-wrap: wrap;
+  }
+
+  .stat-pill {
+    flex: 1 1 0;
+    min-width: 150px;
+    background: var(--card);
+    border-radius: 20px;
+    padding: 22px 20px;
+    box-shadow: 0 2px 16px rgba(31,44,61,0.06);
+  }
+
+  .stat-pill .num {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 30px;
+    color: var(--matcha-deep);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-pill .cap {
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: var(--navy-soft);
+  }
+
+  /* ---------- TLDR ---------- */
+  .tldr {
+    background: var(--matcha-pale);
+    border-radius: 24px;
+    padding: 32px 34px;
+    margin: 20px 0 8px;
+  }
+
+  .tldr .pill { margin-bottom: 14px; background: rgba(255,255,255,0.6); }
+  .tldr p {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.5;
+    color: var(--navy);
+  }
+
+  .tldr p em { color: var(--matcha-deep); font-style: italic; }
+
+  /* ---------- SECTIONS ---------- */
+  section { padding: 52px 0 0; }
+  section:last-of-type { padding-bottom: 20px; }
+
+  .sec-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--cream);
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .sec-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--matcha-deep);
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1.18;
+    color: var(--navy);
+    margin-bottom: 18px;
+    letter-spacing: -0.01em;
+  }
+
+  p { margin-bottom: 16px; color: #2c3648; font-size: 16.5px; }
+  p:last-child { margin-bottom: 0; }
+
+  .lede {
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--navy);
+  }
+
+  b, strong { color: var(--navy); font-weight: 600; }
+
+  .mark {
+    background: linear-gradient(to bottom, transparent 62%, #d7e0c6 62%);
+    padding: 0 1px;
+  }
+
+  /* ---------- PULL QUOTE ---------- */
+  .pq {
+    background: var(--navy);
+    color: var(--cream);
+    border-radius: 24px;
+    padding: 40px 38px;
+    margin: 30px 0;
+  }
+
+  .pq p {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 25px;
+    line-height: 1.45;
+    color: #f4efe1;
+  }
+
+  .pq .attrib {
+    margin-top: 16px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #a9b795;
+  }
+
+  /* ---------- CARDS ---------- */
+  .card-grid {
+    display: flex;
+    gap: 16px;
+    margin: 20px 0 4px;
+    flex-wrap: wrap;
+  }
+
+  .fcard {
+    flex: 1 1 0;
+    min-width: 220px;
+    background: var(--card);
+    border-radius: 20px;
+    padding: 24px 22px;
+    box-shadow: 0 2px 16px rgba(31,44,61,0.06);
+  }
+
+  .fcard .tag {
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--matcha-deep);
+    background: var(--matcha-pale);
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+
+  .fcard h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+
+  .fcard p { font-size: 14.5px; color: var(--navy-soft); margin-bottom: 0; line-height: 1.6; }
+
+  /* ---------- LANES ---------- */
+  .lanes {
+    display: flex;
+    gap: 16px;
+    margin: 20px 0 4px;
+    flex-wrap: wrap;
+  }
+
+  .lane {
+    flex: 1 1 0;
+    min-width: 240px;
+    background: var(--cream-deep);
+    border-radius: 20px;
+    padding: 24px 22px;
+    border: 1.5px solid var(--line);
+  }
+
+  .lane .tag {
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--navy-soft);
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+
+  .lane p { font-size: 15px; margin-bottom: 0; color: var(--navy-soft); }
+
+  /* ---------- MATH BOX ---------- */
+  .mathbox {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 26px 28px;
+    margin: 24px 0;
+    box-shadow: 0 2px 16px rgba(31,44,61,0.06);
+  }
+
+  .mathbox .line {
+    display: block;
+    font-family: 'Space Mono', monospace;
+    font-size: 13.5px;
+    line-height: 2;
+    color: var(--navy-soft);
+  }
+
+  .mathbox .res { color: var(--matcha-deep); font-weight: 700; }
+
+  /* ---------- RISK LIST ---------- */
+  .risklist { margin: 22px 0 4px; display: flex; flex-direction: column; gap: 14px; }
+  .riskrow {
+    display: flex;
+    gap: 16px;
+    background: var(--card);
+    border-radius: 18px;
+    padding: 20px 22px;
+    box-shadow: 0 2px 16px rgba(31,44,61,0.05);
+  }
+
+  .riskrow .rk {
+    flex: 0 0 auto;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: var(--matcha-pale);
+    color: var(--matcha-deep);
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 12px;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .riskrow .rv { font-size: 15px; color: var(--navy-soft); line-height: 1.6; }
+  .riskrow .rv b { color: var(--navy); }
+
+  /* ---------- CLOSER ---------- */
+  .closer {
+    background: linear-gradient(160deg, #24344a 0%, #1a2536 100%);
+    color: var(--cream);
+    border-radius: 28px;
+    padding: 46px 40px;
+    margin: 46px 0 40px;
+    text-align: center;
+  }
+
+  .closer .pill { margin-bottom: 18px; }
+  .closer h2 { color: var(--cream); margin-bottom: 16px; }
+  .closer p { color: #cfd6df; font-size: 16.5px; max-width: 520px; margin: 0 auto 12px; }
+  .closer p:last-child { margin-bottom: 0; }
+  .closer .signoff {
+    margin-top: 22px;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: #cfe0bb;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    padding: 30px 0 60px;
+    text-align: center;
+  }
+
+  footer .src {
+    font-family: 'Space Mono', monospace;
+    font-size: 10.5px;
+    line-height: 1.9;
+    color: #a79c81;
+    max-width: 600px;
+    margin: 0 auto 8px;
+  }
+
+  footer .credit {
+    font-family: 'Space Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #9a9078;
+  }
+
+  hr.soft {
+    border: none;
+    height: 1px;
+    background: var(--line);
+    margin: 44px 0 0;
+  }
+
+  @media (max-width: 600px) {
+    body { font-size: 16px; }
+    .hero h1 { font-size: 40px; }
+    .hero .dek { font-size: 16.5px; }
+    h2 { font-size: 25px; }
+    .card-grid, .lanes, .stat-row { flex-direction: column; }
+    .pq, .closer { padding: 28px 24px; border-radius: 20px; }
+    .pq p { font-size: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- ================= HERO ================= -->
+  <div class="hero">
+    <span class="pill">A Field Thesis · Creator Economy × AI</span>
+    <h1>Licensed <em>Likeness</em></h1>
+    <p class="dek">Deepfakes broke trust in the face. Now Washington is about to turn the face into property — and someone has to run the registry.</p>
+    <div class="byline">By Riya Goel · August 2026</div>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-pill">
+      <div class="num">$310B</div>
+      <div class="cap">Global creator economy, 2026 run-rate</div>
+    </div>
+    <div class="stat-pill">
+      <div class="num">$480B</div>
+      <div class="cap">Goldman Sachs' 2027 creator economy TAM</div>
+    </div>
+    <div class="stat-pill">
+      <div class="num">$2B+</div>
+      <div class="cap">Patreon creator payouts, per year and climbing</div>
+    </div>
+  </div>
+
+  <div class="tldr">
+    <span class="pill">The thesis, in one breath</span>
+    <p>The next Patreon isn't a payments product for content — it's a <em>rights registry</em> for your face and voice. Creators license their likeness into a verified AI agent, fans pay to access it, and once federal law formalizes likeness as a licensable property right, whoever manages the licensing owns the category — not whoever builds the chatbot.</p>
+  </div>
+
+  <!-- ================= I ================= -->
+  <section>
+    <div class="sec-num">1</div>
+    <div class="sec-tag">The Setup</div>
+    <h2>Deepfakes broke the thing licensing is about to fix</h2>
+    <p class="lede">Every conversation about AI and creators right now starts from the same anxiety: someone's face, voice, or style gets lifted without consent and turned into content they never made and can't take back.</p>
+    <p>That anxiety is <span class="mark">real and well-earned</span> — voice-cloning scams, non-consensual likeness content, and AI-generated "collabs" nobody agreed to have all become normal enough in the last two years that platforms and lawmakers are finally responding.</p>
+    <p>But chaos in a market is usually a pricing signal, not just a threat. If your likeness can be stolen and monetized without you, the flip side is that your likeness has monetizable value in the first place — value nobody has built clean infrastructure to let you capture on your own terms. That's the opening. Not "stop the deepfakes." <b>License the real thing, on your terms, before someone counterfeits it for you.</b></p>
+  </section>
+
+  <hr class="soft">
+
+  <!-- ================= II ================= -->
+  <section>
+    <div class="sec-num">2</div>
+    <div class="sec-tag">The Mechanics</div>
+    <h2>How a licensed-likeness agent actually works</h2>
+    <p>Strip away the AI framing and the model is closer to music licensing than software. A creator doesn't sell their likeness — they can't, under the law about to pass — they <b>license</b> a defined, revocable use of it. In practice, that means four layers stacking on top of each other:</p>
+
+    <div class="card-grid">
+      <div class="fcard">
+        <span class="tag">01 · Source</span>
+        <h3>The Corpus</h3>
+        <p>Creator uploads their content — video, voice, writing, style — which becomes the grounded material the agent draws from and cites, rather than free-form generation.</p>
+      </div>
+      <div class="fcard">
+        <span class="tag">02 · License</span>
+        <h3>The Terms</h3>
+        <p>Scope, duration, and revocability are set explicitly — what the agent can say, where it can appear, and how fast it can be pulled if terms are violated.</p>
+      </div>
+      <div class="fcard">
+        <span class="tag">03 · Paywall</span>
+        <h3>The Access</h3>
+        <p>Fans pay by subscription, per-session, or per-message. Pricing tiers gate depth — a free preview, a paid tier, a premium 1:1-feeling tier.</p>
+      </div>
+    </div>
+
+    <p style="margin-top:22px;">The part nobody's productized well yet is the fourth layer: <b>ongoing rights management</b> — tracking where the licensed likeness is being used, splitting revenue automatically, and enforcing takedown when a term is breached. Every platform in this space today bolts that on as an afterthought. It's the least glamorous layer, and the one this thesis is really about.</p>
+  </section>
+
+  <hr class="soft">
+
+  <!-- ================= III ================= -->
+  <section>
+    <div class="sec-num">3</div>
+    <div class="sec-tag">Sizing It</div>
+    <h2>What's the actual TAM here?</h2>
+    <p>Start wide, then narrow to the slice this thesis actually touches. The global creator economy sits around <b>$310B</b> in 2026 run-rate — direct revenue, sponsorships, subscriptions, and infrastructure combined — and Goldman Sachs projects it nearly doubling to <b>$480B by 2027</b>.</p>
+    <p>Narrow further, to the category this actually competes in: creator <b>tools and infrastructure</b> — the analytics platforms, CRM stacks, and payment rails layered on top of raw creator revenue — represents roughly <b>8–12% of that total, or $25–38B in 2026.</b> Licensed-agent platforms sit inside that slice. It's not the whole creator economy; it's the toolbelt.</p>
+    <p>Now anchor it against the closest working comp: Patreon. Creators there have earned <b>over $2B a year</b> in payouts, crossing $10B cumulatively since launch, across roughly 25 million paid memberships — on a platform that takes an 8–12% cut and does nothing but host a paywall and a feed. Patreon itself pulls an estimated <b>$179–228M</b> in annual revenue from that flow.</p>
+
+    <div class="mathbox">
+      <span class="line">Patreon monetizes creator <b style="color:var(--navy)">time and output.</b></span>
+      <span class="line">A licensed agent monetizes creator <b style="color:var(--navy)">presence</b> — available 24/7, infinitely parallel.</span>
+      <span class="line">Shift even a low-single-digit share of that $2B+ payout pool</span>
+      <span class="line">toward "always-on access to me," priced at a premium to a feed post —</span>
+      <span class="line res">and the per-creator ceiling is structurally higher than subscription content ever was.</span>
+    </div>
+
+    <p>That's the TAM case in one line: this isn't a new market invented from nothing — it's an <b>existing, proven creator-payout pool being repriced upward</b>, because access to a person, not just their content, is the thing being sold.</p>
+  </section>
+
+  <hr class="soft">
+
+  <!-- ================= IV ================= -->
+  <section>
+    <div class="sec-num">4</div>
+    <div class="sec-tag">The Catalyst</div>
+    <h2>Congress is about to make the license real</h2>
+    <p>On June 18, 2026, the Senate Judiciary Committee <b>unanimously</b> advanced the NO FAKES Act — bipartisan, backed by the RIAA, the AFL-CIO, and the National Association of Broadcasters, and closer to enactment than in any prior session. It creates a federal property right in a person's voice and visual likeness. Critically: <b>licensable, but not permanently sellable.</b> A notice-and-takedown enforcement structure, modeled on the DMCA, backs it up.</p>
+
+    <div class="pq">
+      <p>"Licensable but not sellable" is the whole ballgame. That's not a chatbot feature — that's a job description for a rights society, the same role ASCAP and BMI have played for music for a century.</p>
+      <div class="attrib">The reframe this thesis turns on</div>
+    </div>
+
+    <p>Once likeness is a formal, revocable, licensable right, every product built on someone's face or voice needs a system behind it that can prove consent, track scope, split revenue, and kill access the moment a term is violated. That system doesn't exist yet at category scale — which makes it infrastructure, not an app. It gets stronger as more platforms build likeness products on top of it, not weaker.</p>
+  </section>
+
+  <hr class="soft">
+
+  <!-- ================= V ================= -->
+  <section>
+    <div class="sec-num">5</div>
+    <div class="sec-tag">The Field</div>
+    <h2>Who's already building it — and exactly where they're thin</h2>
+
+    <div class="card-grid">
+      <div class="fcard">
+        <span class="tag">Category Leader</span>
+        <h3>Delphi</h3>
+        <p>$16M Series A, Sequoia + Anthropic's Anthology Fund. 2,000+ experts on board, tiers from $79–299/mo. But its own reviewers note monetization "is not the design center" — it's an engagement and lead-gen tool wearing a subscription price tag, with platform fees reported up to 20%.</p>
+      </div>
+      <div class="fcard">
+        <span class="tag">Scale, No Payout</span>
+        <h3>Character.AI</h3>
+        <p>20M monthly users, a $9.99/mo tier — and explicitly no creator monetization or revenue-share program. Proof that demand for parasocial AI exists, and proof that demand alone doesn't build a payout rail.</p>
+      </div>
+      <div class="fcard">
+        <span class="tag">Cautionary Comp</span>
+        <h3>Fanvue / Glambase</h3>
+        <p>Real subscription revenue from synthetic personas — proof people pay recurring fees for a persona relationship. But it sits adjacent to adult content, making it a signal to study, not a brand to associate with.</p>
+      </div>
+    </div>
+
+    <p style="margin-top:22px;">Line those three up and a pattern falls out immediately: <b>the platform with the most credible creators hasn't solved monetization, and the platform that's solved for engagement hasn't paid a single creator.</b> Nobody has both a serious creator roster and a real payout engine running at the same time. That's not a crowded market — that's a market where the hard part is still open.</p>
+  </section>
+
+  <hr class="soft">
+
+  <!-- ================= VI ================= -->
+  <section>
+    <div class="sec-num">6</div>
+    <div class="sec-tag">The Whitespace</div>
+    <h2>Two lanes worth actually pursuing</h2>
+    <p>Don't blend them — they're different bets with different risk profiles.</p>
+
+    <div class="lanes">
+      <div class="lane">
+        <span class="tag">Lane One — Build</span>
+        <p>A vertical-specific licensed agent for <b>taste and aesthetic judgment</b> — styling, product curation, design sensibility — rather than general life advice. Every existing player is built for coaches explaining frameworks. Nobody's built the version for creators whose value is a point of view, not a process.</p>
+      </div>
+      <div class="lane">
+        <span class="tag">Lane Two — Invest / Watch</span>
+        <p>The <b>rights-management layer</b> sitting underneath every likeness platform post–NO FAKES: consent tracking, automated revenue splits, takedown enforcement. Slower and less visible than a consumer app, but it compounds — it gets more valuable every time a new platform in this category launches, instead of competing with it.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="soft">
+
+  <!-- ================= VII ================= -->
+  <section>
+    <div class="sec-num">7</div>
+    <div class="sec-tag">What Could Go Wrong</div>
+    <h2>The open risks nobody's pricing in yet</h2>
+
+    <div class="risklist">
+      <div class="riskrow">
+        <div class="rk">01</div>
+        <div class="rv"><b>Liability with no owner.</b> If a licensed agent gives bad advice under a real creator's name, who's exposed — creator, platform, or whoever built the agent? No incumbent has answered this, and it's probably worth more than the AI product itself.</div>
+      </div>
+      <div class="riskrow">
+        <div class="rk">02</div>
+        <div class="rv"><b>Brand dilution at scale.</b> A clone that's "close enough" but not quite right, running unsupervised across thousands of fan interactions a day, can erode the exact trust the license was supposed to protect.</div>
+      </div>
+      <div class="riskrow">
+        <div class="rk">03</div>
+        <div class="rv"><b>Category-level trust erosion.</b> One high-profile scandal — a leaked agent, a scope violation, a badly-disclosed clone — could poison trust across every platform in the category at once, not just the one at fault.</div>
+      </div>
+      <div class="riskrow">
+        <div class="rk">04</div>
+        <div class="rv"><b>Regulatory timing risk.</b> NO FAKES cleared committee unanimously, but it still has to clear the full Senate, the House, and reconciliation before it's law — betting entirely ahead of it means betting on a specific legislative timeline.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CLOSER ================= -->
+  <div class="closer">
+    <span class="pill on-navy">Where This Goes</span>
+    <h2>The bet underneath the bet</h2>
+    <p>Every version of this thesis — the vertical agent, the rights infrastructure, or simply watching it unfold — rests on the same underlying belief: <b style="color:#fff;">presence is about to become a licensable, priceable asset class</b>, the same way a song or a film clip already is.</p>
+    <p>Patreon proved fans will pay recurring fees for access to a creator's output. Delphi is proving they'll pay for access to a creator's presence. NO FAKES is about to make that presence a legal property right instead of a gray-area experiment.</p>
+    <p>The category doesn't need another chatbot wearing a creator's face. It needs the plumbing — consent, splits, enforcement — that makes every future chatbot wearing a creator's face trustworthy by default.</p>
+    <div class="signoff">That's a duller pitch than "an AI version of you." It's also the only version of this thesis still worth something after the tenth competitor shows up.</div>
+  </div>
+
+  <footer>
+    <div class="src">Sources: Delphi (Sequoia, Anthropic's Anthology Fund) · Character.AI reporting · Fanvue / Glambase · S.4591 NO FAKES Act, Congress.gov · Goldman Sachs Creator Economy Research · Patreon (Sacra, Contrary Research) · Grand View Research &amp; Research and Markets creator economy sizing</div>
+    <div class="credit">Riya Goel · August 2026</div>
+  </footer>
+
+</div>
+
+</body>
+</html>
