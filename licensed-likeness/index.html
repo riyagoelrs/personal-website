@@ -3,418 +3,570 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Likeness Economy Already Exists — NIL as the Precedent</title>
-<meta name="description" content="A field briefing on college NIL as the real-world precedent for licensed AI likeness infrastructure.">
-<meta property="og:title" content="The Likeness Economy Already Exists">
-<meta property="og:description" content="College sports built the first scaled market for monetizing identity. AI likeness is the next layer.">
+<title>Licensed Likeness — A Field Thesis</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Mono:wght@400;700&display=swap');
 
 :root{
-  --cream:#f6f1e7;
-  --paper:#fbf8f2;
-  --navy:#10253f;
-  --navy-2:#17385f;
-  --red:#b3272d;
-  --red-2:#d54f45;
-  --gold:#d5b164;
-  --gold-2:#f0d693;
-  --line:#d8d0c3;
-  --ink:#162637;
-  --muted:#58697d;
-  --card:#ffffff;
-  --shadow:0 12px 32px rgba(16,37,63,.08);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  font-family:'Inter',sans-serif;
-  background:
-    linear-gradient(180deg, rgba(16,37,63,.06), rgba(16,37,63,0) 220px),
-    repeating-linear-gradient(135deg, rgba(16,37,63,.025) 0, rgba(16,37,63,.025) 8px, transparent 8px, transparent 16px),
-    var(--cream);
-  color:var(--ink);
-  line-height:1.72;
-  -webkit-font-smoothing:antialiased;
-}
-.wrap{max-width:860px;margin:0 auto;padding:24px 24px 80px}
-a{color:inherit}
-
-.topbar{
-  background:var(--navy);
-  color:#fff;
-  border:3px solid #0a1930;
-  box-shadow:var(--shadow);
-  border-radius:18px;
-  overflow:hidden;
-}
-.topbar .stripe{height:10px;background:repeating-linear-gradient(90deg,var(--red) 0,var(--red) 44px,var(--gold) 44px,var(--gold) 88px)}
-.topbar-inner{
-  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
-  padding:14px 18px;
-  font:700 11px/1 'IBM Plex Mono',monospace;
-  letter-spacing:.08em;text-transform:uppercase;
+--cream: #faf6ee;
+--cream-deep: #f2ead9;
+--card: #ffffff;
+--navy: #1f2c3d;
+--navy-soft: #3c4d63;
+--matcha: #8a9a72;
+--matcha-deep: #6d7d57;
+--matcha-pale: #e7ebdc;
+--line: #e3dbc8;
 }
 
-.hero{
-  background:var(--paper);
-  border:2px solid var(--navy);
-  border-radius:24px;
-  margin-top:18px;
-  overflow:hidden;
-  box-shadow:var(--shadow);
-}
-.hero-grid{
-  display:grid;grid-template-columns:1.15fr .85fr;
-}
-.hero-copy{padding:34px 34px 30px}
-.label{
-  display:inline-block;
-  padding:7px 12px;
-  border:2px solid var(--red);
-  color:var(--red);
-  background:#fff4f2;
-  border-radius:999px;
-  font:700 11px/1 'IBM Plex Mono',monospace;
-  letter-spacing:.08em;text-transform:uppercase;
-  margin-bottom:18px;
-}
-h1{
-  font-family:'Barlow Condensed',sans-serif;
-  text-transform:uppercase;
-  font-size:68px;
-  line-height:.94;
-  letter-spacing:.01em;
-  color:var(--navy);
-  margin-bottom:14px;
-}
-h1 em{font-style:normal;color:var(--red)}
-.dek{font-size:18px;color:var(--muted);max-width:540px}
-.byline{
-  margin-top:20px;
-  font:700 11px/1 'IBM Plex Mono',monospace;
-  letter-spacing:.08em;text-transform:uppercase;color:#6b7786;
-}
-.hero-board{
-  background:linear-gradient(180deg,var(--navy),#0d1d31);
-  color:#fff;
-  padding:24px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  gap:14px;
-  border-left:3px solid var(--gold);
-}
-.board-title{font:700 11px 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-2)}
-.board-box{
-  border:2px solid rgba(255,255,255,.15);
-  border-radius:16px;
-  padding:16px;
-  background:rgba(255,255,255,.03);
-}
-.board-box .big{font-family:'Barlow Condensed',sans-serif;font-size:64px;line-height:.9;color:var(--gold-2);text-transform:uppercase}
-.board-box .small{margin-top:8px;font:700 10px/1.45 'IBM Plex Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:#d6e2f0}
-.board-note{font-size:14px;color:#d6e2f0;line-height:1.55}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-.scoreboard{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0 22px;
-}
-.stat{
-  background:var(--navy);
-  color:#fff;
-  border-radius:20px;
-  border:2px solid #0a1930;
-  box-shadow:var(--shadow);
-  overflow:hidden;
-}
-.stat-head{padding:8px 12px;background:var(--red);font:700 10px 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase}
-.stat-body{padding:18px 16px}
-.stat .n{font-family:'Barlow Condensed',sans-serif;font-size:44px;line-height:.95;color:var(--gold-2);text-transform:uppercase}
-.stat .l{font:700 10px/1.45 'IBM Plex Mono',monospace;letter-spacing:.04em;text-transform:uppercase;color:#dce6f0;margin-top:8px}
+html { scroll-behavior: smooth; }
 
-.thesis{
-  background:#fff;
-  border:2px solid var(--navy);
-  border-left:10px solid var(--gold);
-  border-radius:20px;
-  padding:26px 28px;
-  box-shadow:var(--shadow);
+body {
+background: var(--cream);
+color: var(--navy);
+font-family: 'DM Sans', sans-serif;
+font-size: 17px;
+line-height: 1.75;
+-webkit-font-smoothing: antialiased;
 }
-.thesis .mini{font:700 11px 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
-.thesis p{font-size:22px;line-height:1.5;font-weight:700;color:var(--ink)}
-.thesis em{color:var(--red);font-style:normal}
 
-section{padding-top:52px}
-.rule{height:4px;margin-top:48px;border-radius:999px;background:linear-gradient(90deg,var(--navy) 0,var(--navy) 65%,var(--gold) 65%,var(--gold) 100%)}
-.section-top{display:flex;align-items:center;gap:14px;margin-bottom:10px;flex-wrap:wrap}
-.secno{
-  background:var(--red);color:white;border-radius:10px;padding:7px 11px;
-  font:800 13px/1 'Barlow Condensed',sans-serif;letter-spacing:.06em;text-transform:uppercase;
+.wrap {
+max-width: 720px;
+margin: 0 auto;
+padding: 0 28px;
 }
-.kicker{font:700 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
-h2{
-  font-family:'Barlow Condensed',sans-serif;
-  text-transform:uppercase;
-  font-size:42px;
-  line-height:1;
-  letter-spacing:.01em;
-  margin-bottom:16px;
-  color:var(--navy);
+
+img, svg { max-width: 100%; }
+
+.pill {
+display: inline-block;
+font-family: 'Space Mono', monospace;
+font-size: 11px;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+background: var(--matcha-pale);
+color: var(--matcha-deep);
+padding: 6px 14px;
+border-radius: 999px;
+font-weight: 700;
 }
-p{font-size:16px;color:#304356;margin-bottom:14px}
-.lede{font-size:19px;color:var(--ink);font-weight:600}
-strong{color:var(--ink)}
-.mark{background:linear-gradient(to bottom, transparent 60%, rgba(213,177,100,.45) 60%)}
+.pill.on-navy { background: rgba(255,255,255,0.12); color: #cfe0bb; }
 
-.timeline{display:grid;grid-template-columns:1fr;gap:12px;margin:22px 0 6px}
-.trow{
-  display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:start;
-  background:var(--card);border:2px solid var(--line);border-left:8px solid var(--navy);
-  padding:18px 20px;border-radius:18px;box-shadow:var(--shadow)
+.hero {
+padding: 72px 0 44px;
+text-align: center;
 }
-.tdate{font:800 24px/1 'Barlow Condensed',sans-serif;text-transform:uppercase;color:var(--red)}
-.tbody{font-size:14.5px;color:var(--muted)}
-.tbody b{display:block;font-family:'Barlow Condensed',sans-serif;font-size:24px;line-height:1;color:var(--navy);text-transform:uppercase;margin-bottom:6px}
-
-.stack{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:22px 0 6px}
-.layer{
-  background:var(--card);border-radius:18px;padding:20px;border:2px solid var(--line);border-top:8px solid var(--red);box-shadow:var(--shadow)
+.hero .pill { margin-bottom: 22px; }
+.hero h1 {
+font-family: 'Fraunces', serif;
+font-weight: 600;
+font-size: 58px;
+line-height: 1.04;
+letter-spacing: -0.01em;
+color: var(--navy);
+margin: 0 auto 20px;
+max-width: 620px;
 }
-.layer .tag{font:700 10px 'IBM Plex Mono',monospace;letter-spacing:.07em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
-.layer h3{font-family:'Barlow Condensed',sans-serif;font-size:26px;line-height:1;text-transform:uppercase;color:var(--navy);margin-bottom:8px}
-.layer p{font-size:14px;line-height:1.58;margin:0;color:var(--muted)}
-
-.proof{
-  margin:28px 0 0;
-  background:linear-gradient(145deg,var(--navy),#0d1d31);
-  border:2px solid #0a1930;
-  border-radius:24px;
-  box-shadow:var(--shadow);
-  overflow:hidden;
+.hero h1 em {
+font-style: italic;
+color: var(--matcha-deep);
+font-weight: 500;
 }
-.proof .stripe{height:10px;background:repeating-linear-gradient(90deg,var(--gold) 0,var(--gold) 42px,var(--red) 42px,var(--red) 84px)}
-.proof-inner{padding:30px 30px 32px}
-.proof .label{margin:0 0 12px 0;background:transparent;color:var(--gold-2);border-color:rgba(240,214,147,.45)}
-.proof p{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;font-size:34px;line-height:1.08;color:#fff;margin:0}
-.proof em{color:var(--gold-2);font-style:normal}
-
-.compare{overflow-x:auto;margin:22px 0 4px}
-table{width:100%;border-collapse:collapse;min-width:680px;background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
-th,td{text-align:left;padding:15px 16px;border-bottom:1px solid #ece6db;vertical-align:top}
-th{font:700 10px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;background:var(--navy);color:#fff}
-td{font-size:13.5px;color:var(--muted)}
-td:first-child{font-weight:800;color:var(--navy);font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;font-size:20px;line-height:1}
-tr:nth-child(even) td{background:#fcfaf7}
-tr:last-child td{border-bottom:0}
-
-.callout{
-  background:#fff7e7;border:2px solid var(--gold);border-left:10px solid var(--gold);
-  border-radius:20px;padding:22px 24px;margin:24px 0 4px;box-shadow:var(--shadow)
+.hero .dek {
+font-size: 18.5px;
+line-height: 1.65;
+color: var(--navy-soft);
+max-width: 480px;
+margin: 0 auto;
 }
-.callout .label{margin:0 0 8px 0;color:#7f5a12;border-color:#d9bc6e;background:transparent}
-.callout p{font-size:15.5px;margin:0;color:var(--ink)}
-
-.riskgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px;margin-top:20px}
-.risk{background:#fff;border-radius:18px;padding:20px;border:2px solid var(--line);box-shadow:var(--shadow)}
-.risk .num{font:700 10px 'IBM Plex Mono',monospace;color:var(--red);margin-bottom:7px}
-.risk b{display:block;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;font-size:26px;line-height:1;color:var(--navy);margin-bottom:7px}
-.risk p{font-size:13.8px;line-height:1.58;margin:0;color:var(--muted)}
-
-.close{
-  margin:52px 0 34px;background:linear-gradient(145deg,var(--red),#8f1d23);color:white;
-  border-radius:26px;box-shadow:var(--shadow);overflow:hidden;border:2px solid #7a151a
+.hero .byline {
+margin-top: 26px;
+font-family: 'Space Mono', monospace;
+font-size: 11.5px;
+letter-spacing: 0.06em;
+text-transform: uppercase;
+color: #9a9078;
 }
-.close .stripe{height:10px;background:repeating-linear-gradient(90deg,var(--gold) 0,var(--gold) 40px,var(--navy) 40px,var(--navy) 80px)}
-.close-inner{padding:36px 34px 38px;text-align:center}
-.close .label{margin:0 0 14px 0;color:#fff;border-color:rgba(255,255,255,.45);background:rgba(255,255,255,.08)}
-.close h2{color:#fff;margin-bottom:14px}
-.close p{color:#f9e9e6;max-width:620px;margin:0 auto 12px;font-size:16px}
-.close .last{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;font-size:32px;line-height:1.08;color:var(--gold-2);margin-top:16px}
 
-footer{padding:4px 0 10px;text-align:center}
-.sources{font:10px/1.85 'IBM Plex Mono',monospace;color:#7d7060}
-.sources a{text-decoration:underline;text-decoration-color:#c9b99d;text-underline-offset:2px}
-.credit{font:10px 'IBM Plex Mono',monospace;letter-spacing:.07em;text-transform:uppercase;color:#7d7060;margin-top:11px}
-
-@media(max-width:760px){
-  .hero-grid,.scoreboard,.stack,.riskgrid{grid-template-columns:1fr}
-  h1{font-size:52px}
-  h2{font-size:34px}
-  .hero-copy,.hero-board,.proof-inner,.close-inner,.thesis{padding:24px}
-  .trow{grid-template-columns:1fr;gap:8px}
+.stat-row {
+display: flex;
+gap: 14px;
+margin: 40px 0 8px;
+flex-wrap: wrap;
 }
-@media(max-width:540px){
-  .wrap{padding:16px 16px 60px}
-  .topbar-inner{padding:12px 14px}
-  h1{font-size:44px}
-  .dek{font-size:16px}
-  .proof p{font-size:28px}
-  .close .last{font-size:26px}
+.stat-pill {
+flex: 1 1 0;
+min-width: 150px;
+background: var(--card);
+border-radius: 20px;
+padding: 22px 20px;
+box-shadow: 0 2px 16px rgba(31,44,61,0.06);
+}
+.stat-pill .num {
+font-family: 'Fraunces', serif;
+font-weight: 600;
+font-size: 30px;
+color: var(--matcha-deep);
+line-height: 1;
+margin-bottom: 8px;
+}
+.stat-pill .cap {
+font-size: 12.5px;
+line-height: 1.5;
+color: var(--navy-soft);
+}
+
+.tldr {
+background: var(--matcha-pale);
+border-radius: 24px;
+padding: 32px 34px;
+margin: 20px 0 8px;
+}
+.tldr .pill { margin-bottom: 14px; background: rgba(255,255,255,0.6); }
+.tldr p {
+font-family: 'Fraunces', serif;
+font-weight: 500;
+font-size: 22px;
+line-height: 1.5;
+color: var(--navy);
+}
+.tldr p em { color: var(--matcha-deep); font-style: italic; }
+
+section { padding: 52px 0 0; }
+section:last-of-type { padding-bottom: 20px; }
+
+.sec-num {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+width: 34px;
+height: 34px;
+border-radius: 50%;
+background: var(--navy);
+color: var(--cream);
+font-family: 'Space Mono', monospace;
+font-size: 12px;
+font-weight: 700;
+margin-bottom: 16px;
+}
+
+.sec-tag {
+font-family: 'Space Mono', monospace;
+font-size: 11px;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: var(--matcha-deep);
+margin-bottom: 8px;
+font-weight: 700;
+}
+
+h2 {
+font-family: 'Fraunces', serif;
+font-weight: 600;
+font-size: 32px;
+line-height: 1.18;
+color: var(--navy);
+margin-bottom: 18px;
+letter-spacing: -0.01em;
+}
+
+p { margin-bottom: 16px; color: #2c3648; font-size: 16.5px; }
+p:last-child { margin-bottom: 0; }
+
+.lede {
+font-size: 19px;
+line-height: 1.7;
+color: var(--navy);
+}
+
+b, strong { color: var(--navy); font-weight: 600; }
+
+.mark {
+background: linear-gradient(to bottom, transparent 62%, #d7e0c6 62%);
+padding: 0 1px;
+}
+
+.pq {
+background: var(--navy);
+color: var(--cream);
+border-radius: 24px;
+padding: 40px 38px;
+margin: 30px 0;
+}
+.pq p {
+font-family: 'Fraunces', serif;
+font-weight: 500;
+font-style: italic;
+font-size: 25px;
+line-height: 1.45;
+color: #f4efe1;
+}
+.pq .attrib {
+margin-top: 16px;
+font-family: 'Space Mono', monospace;
+font-size: 11px;
+text-transform: uppercase;
+letter-spacing: 0.06em;
+color: #a9b795;
+}
+
+.card-grid {
+display: flex;
+gap: 16px;
+margin: 20px 0 4px;
+flex-wrap: wrap;
+}
+.fcard {
+flex: 1 1 0;
+min-width: 220px;
+background: var(--card);
+border-radius: 20px;
+padding: 24px 22px;
+box-shadow: 0 2px 16px rgba(31,44,61,0.06);
+}
+.fcard .tag {
+display: inline-block;
+font-family: 'Space Mono', monospace;
+font-size: 10px;
+letter-spacing: 0.06em;
+text-transform: uppercase;
+color: var(--matcha-deep);
+background: var(--matcha-pale);
+padding: 4px 10px;
+border-radius: 999px;
+margin-bottom: 12px;
+font-weight: 700;
+}
+.fcard h3 {
+font-family: 'Fraunces', serif;
+font-weight: 600;
+font-size: 20px;
+color: var(--navy);
+margin-bottom: 8px;
+}
+.fcard p { font-size: 14.5px; color: var(--navy-soft); margin-bottom: 0; line-height: 1.6; }
+
+.lanes {
+display: flex;
+gap: 16px;
+margin: 20px 0 4px;
+flex-wrap: wrap;
+}
+.lane {
+flex: 1 1 0;
+min-width: 240px;
+background: var(--cream-deep);
+border-radius: 20px;
+padding: 24px 22px;
+border: 1.5px solid var(--line);
+}
+.lane .tag {
+display: inline-block;
+font-family: 'Space Mono', monospace;
+font-size: 10px;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+color: var(--navy-soft);
+margin-bottom: 10px;
+font-weight: 700;
+}
+.lane p { font-size: 15px; margin-bottom: 0; color: var(--navy-soft); }
+
+.mathbox {
+background: var(--card);
+border-radius: 20px;
+padding: 26px 28px;
+margin: 24px 0;
+box-shadow: 0 2px 16px rgba(31,44,61,0.06);
+}
+.mathbox .line {
+display: block;
+font-family: 'Space Mono', monospace;
+font-size: 13.5px;
+line-height: 2;
+color: var(--navy-soft);
+}
+.mathbox .res { color: var(--matcha-deep); font-weight: 700; }
+
+.risklist { margin: 22px 0 4px; display: flex; flex-direction: column; gap: 14px; }
+.riskrow {
+display: flex;
+gap: 16px;
+background: var(--card);
+border-radius: 18px;
+padding: 20px 22px;
+box-shadow: 0 2px 16px rgba(31,44,61,0.05);
+}
+.riskrow .rk {
+flex: 0 0 auto;
+width: 30px; height: 30px;
+border-radius: 50%;
+background: var(--matcha-pale);
+color: var(--matcha-deep);
+font-family: 'Space Mono', monospace;
+font-weight: 700;
+font-size: 12px;
+display: flex; align-items: center; justify-content: center;
+}
+.riskrow .rv { font-size: 15px; color: var(--navy-soft); line-height: 1.6; }
+.riskrow .rv b { color: var(--navy); }
+
+.closer {
+background: linear-gradient(160deg, #24344a 0%, #1a2536 100%);
+color: var(--cream);
+border-radius: 28px;
+padding: 46px 40px;
+margin: 46px 0 40px;
+text-align: center;
+}
+.closer .pill { margin-bottom: 18px; }
+.closer h2 { color: var(--cream); margin-bottom: 16px; }
+.closer p { color: #cfd6df; font-size: 16.5px; max-width: 520px; margin: 0 auto 12px; }
+.closer p:last-child { margin-bottom: 0; }
+.closer .signoff {
+margin-top: 22px;
+font-family: 'Fraunces', serif;
+font-style: italic;
+font-size: 17px;
+color: #cfe0bb;
+}
+
+footer {
+padding: 30px 0 60px;
+text-align: center;
+}
+footer .src {
+font-family: 'Space Mono', monospace;
+font-size: 10.5px;
+line-height: 1.9;
+color: #a79c81;
+max-width: 600px;
+margin: 0 auto 8px;
+}
+footer .credit {
+font-family: 'Space Mono', monospace;
+font-size: 10.5px;
+letter-spacing: 0.06em;
+text-transform: uppercase;
+color: #9a9078;
+}
+
+hr.soft {
+border: none;
+height: 1px;
+background: var(--line);
+margin: 44px 0 0;
+}
+
+@media (max-width: 600px) {
+body { font-size: 16px; }
+.hero h1 { font-size: 40px; }
+.hero .dek { font-size: 16.5px; }
+h2 { font-size: 25px; }
+.card-grid, .lanes, .stat-row { flex-direction: column; }
+.pq, .closer { padding: 28px 24px; border-radius: 20px; }
+.pq p { font-size: 20px; }
 }
 </style>
 </head>
 <body>
+
 <div class="wrap">
 
-  <div class="topbar">
-    <div class="stripe"></div>
-    <div class="topbar-inner">
-      <span>Field Briefing</span>
-      <span>NIL × AI Likeness</span>
-      <span>August 2026</span>
-    </div>
-  </div>
+<div class="hero">
+<span class="pill">A Field Thesis · Creator Economy × AI</span>
+<h1>Licensed <em>Likeness</em></h1>
+<p class="dek">Deepfakes broke trust in the face. Now Washington is about to turn the face into property — and someone has to run the registry.</p>
+<div class="byline">By Riya Goel · August 2026</div>
+</div>
 
-  <header class="hero">
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <div class="label">Varsity Thesis Note</div>
-        <h1>The likeness economy <em>already exists</em></h1>
-        <p class="dek">College sports spent five years turning identity into a regulated, reportable, licensable market. AI doesn’t need to invent the model. It needs to copy the infrastructure.</p>
-        <div class="byline">By Riya Goel · August 2026</div>
-      </div>
-      <div class="hero-board">
-        <div class="board-title">Scoreboard</div>
-        <div class="board-box">
-          <div class="big">NIL</div>
-          <div class="small">The live precedent for licensed identity at scale</div>
-        </div>
-        <div class="board-note"><strong style="color:#fff;">Why NIL is the live precedent:</strong> it already does the core job an AI-likeness market will need to do — turn a person’s identity into a permissioned commercial right, connect that right to buyers through intermediaries, benchmark value, report transactions and enforce the rules around use. AI changes the format from endorsements to programmable face, voice and persona; the market structure is already being tested in college sports.</div>
-      </div>
-    </div>
-  </header>
+<div class="stat-row">
+<div class="stat-pill">
+<div class="num">$310B</div>
+<div class="cap">Global creator economy, 2026 run-rate</div>
+</div>
+<div class="stat-pill">
+<div class="num">$480B</div>
+<div class="cap">Goldman Sachs' 2027 creator economy TAM</div>
+</div>
+<div class="stat-pill">
+<div class="num">$2B+</div>
+<div class="cap">Patreon creator payouts, per year and climbing</div>
+</div>
+</div>
 
-  <div class="scoreboard">
-    <div class="stat"><div class="stat-head">Market Size</div><div class="stat-body"><div class="n">$4.5B</div><div class="l">2026–27 NIL market estimate</div></div></div>
-    <div class="stat"><div class="stat-head">School Cap</div><div class="stat-body"><div class="n">$21.3M</div><div class="l">Current school revenue-share cap</div></div></div>
-    <div class="stat"><div class="stat-head">Reporting Threshold</div><div class="stat-body"><div class="n">$600+</div><div class="l">Third-party deals requiring NIL Go reporting</div></div></div>
-  </div>
+<div class="tldr">
+<span class="pill">The thesis, in one breath</span>
+<p>The next Patreon isn't a payments product for content — it's a <em>rights registry</em> for your face and voice. Creators license their likeness into a verified AI agent, fans pay to access it, and once federal law formalizes likeness as a licensable property right, whoever manages the licensing owns the category — not whoever builds the chatbot.</p>
+</div>
 
-  <div class="thesis">
-    <div class="mini">The thesis, in one breath</div>
-    <p>NIL is not just a college-sports story. It is the first scaled proof that a person’s <em>identity can become a licensable economic asset</em> once the market has clear rights, intermediaries, pricing, reporting and enforcement.</p>
-  </div>
+<section>
+<div class="sec-num">1</div>
+<div class="sec-tag">The Setup</div>
+<h2>Deepfakes broke the thing licensing is about to fix</h2>
+<p class="lede">Every conversation about AI and creators right now starts from the same anxiety: someone's face, voice, or style gets lifted without consent and turned into content they never made and can't take back.</p>
+<p>That anxiety is <span class="mark">real and well-earned</span> — voice-cloning scams, non-consensual likeness content, and AI-generated "collabs" nobody agreed to have all become normal enough in the last two years that platforms and lawmakers are finally responding.</p>
+<p>But chaos in a market is usually a pricing signal, not just a threat. If your likeness can be stolen and monetized without you, the flip side is that your likeness has monetizable value in the first place — value nobody has built clean infrastructure to let you capture on your own terms. That's the opening. Not "stop the deepfakes." <b>License the real thing, on your terms, before someone counterfeits it for you.</b></p>
+</section>
 
-  <section>
-    <div class="section-top"><div class="secno">01</div><div class="kicker">The Precedent</div></div>
-    <h2>Before AI cloned a face, college sports priced one</h2>
-    <p class="lede">The most important comp for licensed AI likeness is not a chatbot. It is a quarterback signing an endorsement deal.</p>
-    <p>Since 2021, college athletes have been able to earn money from their <strong>name, image and likeness</strong>. What started as a messy patchwork of collectives and sponsorships has evolved into a market with national compliance rails, formal reporting, pricing review and direct institutional compensation.</p>
-    <p>That matters because the hard question behind AI likeness is not “will people pay?” It is <span class="mark">“can identity be turned into a permissioned, trackable commercial right at scale?”</span> NIL already answered yes.</p>
-  </section>
+<hr class="soft">
 
-  <div class="rule"></div>
+<section>
+<div class="sec-num">2</div>
+<div class="sec-tag">The Mechanics</div>
+<h2>How a licensed-likeness agent actually works</h2>
+<p>Strip away the AI framing and the model is closer to music licensing than software. A creator doesn't sell their likeness — they can't, under the law about to pass — they <b>license</b> a defined, revocable use of it. In practice, that means four layers stacking on top of each other:</p>
 
-  <section>
-    <div class="section-top"><div class="secno">02</div><div class="kicker">How We Got Here</div></div>
-    <h2>Five years from legal gray zone to financial infrastructure</h2>
-    <div class="timeline">
-      <div class="trow"><div class="tdate">2021</div><div class="tbody"><b>The right becomes monetizable</b>NCAA restrictions loosen and athletes begin signing third-party NIL deals.</div></div>
-      <div class="trow"><div class="tdate">2021–24</div><div class="tbody"><b>Intermediaries appear</b>Collectives, agencies, marketplaces and school compliance offices become the connective tissue between athlete and buyer.</div></div>
-      <div class="trow"><div class="tdate">June 2025</div><div class="tbody"><b>The clearinghouse arrives</b>NIL Go launches for Division I third-party deal reporting and compliance review.</div></div>
-      <div class="trow"><div class="tdate">2025–26</div><div class="tbody"><b>Schools become payers</b>The House settlement creates a first-year institutional benefits cap of about $20.5M per school.</div></div>
-      <div class="trow"><div class="tdate">2026–27</div><div class="tbody"><b>The market expands past the cap</b>The annual cap rises to roughly $21.3M, while commercial NIL remains an additional market layered on top.</div></div>
-    </div>
-  </section>
+<div class="card-grid">
+<div class="fcard">
+<span class="tag">01 · Source</span>
+<h3>The Corpus</h3>
+<p>Creator uploads their content — video, voice, writing, style — which becomes the grounded material the agent draws from and cites, rather than free-form generation.</p>
+</div>
+<div class="fcard">
+<span class="tag">02 · License</span>
+<h3>The Terms</h3>
+<p>Scope, duration, and revocability are set explicitly — what the agent can say, where it can appear, and how fast it can be pulled if terms are violated.</p>
+</div>
+<div class="fcard">
+<span class="tag">03 · Paywall</span>
+<h3>The Access</h3>
+<p>Fans pay by subscription, per-session, or per-message. Pricing tiers gate depth — a free preview, a paid tier, a premium 1:1-feeling tier.</p>
+</div>
+</div>
 
-  <div class="rule"></div>
+<p style="margin-top:22px;">The part nobody's productized well yet is the fourth layer: <b>ongoing rights management</b> — tracking where the licensed likeness is being used, splitting revenue automatically, and enforcing takedown when a term is breached. Every platform in this space today bolts that on as an afterthought. It's the least glamorous layer, and the one this thesis is really about.</p>
+</section>
 
-  <section>
-    <div class="section-top"><div class="secno">03</div><div class="kicker">The Infrastructure Stack</div></div>
-    <h2>NIL works because the rights have plumbing</h2>
-    <div class="stack">
-      <div class="layer"><div class="tag">01 · Right</div><h3>Permission</h3><p>The athlete controls commercial use of their name, image and likeness rather than surrendering identity outright.</p></div>
-      <div class="layer"><div class="tag">02 · Intermediary</div><h3>Market Access</h3><p>Collectives, agencies, schools and marketplaces connect the rights-holder to brands and counterparties.</p></div>
-      <div class="layer"><div class="tag">03 · Registry</div><h3>Reporting</h3><p>Division I third-party deals at the reporting threshold run through NIL Go, creating a compliance record instead of an invisible handshake.</p></div>
-      <div class="layer"><div class="tag">04 · Pricing</div><h3>Fair-Market Review</h3><p>Deals can be reviewed for valid business purpose and whether compensation sits within a reasonable range.</p></div>
-      <div class="layer"><div class="tag">05 · Enforcement</div><h3>Rules With Teeth</h3><p>The College Sports Commission oversees settlement-related financial rules and third-party NIL compliance.</p></div>
-      <div class="layer"><div class="tag">06 · Distribution</div><h3>Money Moves</h3><p>Brands, schools and other counterparties pay for licensed access to identity — exactly the economic behavior AI likeness needs.</p></div>
-    </div>
-  </section>
+<hr class="soft">
 
-  <div class="proof">
-    <div class="stripe"></div>
-    <div class="proof-inner">
-      <div class="label">The key reframe</div>
-      <p>The breakthrough was not letting athletes “be influencers.” The breakthrough was building a system where <em>identity itself became a governed commercial asset.</em></p>
-    </div>
-  </div>
+<section>
+<div class="sec-num">3</div>
+<div class="sec-tag">Sizing It</div>
+<h2>What's the actual TAM here?</h2>
+<p>Start wide, then narrow to the slice this thesis actually touches. The global creator economy sits around <b>$310B</b> in 2026 run-rate — direct revenue, sponsorships, subscriptions, and infrastructure combined — and Goldman Sachs projects it nearly doubling to <b>$480B by 2027</b>.</p>
+<p>Narrow further, to the category this actually competes in: creator <b>tools and infrastructure</b> — the analytics platforms, CRM stacks, and payment rails layered on top of raw creator revenue — represents roughly <b>8–12% of that total, or $25–38B in 2026.</b> Licensed-agent platforms sit inside that slice. It's not the whole creator economy; it's the toolbelt.</p>
+<p>Now anchor it against the closest working comp: Patreon. Creators there have earned <b>over $2B a year</b> in payouts, crossing $10B cumulatively since launch, across roughly 25 million paid memberships — on a platform that takes an 8–12% cut and does nothing but host a paywall and a feed. Patreon itself pulls an estimated <b>$179–228M</b> in annual revenue from that flow.</p>
 
-  <section>
-    <div class="section-top"><div class="secno">04</div><div class="kicker">The AI Parallel</div></div>
-    <h2>Swap the athlete for a creator. The stack barely changes.</h2>
-    <div class="compare">
-      <table>
-        <thead><tr><th>Layer</th><th>College NIL</th><th>Licensed AI Likeness</th></tr></thead>
-        <tbody>
-          <tr><td>Asset</td><td>Name, image, likeness</td><td>Face, voice, persona, style</td></tr>
-          <tr><td>Rights holder</td><td>Athlete</td><td>Creator / public figure / individual</td></tr>
-          <tr><td>Buyer</td><td>Brand, school, sponsor</td><td>AI platform, brand, fan product</td></tr>
-          <tr><td>Intermediary</td><td>Collective, agency, marketplace</td><td>Rights registry / licensing platform</td></tr>
-          <tr><td>Compliance</td><td>NIL Go + CSC rules</td><td>Consent ledger + federal/state likeness rules</td></tr>
-          <tr><td>Pricing logic</td><td>Comparable market value + deliverables</td><td>Scope + duration + channels + synthetic usage</td></tr>
-          <tr><td>Enforcement</td><td>Deal review / eligibility consequences</td><td>Revocation / takedown / access termination</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="callout">
-      <div class="label">Why this is stronger than Delphi</div>
-      <p>Delphi proves people may want access to an AI version of a person. <strong>NIL proves a regulated likeness market can actually clear transactions at scale.</strong> One is product-market evidence. The other is market-structure evidence.</p>
-    </div>
-  </section>
+<div class="mathbox">
+<span class="line">Patreon monetizes creator <b style="color:var(--navy)">time and output.</b></span>
+<span class="line">A licensed agent monetizes creator <b style="color:var(--navy)">presence</b> — available 24/7, infinitely parallel.</span>
+<span class="line">Shift even a low-single-digit share of that $2B+ payout pool</span>
+<span class="line">toward "always-on access to me," priced at a premium to a feed post —</span>
+<span class="line res">and the per-creator ceiling is structurally higher than subscription content ever was.</span>
+</div>
 
-  <div class="rule"></div>
+<p>That's the TAM case in one line: this isn't a new market invented from nothing — it's an <b>existing, proven creator-payout pool being repriced upward</b>, because access to a person, not just their content, is the thing being sold.</p>
+</section>
 
-  <section>
-    <div class="section-top"><div class="secno">05</div><div class="kicker">What the Market Is Telling Us</div></div>
-    <h2>The cap did not cap the market</h2>
-    <p>One of the most interesting 2026 developments is that formalization did not shrink NIL. It expanded it. Opendorse revised its 2026–27 NIL estimate from roughly $2.8B to <strong>$4.5B</strong>, arguing that direct school payments created a base layer while commercial NIL became an additional channel above it.</p>
-    <p>That is the lesson for AI likeness: regulation does not necessarily kill monetization. Clear rules can <strong>unlock more counterparties</strong> because buyers know what they are allowed to purchase, rights-holders know what they are giving up, and intermediaries can underwrite the transaction.</p>
-  </section>
+<hr class="soft">
 
-  <div class="rule"></div>
+<section>
+<div class="sec-num">4</div>
+<div class="sec-tag">The Catalyst</div>
+<h2>Congress is about to make the license real</h2>
+<p>On June 18, 2026, the Senate Judiciary Committee <b>unanimously</b> advanced the NO FAKES Act — bipartisan, backed by the RIAA, the AFL-CIO, and the National Association of Broadcasters, and closer to enactment than in any prior session. It creates a federal property right in a person's voice and visual likeness. Critically: <b>licensable, but not permanently sellable.</b> A notice-and-takedown enforcement structure, modeled on the DMCA, backs it up.</p>
 
-  <section>
-    <div class="section-top"><div class="secno">06</div><div class="kicker">The Investment Insight</div></div>
-    <h2>The category winner may look less like Character.AI and more like NIL Go</h2>
-    <p>The obvious company to build is a better AI clone. The more durable company may be the one that sits underneath every clone: a registry that can prove consent, define usage rights, price a license, route payouts, log derivative uses and revoke access.</p>
-    <p>NIL shows why. Once transactions become large enough, everyone needs the boring layer: <strong>compliance, records, valuation and enforcement.</strong> That layer becomes more valuable as the number of apps on top increases.</p>
-  </section>
+<div class="pq">
+<p>"Licensable but not sellable" is the whole ballgame. That's not a chatbot feature — that's a job description for a rights society, the same role ASCAP and BMI have played for music for a century.</p>
+<div class="attrib">The reframe this thesis turns on</div>
+</div>
 
-  <div class="rule"></div>
+<p>Once likeness is a formal, revocable, licensable right, every product built on someone's face or voice needs a system behind it that can prove consent, track scope, split revenue, and kill access the moment a term is violated. That system doesn't exist yet at category scale — which makes it infrastructure, not an app. It gets stronger as more platforms build likeness products on top of it, not weaker.</p>
+</section>
 
-  <section>
-    <div class="section-top"><div class="secno">07</div><div class="kicker">Where the Analogy Breaks</div></div>
-    <h2>NIL is the precedent — not a perfect copy</h2>
-    <div class="riskgrid">
-      <div class="risk"><div class="num">01</div><b>Finite vs. infinite use</b><p>An athlete endorsement is bounded. A synthetic likeness can generate thousands of outputs after one license.</p></div>
-      <div class="risk"><div class="num">02</div><b>Speech risk</b><p>A creator’s AI can say something the creator never said. NIL deals usually do not create autonomous speech.</p></div>
-      <div class="risk"><div class="num">03</div><b>Derivative rights</b><p>AI raises questions around training, remixing, fine-tuning and downstream outputs that classic endorsements do not.</p></div>
-      <div class="risk"><div class="num">04</div><b>Revocation complexity</b><p>Taking down one ad is easy. Pulling a likeness from models, caches and third-party products is not.</p></div>
-    </div>
-  </section>
+<hr class="soft">
 
-  <div class="close">
-    <div class="stripe"></div>
-    <div class="close-inner">
-      <div class="label">The Bet Underneath the Bet</div>
-      <h2>AI likeness is not waiting for a business model</h2>
-      <p>The business model has already been tested in college stadiums, brand campaigns and compliance portals. What AI changes is the frequency, scale and programmability of the licensed identity.</p>
-      <div class="last">NIL proved the face can be an asset. AI is about to prove the asset can be software.</div>
-    </div>
-  </div>
+<section>
+<div class="sec-num">5</div>
+<div class="sec-tag">The Field</div>
+<h2>Who's already building it — and exactly where they're thin</h2>
 
-  <footer>
-    <div class="sources">
-      Sources:
-      <a href="https://biz.opendorse.com/blog/nil-market-size-2026/">Opendorse 2026 NIL Market Update</a> ·
-      <a href="https://www.ncaa.org/student-athletes/name-image-likeness/">NCAA NIL Guidance</a> ·
-      <a href="https://www.collegesportscommission.org/">College Sports Commission</a> ·
-      <a href="https://www.congress.gov/crs-product/LSB11349">Congressional Research Service — House Settlement</a>
-    </div>
-    <div class="credit">Riya Goel · August 2026</div>
-  </footer>
+<div class="card-grid">
+<div class="fcard">
+<span class="tag">Category Leader</span>
+<h3>Delphi</h3>
+<p>$16M Series A, Sequoia + Anthropic's Anthology Fund. 2,000+ experts on board, tiers from $79–299/mo. But its own reviewers note monetization "is not the design center" — it's an engagement and lead-gen tool wearing a subscription price tag, with platform fees reported up to 20%.</p>
+</div>
+<div class="fcard">
+<span class="tag">Scale, No Payout</span>
+<h3>Character.AI</h3>
+<p>20M monthly users, a $9.99/mo tier — and explicitly no creator monetization or revenue-share program. Proof that demand for parasocial AI exists, and proof that demand alone doesn't build a payout rail.</p>
+</div>
+<div class="fcard">
+<span class="tag">Cautionary Comp</span>
+<h3>Fanvue / Glambase</h3>
+<p>Real subscription revenue from synthetic personas — proof people pay recurring fees for a persona relationship. But it sits adjacent to adult content, making it a signal to study, not a brand to associate with.</p>
+</div>
+</div>
+
+<p style="margin-top:22px;">Line those three up and a pattern falls out immediately: <b>the platform with the most credible creators hasn't solved monetization, and the platform that's solved for engagement hasn't paid a single creator.</b> Nobody has both a serious creator roster and a real payout engine running at the same time. That's not a crowded market — that's a market where the hard part is still open.</p>
+</section>
+
+<hr class="soft">
+
+<section>
+<div class="sec-num">6</div>
+<div class="sec-tag">The Whitespace</div>
+<h2>Two lanes worth actually pursuing</h2>
+<p>Don't blend them — they're different bets with different risk profiles.</p>
+
+<div class="lanes">
+<div class="lane">
+<span class="tag">Lane One — Build</span>
+<p>A vertical-specific licensed agent for <b>taste and aesthetic judgment</b> — styling, product curation, design sensibility — rather than general life advice. Every existing player is built for coaches explaining frameworks. Nobody's built the version for creators whose value is a point of view, not a process.</p>
+</div>
+<div class="lane">
+<span class="tag">Lane Two — Invest / Watch</span>
+<p>The <b>rights-management layer</b> sitting underneath every likeness platform post–NO FAKES: consent tracking, automated revenue splits, takedown enforcement. Slower and less visible than a consumer app, but it compounds — it gets more valuable every time a new platform in this category launches, instead of competing with it.</p>
+</div>
+</div>
+</section>
+
+<hr class="soft">
+
+<section>
+<div class="sec-num">7</div>
+<div class="sec-tag">What Could Go Wrong</div>
+<h2>The open risks nobody's pricing in yet</h2>
+
+<div class="risklist">
+<div class="riskrow">
+<div class="rk">01</div>
+<div class="rv"><b>Liability with no owner.</b> If a licensed agent gives bad advice under a real creator's name, who's exposed — creator, platform, or whoever built the agent? No incumbent has answered this, and it's probably worth more than the AI product itself.</div>
+</div>
+<div class="riskrow">
+<div class="rk">02</div>
+<div class="rv"><b>Brand dilution at scale.</b> A clone that's "close enough" but not quite right, running unsupervised across thousands of fan interactions a day, can erode the exact trust the license was supposed to protect.</div>
+</div>
+<div class="riskrow">
+<div class="rk">03</div>
+<div class="rv"><b>Category-level trust erosion.</b> One high-profile scandal — a leaked agent, a scope violation, a badly-disclosed clone — could poison trust across every platform in the category at once, not just the one at fault.</div>
+</div>
+<div class="riskrow">
+<div class="rk">04</div>
+<div class="rv"><b>Regulatory timing risk.</b> NO FAKES cleared committee unanimously, but it still has to clear the full Senate, the House, and reconciliation before it's law — betting entirely ahead of it means betting on a specific legislative timeline.</div>
+</div>
+</div>
+</section>
+
+<div class="closer">
+<span class="pill on-navy">Where This Goes</span>
+<h2>The bet underneath the bet</h2>
+<p>Every version of this thesis — the vertical agent, the rights infrastructure, or simply watching it unfold — rests on the same underlying belief: <b style="color:#fff;">presence is about to become a licensable, priceable asset class</b>, the same way a song or a film clip already is.</p>
+<p>Patreon proved fans will pay recurring fees for access to a creator's output. Delphi is proving they'll pay for access to a creator's presence. NO FAKES is about to make that presence a legal property right instead of a gray-area experiment.</p>
+<p>The category doesn't need another chatbot wearing a creator's face. It needs the plumbing — consent, splits, enforcement — that makes every future chatbot wearing a creator's face trustworthy by default.</p>
+<div class="signoff">That's a duller pitch than "an AI version of you." It's also the only version of this thesis still worth something after the tenth competitor shows up.</div>
+</div>
+
+<footer>
+<div class="src">Sources: Delphi (Sequoia, Anthropic's Anthology Fund) · Character.AI reporting · Fanvue / Glambase · S.4591 NO FAKES Act, Congress.gov · Goldman Sachs Creator Economy Research · Patreon (Sacra, Contrary Research) · Grand View Research &amp; Research and Markets creator economy sizing</div>
+<div class="credit">Riya Goel · August 2026</div>
+</footer>
 
 </div>
+
 </body>
 </html>
